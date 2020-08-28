@@ -44,5 +44,16 @@ namespace PHP.Properties {
                 return ((string)(this["PHPdb"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=D:\\PROJECTS\\SALESPOINT\\PHPDB.M" +
+            "DF;Integrated Security=True")]
+        public string D__PROJECTS_SALESPOINT_PHPDB_MDFConnectionString {
+            get {
+                return ((string)(this["D__PROJECTS_SALESPOINT_PHPDB_MDFConnectionString"]));
+            }
+        }
     }
 }

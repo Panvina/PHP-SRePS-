@@ -17,8 +17,12 @@ namespace PHP
         {
             InitializeComponent();
         }
-        public string conString = (@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=PHPdb;Integrated Security=True");
+        private static readonly string databaseLocation = @"D:\Projects\SalesPoint\PHPdb.mdf";
+        //should be the machine name
+        private static readonly string userName = @"(LocalDB)\MSSQLLocalDB";
 
+        public string conString = @"Data Source="+userName+";AttachDbFilename=" + databaseLocation + ";Integrated Security=True";
+        
         private void Connect_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(conString);
@@ -27,13 +31,9 @@ namespace PHP
             {
                 MessageBox.Show("Connecting...");
                 Homepage hp = new Homepage();
-                hp.Show();
-                this.Hide();
-                
+                hp.Show();               
+                this.Hide();              
             }
-            // Data Source=(<machine>)\<instance>;Initial Catalog=<database directory>;Integrated Security=True
-
-
         }
 
         private void Login_Load(object sender, EventArgs e)
