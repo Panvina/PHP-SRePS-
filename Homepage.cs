@@ -21,13 +21,20 @@ namespace PHP
         private void product_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ProductList pl = new ProductList();
+            InventoryList pl = new InventoryList();
             pl.Show();
         }
 
         private void exit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void showAllSales_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            All_Sales s = new All_Sales();
+            s.Show();
         }
     }
 }
