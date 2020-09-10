@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PHP
 {
-    public partial class InventoryList : Form
+    public partial class ProductList : Form
     {
-        public InventoryList()
+        public ProductList()
         {
             InitializeComponent();
         }
@@ -24,8 +24,10 @@ namespace PHP
 
         private void ProductList_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'pHPdbDataSet.Inventory' table. You can move, or remove it, as needed.
-            this.inventoryTableAdapter.Fill(this.pHPdbDataSet.Inventory);         
+            // TODO: This line of code loads data into the 'pHPdbDataSet.Products' table. You can move, or remove it, as needed.
+            //this.productsTableAdapter.Fill(this.pHPdbDataSet.Products);
+            // TODO: This line of code loads data into the 'pHPdbDataSet.Orders' table. You can move, or remove it, as needed.
+
         }
 
         private void back_Click(object sender, EventArgs e)
@@ -35,6 +37,10 @@ namespace PHP
             hp.Show();
         }
 
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {

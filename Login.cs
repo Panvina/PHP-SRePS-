@@ -17,7 +17,7 @@ namespace PHP
         {
             InitializeComponent();
         }
-        private static readonly string databaseLocation = @"D:\Projects\SalesPoint\PHPdb.mdf";
+        private static readonly string databaseLocation = @"S:\Uni\Development project 2\PHP-SRePS\PHP-SRePS-\PHPdb.mdf";
         //should be the machine name
         private static readonly string userName = @"(LocalDB)\MSSQLLocalDB";
 
@@ -37,6 +37,11 @@ namespace PHP
         }
 
         private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
