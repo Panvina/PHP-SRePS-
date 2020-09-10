@@ -1,6 +1,6 @@
 ﻿namespace PHP
 {
-    partial class All_Sales
+    partial class AllSales
     {
         /// <summary>
         /// Required designer variable.
@@ -30,17 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pHPdbDataSet = new PHP.PHPdbDataSet();
+            this.pHPdbDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.salesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.salesTableAdapter = new PHP.PHPdbDataSetTableAdapters.SalesTableAdapter();
             this.salesIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pHPdbDataSet = new PHP.PHPdbDataSet();
-            this.salesTableAdapter = new PHP.PHPdbDataSetTableAdapters.SalesTableAdapter();
             this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pHPdbDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pHPdbDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -53,10 +55,29 @@
             this.quantityDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.salesBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(44, 38);
+            this.dataGridView1.Location = new System.Drawing.Point(47, 35);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(440, 299);
+            this.dataGridView1.Size = new System.Drawing.Size(440, 281);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // pHPdbDataSet
+            // 
+            this.pHPdbDataSet.DataSetName = "PHPdbDataSet";
+            this.pHPdbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pHPdbDataSetBindingSource
+            // 
+            this.pHPdbDataSetBindingSource.DataSource = this.pHPdbDataSet;
+            this.pHPdbDataSetBindingSource.Position = 0;
+            // 
+            // salesBindingSource
+            // 
+            this.salesBindingSource.DataMember = "Sales";
+            this.salesBindingSource.DataSource = this.pHPdbDataSetBindingSource;
+            // 
+            // salesTableAdapter
+            // 
+            this.salesTableAdapter.ClearBeforeFill = true;
             // 
             // salesIDDataGridViewTextBoxColumn
             // 
@@ -82,43 +103,30 @@
             this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
             this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
             // 
-            // salesBindingSource
-            // 
-            this.salesBindingSource.DataMember = "Sales";
-            this.salesBindingSource.DataSource = this.pHPdbDataSet;
-            // 
-            // pHPdbDataSet
-            // 
-            this.pHPdbDataSet.DataSetName = "PHPdbDataSet";
-            this.pHPdbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // salesTableAdapter
-            // 
-            this.salesTableAdapter.ClearBeforeFill = true;
-            // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(359, 355);
+            this.btnBack.Location = new System.Drawing.Point(365, 338);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(125, 38);
+            this.btnBack.Size = new System.Drawing.Size(122, 43);
             this.btnBack.TabIndex = 1;
             this.btnBack.Text = "Back to Homepage";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // All_Sales
+            // AllSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(535, 427);
+            this.ClientSize = new System.Drawing.Size(545, 437);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "All_Sales";
+            this.Name = "AllSales";
             this.Text = "All Sales";
-            this.Load += new System.EventHandler(this.All_Sales_Load);
+            this.Load += new System.EventHandler(this.AllSales_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pHPdbDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pHPdbDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -126,6 +134,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource pHPdbDataSetBindingSource;
         private PHPdbDataSet pHPdbDataSet;
         private System.Windows.Forms.BindingSource salesBindingSource;
         private PHPdbDataSetTableAdapters.SalesTableAdapter salesTableAdapter;

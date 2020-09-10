@@ -61,7 +61,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AllSales.cs" />
+    <Compile Include="AllSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AllSales.Designer.cs">
       <DependentUpon>AllSales.cs</DependentUpon>
     </Compile>
@@ -95,7 +97,9 @@
     <Compile Include="Homepage.Designer.cs">
       <DependentUpon>Homepage.cs</DependentUpon>
     </Compile>
-    <Compile Include="InventoryList.cs" />
+    <Compile Include="InventoryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="InventoryList.Designer.cs">
       <DependentUpon>InventoryList.cs</DependentUpon>
     </Compile>

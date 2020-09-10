@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.back = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pHPdbDataSet = new PHP.PHPdbDataSet();
             this.pHPdbDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -38,21 +37,12 @@
             this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitsInStockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitsOnOrderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pHPdbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pHPdbDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // back
-            // 
-            this.back.Location = new System.Drawing.Point(257, 412);
-            this.back.Name = "back";
-            this.back.Size = new System.Drawing.Size(112, 23);
-            this.back.TabIndex = 1;
-            this.back.Text = "Back to Homepage";
-            this.back.UseVisualStyleBackColor = true;
-            this.back.Click += new System.EventHandler(this.back_Click);
             // 
             // dataGridView1
             // 
@@ -63,10 +53,10 @@
             this.unitsInStockDataGridViewTextBoxColumn,
             this.unitsOnOrderDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.inventoryBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(31, 25);
+            this.dataGridView1.Location = new System.Drawing.Point(43, 37);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(338, 378);
-            this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.Size = new System.Drawing.Size(342, 311);
+            this.dataGridView1.TabIndex = 0;
             // 
             // pHPdbDataSet
             // 
@@ -105,16 +95,26 @@
             this.unitsOnOrderDataGridViewTextBoxColumn.HeaderText = "UnitsOnOrder";
             this.unitsOnOrderDataGridViewTextBoxColumn.Name = "unitsOnOrderDataGridViewTextBoxColumn";
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(272, 355);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(113, 34);
+            this.btnBack.TabIndex = 1;
+            this.btnBack.Text = "Back to Homepage";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // InventoryList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(415, 447);
+            this.ClientSize = new System.Drawing.Size(432, 419);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.back);
             this.Name = "InventoryList";
-            this.Text = "Current Inventory";
-            this.Load += new System.EventHandler(this.ProductList_Load);
+            this.Text = "InventoryList";
+            this.Load += new System.EventHandler(this.InventoryList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pHPdbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pHPdbDataSetBindingSource)).EndInit();
@@ -124,7 +124,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button back;
+
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource pHPdbDataSetBindingSource;
         private PHPdbDataSet pHPdbDataSet;
@@ -133,5 +133,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitsInStockDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitsOnOrderDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnBack;
     }
 }

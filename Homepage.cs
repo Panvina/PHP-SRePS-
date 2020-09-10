@@ -64,10 +64,10 @@ namespace PHP
 
         }
 
-        private void showAllSales_Click(object sender, EventArgs e)
+        private void btnAllSales_Click(object sender, EventArgs e)
         {
             this.Hide();
-            All_Sales s = new All_Sales();
+            AllSales s = new AllSales();
             s.Show();
         }
     }

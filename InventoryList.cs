@@ -10,41 +10,25 @@ using System.Windows.Forms;
 
 namespace PHP
 {
-    public partial class ProductList : Form
+    public partial class InventoryList : Form
     {
-        public ProductList()
+        public InventoryList()
         {
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void InventoryList_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'pHPdbDataSet.Inventory' table. You can move, or remove it, as needed.
+            this.inventoryTableAdapter.Fill(this.pHPdbDataSet.Inventory);
 
         }
 
-        private void ProductList_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'pHPdbDataSet.Products' table. You can move, or remove it, as needed.
-            //this.productsTableAdapter.Fill(this.pHPdbDataSet.Products);
-            // TODO: This line of code loads data into the 'pHPdbDataSet.Orders' table. You can move, or remove it, as needed.
-
-        }
-
-        private void back_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Homepage hp = new Homepage();
-            hp.Show();
-        }
-
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
+            Homepage home = new Homepage();
+            home.Show();
         }
     }
 }

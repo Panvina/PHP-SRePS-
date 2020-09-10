@@ -35,6 +35,7 @@
             this.deleteSales = new System.Windows.Forms.Button();
             this.editSales = new System.Windows.Forms.Button();
             this.displaySales = new System.Windows.Forms.Button();
+            this.btnAllSales = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -50,11 +51,11 @@
             // 
             // product
             // 
-            this.product.Location = new System.Drawing.Point(229, 264);
+            this.product.Location = new System.Drawing.Point(228, 296);
             this.product.Name = "product";
             this.product.Size = new System.Drawing.Size(142, 58);
             this.product.TabIndex = 1;
-            this.product.Text = "Show All Products";
+            this.product.Text = "Show Current Inventory";
             this.product.UseVisualStyleBackColor = true;
             this.product.Click += new System.EventHandler(this.product_Click);
             // 
@@ -109,11 +110,22 @@
             this.displaySales.UseVisualStyleBackColor = true;
             this.displaySales.Click += new System.EventHandler(this.displaySales_Click);
             // 
+            // btnAllSales
+            // 
+            this.btnAllSales.Location = new System.Drawing.Point(228, 241);
+            this.btnAllSales.Name = "btnAllSales";
+            this.btnAllSales.Size = new System.Drawing.Size(142, 49);
+            this.btnAllSales.TabIndex = 7;
+            this.btnAllSales.Text = "Show All Sales";
+            this.btnAllSales.UseVisualStyleBackColor = true;
+            this.btnAllSales.Click += new System.EventHandler(this.btnAllSales_Click);
+            // 
             // Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(635, 385);
+            this.Controls.Add(this.btnAllSales);
             this.Controls.Add(this.displaySales);
             this.Controls.Add(this.editSales);
             this.Controls.Add(this.deleteSales);
@@ -137,5 +149,6 @@
         private System.Windows.Forms.Button deleteSales;
         private System.Windows.Forms.Button editSales;
         private System.Windows.Forms.Button displaySales;
+        private System.Windows.Forms.Button btnAllSales;
     }
 }
