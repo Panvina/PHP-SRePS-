@@ -21,7 +21,6 @@ namespace PHP
         {
             // TODO: This line of code loads data into the 'pHPdbDataSet.Inventory' table. You can move, or remove it, as needed.
             this.inventoryTableAdapter.Fill(this.pHPdbDataSet.Inventory);
-
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -29,6 +28,11 @@ namespace PHP
             this.Hide();
             Homepage home = new Homepage();
             home.Show();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
