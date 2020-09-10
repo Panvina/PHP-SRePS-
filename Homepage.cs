@@ -28,24 +28,38 @@ namespace PHP
         private void exit_Click(object sender, EventArgs e)
         {
             this.Close();
+            Application.Exit();
         }
 
         private void addSales_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            AddSales addSales = new AddSales();
+            addSales.Show();
         }
 
         private void deleteSales_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            DeleteSales deleteSales = new DeleteSales();
+            deleteSales.Show();
         }
 
         private void editSales_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            EditSales editSales = new EditSales();
+            editSales.Show();
         }
 
         private void displaySales_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DisplaySales displaySales = new DisplaySales();
+            displaySales.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

@@ -40,17 +40,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 25);
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(42, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(220, 13);
+            this.label1.Size = new System.Drawing.Size(570, 33);
             this.label1.TabIndex = 0;
-            this.label1.Text = "This is the homepage.  Remove this text after";
+            this.label1.Text = "PEOPLE HEALTH PHARMACY INVOICE SYSTEM";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // product
             // 
-            this.product.Location = new System.Drawing.Point(470, 232);
+            this.product.Location = new System.Drawing.Point(229, 264);
             this.product.Name = "product";
-            this.product.Size = new System.Drawing.Size(123, 29);
+            this.product.Size = new System.Drawing.Size(142, 58);
             this.product.TabIndex = 1;
             this.product.Text = "Show All Products";
             this.product.UseVisualStyleBackColor = true;
@@ -58,9 +60,10 @@
             // 
             // exit
             // 
-            this.exit.Location = new System.Drawing.Point(470, 316);
+            this.exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exit.Location = new System.Drawing.Point(497, 339);
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(124, 33);
+            this.exit.Size = new System.Drawing.Size(137, 46);
             this.exit.TabIndex = 2;
             this.exit.Text = "Exit";
             this.exit.UseVisualStyleBackColor = true;
@@ -68,9 +71,9 @@
             // 
             // addSales
             // 
-            this.addSales.Location = new System.Drawing.Point(29, 84);
+            this.addSales.Location = new System.Drawing.Point(135, 84);
             this.addSales.Name = "addSales";
-            this.addSales.Size = new System.Drawing.Size(132, 47);
+            this.addSales.Size = new System.Drawing.Size(134, 57);
             this.addSales.TabIndex = 3;
             this.addSales.Text = "Add Sales Report";
             this.addSales.UseVisualStyleBackColor = true;
@@ -78,9 +81,9 @@
             // 
             // deleteSales
             // 
-            this.deleteSales.Location = new System.Drawing.Point(29, 194);
+            this.deleteSales.Location = new System.Drawing.Point(311, 162);
             this.deleteSales.Name = "deleteSales";
-            this.deleteSales.Size = new System.Drawing.Size(111, 24);
+            this.deleteSales.Size = new System.Drawing.Size(134, 57);
             this.deleteSales.TabIndex = 4;
             this.deleteSales.Text = "Delete Sales Report";
             this.deleteSales.UseVisualStyleBackColor = true;
@@ -88,9 +91,9 @@
             // 
             // editSales
             // 
-            this.editSales.Location = new System.Drawing.Point(29, 238);
+            this.editSales.Location = new System.Drawing.Point(137, 162);
             this.editSales.Name = "editSales";
-            this.editSales.Size = new System.Drawing.Size(111, 23);
+            this.editSales.Size = new System.Drawing.Size(134, 57);
             this.editSales.TabIndex = 5;
             this.editSales.Text = "Edit Sales Report";
             this.editSales.UseVisualStyleBackColor = true;
@@ -98,9 +101,9 @@
             // 
             // displaySales
             // 
-            this.displaySales.Location = new System.Drawing.Point(29, 275);
+            this.displaySales.Location = new System.Drawing.Point(311, 84);
             this.displaySales.Name = "displaySales";
-            this.displaySales.Size = new System.Drawing.Size(111, 23);
+            this.displaySales.Size = new System.Drawing.Size(134, 57);
             this.displaySales.TabIndex = 6;
             this.displaySales.Text = "Display Sales Report";
             this.displaySales.UseVisualStyleBackColor = true;

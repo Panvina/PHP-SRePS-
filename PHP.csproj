@@ -79,12 +79,6 @@
     <Compile Include="EditSales.Designer.cs">
       <DependentUpon>EditSales.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="AddSales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +115,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddSales.resx">
       <DependentUpon>AddSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteSales.resx">
+      <DependentUpon>DeleteSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisplaySales.resx">
+      <DependentUpon>DisplaySales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditSales.resx">
+      <DependentUpon>EditSales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>

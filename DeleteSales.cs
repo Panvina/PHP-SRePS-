@@ -16,5 +16,12 @@ namespace PHP
         {
             InitializeComponent();
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Homepage home = new Homepage();
+            home.Show();
+        }
     }
 }
