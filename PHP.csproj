@@ -61,6 +61,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllSales.cs" />
+    <Compile Include="AllSales.Designer.cs">
+      <DependentUpon>AllSales.cs</DependentUpon>
+    </Compile>
     <Compile Include="DeleteSales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +95,10 @@
     <Compile Include="Homepage.Designer.cs">
       <DependentUpon>Homepage.cs</DependentUpon>
     </Compile>
+    <Compile Include="InventoryList.cs" />
+    <Compile Include="InventoryList.Designer.cs">
+      <DependentUpon>InventoryList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,16 +113,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PHPdbDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="ProductList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ProductList.Designer.cs">
-      <DependentUpon>ProductList.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddSales.resx">
       <DependentUpon>AddSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllSales.resx">
+      <DependentUpon>AllSales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteSales.resx">
       <DependentUpon>DeleteSales.cs</DependentUpon>
@@ -128,11 +133,11 @@
     <EmbeddedResource Include="Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InventoryList.resx">
+      <DependentUpon>InventoryList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ProductList.resx">
-      <DependentUpon>ProductList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
