@@ -29,5 +29,25 @@ namespace PHP
         {
             this.Close();
         }
+
+        private void addSales_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deleteSales_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void editSales_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void displaySales_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

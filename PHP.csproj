@@ -61,11 +61,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeleteSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteSales.Designer.cs">
+      <DependentUpon>DeleteSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisplaySales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisplaySales.Designer.cs">
+      <DependentUpon>DisplaySales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditSales.Designer.cs">
+      <DependentUpon>EditSales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSales.Designer.cs">
+      <DependentUpon>AddSales.cs</DependentUpon>
     </Compile>
     <Compile Include="Homepage.cs">
       <SubType>Form</SubType>
@@ -78,6 +102,9 @@
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PHPdbDataSet.cs">
+      <DependentUpon>PHPdbDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="PHPdbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -92,6 +119,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddSales.resx">
+      <DependentUpon>AddSales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>
     </EmbeddedResource>

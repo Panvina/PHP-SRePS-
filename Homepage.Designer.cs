@@ -68,39 +68,43 @@
             // 
             // addSales
             // 
-            this.addSales.Location = new System.Drawing.Point(29, 87);
+            this.addSales.Location = new System.Drawing.Point(29, 84);
             this.addSales.Name = "addSales";
-            this.addSales.Size = new System.Drawing.Size(111, 24);
+            this.addSales.Size = new System.Drawing.Size(132, 47);
             this.addSales.TabIndex = 3;
             this.addSales.Text = "Add Sales Report";
             this.addSales.UseVisualStyleBackColor = true;
+            this.addSales.Click += new System.EventHandler(this.addSales_Click);
             // 
             // deleteSales
             // 
-            this.deleteSales.Location = new System.Drawing.Point(29, 129);
+            this.deleteSales.Location = new System.Drawing.Point(29, 194);
             this.deleteSales.Name = "deleteSales";
             this.deleteSales.Size = new System.Drawing.Size(111, 24);
             this.deleteSales.TabIndex = 4;
             this.deleteSales.Text = "Delete Sales Report";
             this.deleteSales.UseVisualStyleBackColor = true;
+            this.deleteSales.Click += new System.EventHandler(this.deleteSales_Click);
             // 
             // editSales
             // 
-            this.editSales.Location = new System.Drawing.Point(29, 172);
+            this.editSales.Location = new System.Drawing.Point(29, 238);
             this.editSales.Name = "editSales";
             this.editSales.Size = new System.Drawing.Size(111, 23);
             this.editSales.TabIndex = 5;
             this.editSales.Text = "Edit Sales Report";
             this.editSales.UseVisualStyleBackColor = true;
+            this.editSales.Click += new System.EventHandler(this.editSales_Click);
             // 
             // displaySales
             // 
-            this.displaySales.Location = new System.Drawing.Point(29, 216);
+            this.displaySales.Location = new System.Drawing.Point(29, 275);
             this.displaySales.Name = "displaySales";
             this.displaySales.Size = new System.Drawing.Size(111, 23);
             this.displaySales.TabIndex = 6;
             this.displaySales.Text = "Display Sales Report";
             this.displaySales.UseVisualStyleBackColor = true;
+            this.displaySales.Click += new System.EventHandler(this.displaySales_Click);
             // 
             // Homepage
             // 
