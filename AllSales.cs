@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,6 @@ namespace PHP
         {
             // TODO: This line of code loads data into the 'pHPdbDataSet.Sales' table. You can move, or remove it, as needed.
             this.salesTableAdapter.Fill(this.pHPdbDataSet.Sales);
-
         }
 
         private void btnBack_Click(object sender, EventArgs e)

@@ -41,10 +41,6 @@ namespace PHP
                 lblDateError.Visible = true;
                 return false;
 			}
-            else
-			{
-                lblDate.Text = date.ToString("yyyy-mm-dd");
-            }
 
             try
 			{
@@ -111,15 +107,12 @@ namespace PHP
             if (ValidateInputs())
 			{
                 string prodID = cmbProductID.Text.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries)[1];
-                this.Text = prodID;
-                txtDate.Text = prodID;
-
                 int quant = int.Parse(txtQuantity.Text);
                 string date = txtDate.Text;
 
-                string query = $"INSERT INTO Sales (ProductID, Quantity, Date) VALUES ({prodID}, {quant}, \"{date}\"";
+                string query = $"INSERT INTO Sales (ProductID, Quantity, Date) VALUES ({prodID}, {quant}, '{date}')";
                 SqlCommand command = new SqlCommand(query, Login.con);
-                lblRowsAffected.Text = command.ExecuteNonQuery().ToString();
+                lblRowsAffected.Text = $"{command.ExecuteNonQuery()} affected rows.";
 
                 lblRowsAffected.Visible = true;
             }
