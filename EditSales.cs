@@ -13,10 +13,14 @@ namespace PHP
 {
     public partial class EditSales : Form
     {
+        private SqlConnection connection;
+
 
         public EditSales()
         {
             InitializeComponent();
+
+            connection = new SqlConnection(Login.conString);
         }
 
         private void EditSales_Load(object sender, EventArgs e)
@@ -24,7 +28,10 @@ namespace PHP
             //Gets all sales IDs from sales table.
             string query = "SELECT SalesID from Sales";
 
-            SqlCommand command = new SqlCommand(query, Login.con);
+            connection.Open();
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Transaction = connection.BeginTransaction();
 
             using (SqlDataReader reader = command.ExecuteReader())
             {
@@ -33,6 +40,9 @@ namespace PHP
                     cmbSalesID.Items.Add(reader[0].ToString());
                 }
             }
+
+            command.Transaction.Commit();
+            connection.Close();
 
             HideErrorLabels();
         }
@@ -49,12 +59,15 @@ namespace PHP
         private void cmbSalesID_IndexChanged(object sender, EventArgs e)
         {
             ComboBox cmb = (ComboBox)sender;
+            connection.Open();
 
             //Gets sales data for specific sales ID.
             string query = $"SELECT ProductID, Quantity, Date from Sales WHERE SalesID={cmb.SelectedItem}";
 
             //Update textboxes to match Sales data.
-            SqlCommand command = new SqlCommand(query, Login.con);
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Transaction = connection.BeginTransaction();
+
             using (SqlDataReader reader = command.ExecuteReader())
             {
                 while (reader.Read())
@@ -65,6 +78,8 @@ namespace PHP
                 }
             }
 
+            command.Transaction.Commit();
+            connection.Close();
             HideErrorLabels();
         }
 
@@ -72,18 +87,23 @@ namespace PHP
         {
             if(ValidateInputs())
             {
+                connection.Open();
+
                 int productID = int.Parse(txtProductID.Text);
                 int quantity = int.Parse(txtQuantity.Text);
-
                 string date = tpDate.Value.ToString("yyyy-MM-dd");
-
                 string query = $"UPDATE Sales SET ProductID={productID}, quantity={quantity}, Date='{date}' WHERE SalesID={cmbSalesID.SelectedItem}";
 
-                SqlCommand command = new SqlCommand(query, Login.con);
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Transaction = connection.BeginTransaction();
+
                 int rowsAffected = command.ExecuteNonQuery();
 
                 lblRecordResult.Text = $"Success! {rowsAffected} records affected.";
                 lblRecordResult.Visible = true;
+
+                command.Transaction.Commit();
+                connection.Close();
 
             }
         }
@@ -110,10 +130,19 @@ namespace PHP
                 return false;
             }
 
+            connection.Open();
+
             //Check to see if the product ID exists in the database.
             string query = $"SELECT Count(*) from Products WHERE ProductID={productID}";
-            SqlCommand command = new SqlCommand(query, Login.con);
+            
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Transaction = connection.BeginTransaction();
+
             int rowCount = (int) command.ExecuteScalar();
+
+            command.Transaction.Commit();
+            connection.Close();
+
             if(rowCount <= 0)
             {
                 lblProductIDError.Visible = true;
