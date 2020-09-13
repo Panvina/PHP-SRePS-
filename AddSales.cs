@@ -76,6 +76,7 @@ namespace PHP
             if (intQuant <= 0)
 			{
                 lblQuantityError.Visible = true;
+                return false;
             }
 
             lblQuantityError.Visible = false;
