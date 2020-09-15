@@ -26,16 +26,16 @@ namespace PHP
             home.Show();
         }
 
-        private bool ValidateInputs()
+        public bool ValidateInputs()
 		{
-            return (ValidateDate() && ValidateQuantity());
+            return (ValidateDate(txtDate.Text) && ValidateQuantity(txtQuantity.Text));
 		}
 
-        private bool ValidateDate()
+        public bool ValidateDate(string dateStr)
 		{
             DateTime date = default;
 
-            if (!DateTime.TryParseExact(txtDate.Text, "yyyy-mm-dd", CultureInfo.GetCultureInfo("en-US").DateTimeFormat, DateTimeStyles.None, out date))
+            if (!DateTime.TryParseExact(dateStr, "yyyy-mm-dd", CultureInfo.GetCultureInfo("en-US").DateTimeFormat, DateTimeStyles.None, out date))
 			{
                 // parse failed.
                 lblDateError.Visible = true;
@@ -62,9 +62,8 @@ namespace PHP
             return true;
 		}
 
-        private bool ValidateQuantity()
+        public bool ValidateQuantity(string quant)
 		{
-            string quant = txtQuantity.Text;
             int intQuant = default;
 
             if (!int.TryParse(quant, out intQuant))
