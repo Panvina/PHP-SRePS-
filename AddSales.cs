@@ -124,5 +124,10 @@ namespace PHP
                 lblRowsAffected.Visible = true;
             }
         }
-	}
+
+        private void cmbProductID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

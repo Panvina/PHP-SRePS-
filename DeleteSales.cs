@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,5 +24,13 @@ namespace PHP
             Homepage home = new Homepage();
             home.Show();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string salesID = txtID.Text;
+            SqlCommand command = new SqlCommand("DELETE FROM Sales WHERE SalesID = @salesID");
+            MessageBox.Show("Sale Deleted");
+        }
+
     }
 }
