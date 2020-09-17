@@ -47,33 +47,42 @@ namespace PHP
         }
 
 
-
-            private void btnSearch_Click(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
-            
-            int Month = Convert.ToInt32(txtMonth.Text);
-            string Year = txtYear.Text;
+            int Month, Year;
 
-            if (Month > 12 || Month <= 0)
+            lblMonthError.Visible = true;
+            lblInvalidYear.Visible = true;
+
+            if (int.TryParse(txtMonth.Text, out Month))
             {
-                lblMonth.Visible = true;              
+                if ((Month >= 1) && (Month <= 12))
+                {
+                    lblMonthError.Visible = false;
+                }
             }
 
-            if (Year.Length > 4)
-            {
-                lblYear.Visible = true;
-            }
+            if (int.TryParse(txtYear.Text, out Year))
+			{
+                if ((Year >= 1753) && (Year <= 9999))
+				{
+                    lblInvalidYear.Visible = false;
+				}
+			}
+
+            if ((lblInvalidYear.Visible == true) || (lblMonthError.Visible == true))
+			{
+                return;
+			}
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = Login.con;
             cmd.CommandText = $"SELECT * FROM SALES WHERE MONTH(DATE) = {txtMonth.Text} AND YEAR(DATE) = {txtYear.Text}";
-
            
             BindingSource bs = new BindingSource();
             DataSet ds = new DataSet();                     // create new dataset
 
             SqlDataAdapter adapter = new SqlDataAdapter();
-            
 
             adapter.SelectCommand = cmd;        // stores records from command
             adapter.Fill(ds);                   // fills dataset with records
