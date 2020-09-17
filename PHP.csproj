@@ -75,6 +75,12 @@
     <Compile Include="DeleteSales.Designer.cs">
       <DependentUpon>DeleteSales.cs</DependentUpon>
     </Compile>
+    <Compile Include="DisplayMonthlySales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisplayMonthlySales.Designer.cs">
+      <DependentUpon>DisplayMonthlySales.cs</DependentUpon>
+    </Compile>
     <Compile Include="DisplaySales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteSales.resx">
       <DependentUpon>DeleteSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisplayMonthlySales.resx">
+      <DependentUpon>DisplayMonthlySales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DisplaySales.resx">
       <DependentUpon>DisplaySales.cs</DependentUpon>

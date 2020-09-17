@@ -142,5 +142,15 @@ namespace PHP
                 lblRowsAffected.Visible = true;
             }
         }
-	}
+
+        private void txtDate_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDateError_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

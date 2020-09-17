@@ -47,5 +47,10 @@ namespace PHP
             Homepage home = new Homepage();
             home.Show();
         }
-	}
+
+        private void dgvSales_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+    }
 }
