@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Globalization;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PHP
@@ -19,6 +12,9 @@ namespace PHP
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Event handler for exit button clicked
+        /// </summary>
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -26,26 +22,33 @@ namespace PHP
             home.Show();
         }
 
-        private bool ValidateInputs()
+        /// <summary>
+        /// Validate inputs (date and quantity)
+        /// </summary>
+        /// <returns>true if inputs valid</returns>
+        public bool ValidateInputs()
 		{
-            return (ValidateDate() && ValidateQuantity());
+            return (ValidateDate(txtDate.Text) && ValidateQuantity(txtQuantity.Text));
 		}
 
-        private bool ValidateDate()
+        /// <summary>
+        /// Validates date input in textbox
+        /// </summary>
+        /// <param name="dateStr">String to validate</param>
+        /// <returns>true if input string is valid date</returns>
+        public bool ValidateDate(string dateStr)
 		{
             DateTime date = default;
 
-            if (!DateTime.TryParseExact(txtDate.Text, "yyyy-mm-dd", CultureInfo.GetCultureInfo("en-US").DateTimeFormat, DateTimeStyles.None, out date))
+            // Validate that date format is valid
+            if (!DateTime.TryParseExact(dateStr, "yyyy-mm-dd", CultureInfo.GetCultureInfo("en-US").DateTimeFormat, DateTimeStyles.None, out date))
 			{
                 // parse failed.
                 lblDateError.Visible = true;
                 return false;
 			}
-            else
-			{
-                lblDate.Text = date.ToString("yyyy-mm-dd");
-            }
 
+            // validate that date can be parsed to SQL DateTime type
             try
 			{
                 System.Data.SqlTypes.SqlDateTime dtSql = System.Data.SqlTypes.SqlDateTime.Parse(date.ToString("yyyy-mm-dd"));
@@ -61,34 +64,47 @@ namespace PHP
                 return false;
             }
 
+            // remove error message
             lblDateError.Visible = false;
 
             return true;
 		}
 
-        private bool ValidateQuantity()
+        /// <summary>
+        /// Validate quantity string
+        /// </summary>
+        /// <param name="quant">string to validate</param>
+        /// <returns>true if input string valid quantity</returns>
+        public bool ValidateQuantity(string quant)
 		{
-            string quant = txtQuantity.Text;
             int intQuant = default;
 
+            // ensure input can be converted to int
             if (!int.TryParse(quant, out intQuant))
 			{
                 lblQuantityError.Visible = true;
                 return false;
 			}
             
+            // ensure positive integer
             if (intQuant <= 0)
 			{
                 lblQuantityError.Visible = true;
+                return false;
             }
 
+            // hide error message
             lblQuantityError.Visible = false;
 
             return true;
         }
 
+        /// <summary>
+        /// Event handler for form load
+        /// </summary>
 		private void AddSales_Load(object sender, EventArgs e)
 		{
+            // load in combo box option for product ID.
             string query = "SELECT productID, productName FROM products";
 
             SqlCommand command = new SqlCommand(query, Login.con);
@@ -104,22 +120,24 @@ namespace PHP
             cmbProductID.SelectedIndex = 0;
 		}
 
+        /// <summary>
+        /// Event handler for submit button click
+        /// </summary>
 		private void btnSubmit_Click(object sender, EventArgs e)
 		{
+            // hide output from DB
             lblRowsAffected.Visible = false;
 
             if (ValidateInputs())
 			{
+                // add sales record to table
                 string prodID = cmbProductID.Text.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries)[1];
-                this.Text = prodID;
-                txtDate.Text = prodID;
-
                 int quant = int.Parse(txtQuantity.Text);
                 string date = txtDate.Text;
 
-                string query = $"INSERT INTO Sales (ProductID, Quantity, Date) VALUES ({prodID}, {quant}, \"{date}\"";
+                string query = $"INSERT INTO Sales (ProductID, Quantity, Date) VALUES ({prodID}, {quant}, '{date}')";
                 SqlCommand command = new SqlCommand(query, Login.con);
-                lblRowsAffected.Text = command.ExecuteNonQuery().ToString();
+                lblRowsAffected.Text = $"{command.ExecuteNonQuery()} affected rows.";
 
                 lblRowsAffected.Visible = true;
             }

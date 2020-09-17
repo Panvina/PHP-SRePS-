@@ -24,14 +24,12 @@ namespace PHP
         public string conString = @"Data Source="+userName+";AttachDbFilename=" + databaseLocation + ";Integrated Security=True";
         public static SqlConnection con;
 
-
         private void Connect_Click(object sender, EventArgs e)
         {
             con = new SqlConnection(conString);
             con.Open();
             if (con.State == System.Data.ConnectionState.Open)
             {
-                MessageBox.Show("Connecting...");
                 Homepage hp = new Homepage();
                 hp.Show();               
                 this.Hide();              
