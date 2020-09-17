@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.btnExit = new System.Windows.Forms.Button();
-            this.txtIdInput = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.lblIdPrompt = new System.Windows.Forms.Label();
             this.pHPdbDataSet = new PHP.PHPdbDataSet();
             this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordersTableAdapter = new PHP.PHPdbDataSetTableAdapters.OrdersTableAdapter();
-            this.dgvDisplay = new System.Windows.Forms.DataGridView();
-            this.SaleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblWarning = new System.Windows.Forms.Label();
+            this.txtIdInput = new System.Windows.Forms.TextBox();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SaleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDisplay = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pHPdbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).BeginInit();
@@ -57,13 +57,6 @@
             this.btnExit.Text = "Exit to home page";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // txtIdInput
-            // 
-            this.txtIdInput.Location = new System.Drawing.Point(357, 130);
-            this.txtIdInput.Name = "txtIdInput";
-            this.txtIdInput.Size = new System.Drawing.Size(100, 20);
-            this.txtIdInput.TabIndex = 1;
             // 
             // btnSearch
             // 
@@ -100,6 +93,45 @@
             // 
             this.ordersTableAdapter.ClearBeforeFill = true;
             // 
+            // lblWarning
+            // 
+            this.lblWarning.AutoSize = true;
+            this.lblWarning.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWarning.ForeColor = System.Drawing.Color.Red;
+            this.lblWarning.Location = new System.Drawing.Point(363, 150);
+            this.lblWarning.Name = "lblWarning";
+            this.lblWarning.Size = new System.Drawing.Size(87, 15);
+            this.lblWarning.TabIndex = 11;
+            this.lblWarning.Text = "Invalid Sale ID";
+            this.lblWarning.Visible = false;
+            // 
+            // txtIdInput
+            // 
+            this.txtIdInput.Location = new System.Drawing.Point(357, 130);
+            this.txtIdInput.Name = "txtIdInput";
+            this.txtIdInput.Size = new System.Drawing.Size(100, 20);
+            this.txtIdInput.TabIndex = 1;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.Name = "Quantity";
+            // 
+            // ProductID
+            // 
+            this.ProductID.HeaderText = "Product ID";
+            this.ProductID.Name = "ProductID";
+            // 
+            // SaleID
+            // 
+            this.SaleID.HeaderText = "Sale ID";
+            this.SaleID.Name = "SaleID";
+            // 
             // dgvDisplay
             // 
             this.dgvDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -112,38 +144,6 @@
             this.dgvDisplay.Name = "dgvDisplay";
             this.dgvDisplay.Size = new System.Drawing.Size(443, 46);
             this.dgvDisplay.TabIndex = 10;
-            // 
-            // SaleID
-            // 
-            this.SaleID.HeaderText = "Sale ID";
-            this.SaleID.Name = "SaleID";
-            // 
-            // ProductID
-            // 
-            this.ProductID.HeaderText = "Product ID";
-            this.ProductID.Name = "ProductID";
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.Name = "Quantity";
-            // 
-            // Date
-            // 
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            // 
-            // lblWarning
-            // 
-            this.lblWarning.AutoSize = true;
-            this.lblWarning.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWarning.ForeColor = System.Drawing.Color.Red;
-            this.lblWarning.Location = new System.Drawing.Point(363, 150);
-            this.lblWarning.Name = "lblWarning";
-            this.lblWarning.Size = new System.Drawing.Size(87, 15);
-            this.lblWarning.TabIndex = 11;
-            this.lblWarning.Text = "Invalid Sale ID";
-            this.lblWarning.Visible = false;
             // 
             // DisplaySales
             // 
@@ -170,17 +170,17 @@
         #endregion
 
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.TextBox txtIdInput;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label lblIdPrompt;
         private PHPdbDataSet pHPdbDataSet;
         private System.Windows.Forms.BindingSource ordersBindingSource;
         private PHPdbDataSetTableAdapters.OrdersTableAdapter ordersTableAdapter;
-        private System.Windows.Forms.DataGridView dgvDisplay;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SaleID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.Label lblWarning;
+        private System.Windows.Forms.TextBox txtIdInput;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SaleID;
+        private System.Windows.Forms.DataGridView dgvDisplay;
     }
 }
