@@ -67,7 +67,6 @@
     <Compile Include="AllSales.Designer.cs">
       <DependentUpon>AllSales.cs</DependentUpon>
     </Compile>
-    <Compile Include="DBConnection.cs" />
     <Compile Include="DeleteSales.cs">
       <SubType>Form</SubType>
     </Compile>
