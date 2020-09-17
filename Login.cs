@@ -17,7 +17,7 @@ namespace PHP
         {
             InitializeComponent();
         }
-        private static readonly string databaseLocation = @"C:\Users\aetha\Documents\SWE30010\PHP-SREPS\PHPdb.mdf";
+        private static readonly string databaseLocation = @"C:\Users\Mihai\Desktop\University\Current\Dev Project 2\DisplaySale\PHPdb.mdf";
         //should be the machine name
         private static readonly string userName = @"(LocalDB)\MSSQLLocalDB";
 
