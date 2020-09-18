@@ -18,6 +18,29 @@ namespace PHP
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Validate SaleID integer
+        /// </summary>
+        /// <param name="salesID">integer to validate</param>
+        /// <returns>true if input integer is found in table</returns>
+        public bool ValidateSaleID(int salesID)
+        {
+            SqlCommand command = new SqlCommand($"SELECT COUNT(*) FROM Sales WHERE SalesID = @salesID", Login.con);
+            command.Parameters.AddWithValue("@salesID", salesID);
+            var res = (int)command.ExecuteScalar();
+            if (res > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Event handler for exit button clicked
+        /// </summary>
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -25,11 +48,24 @@ namespace PHP
             home.Show();
         }
 
+        /// <summary>
+        /// Event handler for delete button click
+        /// </summary>
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string salesID = txtID.Text;
-            SqlCommand command = new SqlCommand("DELETE FROM Sales WHERE SalesID = @salesID");
-            MessageBox.Show("Sale Deleted");
+            int salesID = int.Parse(txtID.Text);
+            if (ValidateSaleID(salesID))
+            {            
+                SqlCommand command = new SqlCommand($"DELETE FROM Sales WHERE SalesID = @salesID", Login.con);
+                command.Parameters.AddWithValue("@salesID", salesID);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Sale deleted");
+            }
+            else
+            {
+                MessageBox.Show("Sale not found");
+            }
+            
         }
 
     }

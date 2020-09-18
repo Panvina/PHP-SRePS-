@@ -37,9 +37,9 @@
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(149, 393);
+            this.btnExit.Location = new System.Drawing.Point(31, 202);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(137, 46);
+            this.btnExit.Size = new System.Drawing.Size(200, 49);
             this.btnExit.TabIndex = 5;
             this.btnExit.Text = "Exit to home page";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -47,9 +47,9 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(149, 315);
+            this.btnDelete.Location = new System.Drawing.Point(31, 150);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(137, 47);
+            this.btnDelete.Size = new System.Drawing.Size(200, 36);
             this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "Delete Record";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -57,15 +57,15 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(149, 74);
+            this.txtID.Location = new System.Drawing.Point(30, 65);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(137, 20);
+            this.txtID.Size = new System.Drawing.Size(201, 20);
             this.txtID.TabIndex = 7;
             // 
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(149, 55);
+            this.lblID.Location = new System.Drawing.Point(28, 49);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(47, 13);
             this.lblID.TabIndex = 8;
@@ -75,7 +75,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 461);
+            this.ClientSize = new System.Drawing.Size(265, 274);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.btnDelete);
