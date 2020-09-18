@@ -17,11 +17,10 @@ namespace PHP
         {
             InitializeComponent();
         }
-        private static readonly string databaseLocation = @"C:\Users\Hayden\Desktop\Uni 2020\Design, Planning and Management\PHP\PHP-SRePS-\PHPdb.mdf";
-        //should be the machine name
+        private static readonly string databaseLocation = $"{Environment.CurrentDirectory}\\PHPdb.mdf";        //should be the machine name
         private static readonly string userName = @"(LocalDB)\MSSQLLocalDB";
 
-        public string conString = @"Data Source="+userName+";AttachDbFilename=" + databaseLocation + ";Integrated Security=True";
+        public static string conString = @"Data Source="+userName+";AttachDbFilename=" + databaseLocation + ";Integrated Security=True";
         public static SqlConnection con;
 
         private void Connect_Click(object sender, EventArgs e)

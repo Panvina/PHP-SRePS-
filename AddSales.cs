@@ -143,7 +143,12 @@ namespace PHP
             }
         }
 
-        private void cmbProductID_SelectedIndexChanged(object sender, EventArgs e)
+        private void txtDate_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDateError_Click(object sender, EventArgs e)
         {
 
         }

@@ -48,6 +48,7 @@
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(201, 20);
             this.txtDate.TabIndex = 1;
+            this.txtDate.TextChanged += new System.EventHandler(this.txtDate_TextChanged);
             // 
             // lblDate
             // 
@@ -97,7 +98,6 @@
             this.cmbProductID.Name = "cmbProductID";
             this.cmbProductID.Size = new System.Drawing.Size(201, 21);
             this.cmbProductID.TabIndex = 0;
-            this.cmbProductID.SelectedIndexChanged += new System.EventHandler(this.cmbProductID_SelectedIndexChanged);
             // 
             // lblProduct
             // 
@@ -142,6 +142,7 @@
             this.lblDateError.TabIndex = 10;
             this.lblDateError.Text = "Invalid Date (yyyy-mm-dd)";
             this.lblDateError.Visible = false;
+            this.lblDateError.Click += new System.EventHandler(this.lblDateError_Click);
             // 
             // lblQuantityError
             // 
