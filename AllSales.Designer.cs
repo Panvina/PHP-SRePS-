@@ -38,6 +38,8 @@
             this.pHPdbDataSet = new PHP.PHPdbDataSet();
             this.btnBack = new System.Windows.Forms.Button();
             this.salesTableAdapter = new PHP.PHPdbDataSetTableAdapters.SalesTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pHPdbDataSet)).BeginInit();
@@ -55,7 +57,7 @@
             this.quantityDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn});
             this.dgvSales.DataSource = this.salesBindingSource;
-            this.dgvSales.Location = new System.Drawing.Point(47, 35);
+            this.dgvSales.Location = new System.Drawing.Point(47, 82);
             this.dgvSales.Name = "dgvSales";
             this.dgvSales.ReadOnly = true;
             this.dgvSales.RowHeadersWidth = 62;
@@ -110,7 +112,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(365, 338);
+            this.btnBack.Location = new System.Drawing.Point(365, 369);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(122, 43);
             this.btnBack.TabIndex = 1;
@@ -122,11 +124,30 @@
             // 
             this.salesTableAdapter.ClearBeforeFill = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(47, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Search Sales ID";
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Location = new System.Drawing.Point(137, 47);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSearch.TabIndex = 3;
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
+            // 
             // AllSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(545, 437);
+            this.Controls.Add(this.textBoxSearch);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dgvSales);
             this.Name = "AllSales";
@@ -136,6 +157,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.salesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pHPdbDataSet)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -150,5 +172,7 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-	}
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxSearch;
+    }
 }
