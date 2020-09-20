@@ -36,6 +36,7 @@
             this.editSales = new System.Windows.Forms.Button();
             this.displaySales = new System.Windows.Forms.Button();
             this.btnAllSales = new System.Windows.Forms.Button();
+            this.btnDisplayMonthlySales = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -72,7 +73,7 @@
             // 
             // addSales
             // 
-            this.addSales.Location = new System.Drawing.Point(135, 84);
+            this.addSales.Location = new System.Drawing.Point(65, 84);
             this.addSales.Name = "addSales";
             this.addSales.Size = new System.Drawing.Size(134, 57);
             this.addSales.TabIndex = 3;
@@ -102,7 +103,7 @@
             // 
             // displaySales
             // 
-            this.displaySales.Location = new System.Drawing.Point(311, 84);
+            this.displaySales.Location = new System.Drawing.Point(228, 84);
             this.displaySales.Name = "displaySales";
             this.displaySales.Size = new System.Drawing.Size(134, 57);
             this.displaySales.TabIndex = 6;
@@ -120,11 +121,22 @@
             this.btnAllSales.UseVisualStyleBackColor = true;
             this.btnAllSales.Click += new System.EventHandler(this.btnAllSales_Click);
             // 
+            // btnDisplayMonthlySales
+            // 
+            this.btnDisplayMonthlySales.Location = new System.Drawing.Point(402, 84);
+            this.btnDisplayMonthlySales.Name = "btnDisplayMonthlySales";
+            this.btnDisplayMonthlySales.Size = new System.Drawing.Size(134, 57);
+            this.btnDisplayMonthlySales.TabIndex = 8;
+            this.btnDisplayMonthlySales.Text = "Display Monthly Sales Report";
+            this.btnDisplayMonthlySales.UseVisualStyleBackColor = true;
+            this.btnDisplayMonthlySales.Click += new System.EventHandler(this.btnDisplayMonthlySales_Click);
+            // 
             // Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(635, 385);
+            this.Controls.Add(this.btnDisplayMonthlySales);
             this.Controls.Add(this.btnAllSales);
             this.Controls.Add(this.displaySales);
             this.Controls.Add(this.editSales);
@@ -135,6 +147,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Homepage";
             this.Text = "Homepage";
+            this.Load += new System.EventHandler(this.Homepage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,5 +163,6 @@
         private System.Windows.Forms.Button editSales;
         private System.Windows.Forms.Button displaySales;
         private System.Windows.Forms.Button btnAllSales;
+        private System.Windows.Forms.Button btnDisplayMonthlySales;
     }
 }

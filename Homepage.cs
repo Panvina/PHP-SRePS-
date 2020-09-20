@@ -13,6 +13,7 @@ namespace PHP
 {
     public partial class Homepage : Form
     {
+
         public Homepage()
         {
             InitializeComponent();
@@ -28,6 +29,7 @@ namespace PHP
         private void exit_Click(object sender, EventArgs e)
         {
             this.Close();
+            Login.con.Close();
             Application.Exit();
         }
 
@@ -68,7 +70,24 @@ namespace PHP
         {
             this.Hide();
             AllSales s = new AllSales();
+            Login.con.Close();
+            Login.con.Open();
+            s.UpdateTable();
             s.Show();
+        }
+
+		private void Homepage_Load(object sender, EventArgs e)
+		{
+
+		}
+
+        private void btnDisplayMonthlySales_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DisplayMonthlySales d = new DisplayMonthlySales();
+            Login.con.Close();
+            Login.con.Open();
+            d.Show();
         }
     }
 }
