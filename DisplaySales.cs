@@ -27,7 +27,6 @@ namespace PHP
 
         private void DisplaySales_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'pHPdbDataSet.Orders' table. You can move, or remove it, as needed.
             this.ordersTableAdapter.Fill(this.pHPdbDataSet.Orders);
 
         }
@@ -44,17 +43,15 @@ namespace PHP
                 return false;
             }
 
-            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM dbo.Sales", Login.con);
-
-            int maxID = Convert.ToInt32(cmd.ExecuteScalar());
-
-            if (!(Convert.ToInt32(txtIdInput.Text) <= maxID && Convert.ToInt32(txtIdInput.Text) > 0))
+            SqlCommand command = new SqlCommand($"SELECT COUNT(*) FROM Sales WHERE SalesID = @salesID", Login.con);
+            command.Parameters.AddWithValue("@salesID", txtIdInput.Text);
+            var res = (int)command.ExecuteScalar();
+            if (res <= 0)
             {
-                lblWarning.Visible = true;
+                MessageBox.Show("Sale not found");
                 return false;
             }
-            //Check if ID is in Sales table, return false if not
-            //Also set lblWarning to visible if returning false
+
             return true;
         }
 
