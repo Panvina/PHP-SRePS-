@@ -11,8 +11,10 @@ using System.Windows.Forms;
 
 namespace PHP
 {
+
     public partial class DisplayWeeklySales : Form
     {
+
         public DisplayWeeklySales()
         {
             InitializeComponent();
@@ -27,15 +29,21 @@ namespace PHP
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+
+            DateTime StartDate = tpDate.Value;  //gets the date from the date picker              
+            StartDate = DateTime.Parse(StartDate.ToString()).StartOfWeek(DayOfWeek.Monday); //gets the starting date in that week based on the date
+
+            DateTime EndDate = StartDate; 
+            EndDate = EndDate.AddDays(6); //gets the ending date of that week
+            
+
+
+            string stringStartDate = StartDate.ToString("yyyy-MM-dd"); //gets rid of the time part of the date, and to be used for the query
+            string stringEndDate = EndDate.ToString("yyyy-MM-dd"); //gets rid of the time part of the date, and to be used for the query
+        
             SqlCommand cmd = new SqlCommand();
-            cmd.Connection = Login.con;
-            //cmd.CommandText = $"SELECT * FROM SALES WHERE MONTH(DATE) = {txtMonth.Text} AND YEAR(DATE) = {txtYear.Text}";
-            //cmd.CommandText = $"SELECT * FROM SALES WHERE  MONTH(DATE) = {txtMonth.Text} AND DATE >= dateadd(day, 1-datepart(dw, getdate()), CONVERT(date,getdate())) AND DATE <  dateadd(day, 8-datepart(dw, getdate()), CONVERT(date,getdate()))";
-            //cmd.CommandText = $"SELECT * FROM SALES WHERE DATE >= DATE_SUB(GETDATE(), INTERVAL 10 DAY)";
-            //cmd.CommandText = $"SELECT * FROM SALES WHERE DATE = DATEPART(week, GETDATE())";
-            //cmd.CommandText = $"SELECT * FROM SALES WHERE DATE >= DATEADD(day,-7, GETDATE())";
-            //cmd.CommandText = $"SELECT * FROM SALES WHERE  MONTH(DATE) = {txtMonth.Text} AND DATE >= dateadd(day, 2-datepart(dw, getdate()), CONVERT(date,getdate())) AND DATE <  dateadd(day, 9-datepart(dw, getdate()), CONVERT(date,getdate()))";
-            cmd.CommandText = $"SELECT * FROM SALES WHERE  MONTH(DATE) = {txtMonth.Text} AND DATE >= dateadd(day, 2-datepart(dw, getdate()), CONVERT(date,getdate())) AND DATE <  dateadd(day, 9-datepart(dw, getdate()), CONVERT(date,getdate()))";
+            cmd.Connection = Login.con;          
+            cmd.CommandText = $"SELECT * FROM SALES WHERE DATE between '{stringStartDate}' AND '{stringEndDate}' ";
             BindingSource bs = new BindingSource();
             DataSet ds = new DataSet();                     // create new dataset
 
@@ -47,6 +55,21 @@ namespace PHP
             bs.DataSource = ds.Tables[0];       // set datasource of new BindingSource
 
             dgvDisplay.DataSource = bs;           // set datasource of data grid view
+        }
+
+        private void tpDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+
+
+    public static class DateTimeExtensions
+    {
+        public static DateTime StartOfWeek(this DateTime dt, DayOfWeek startOfWeek)
+        {
+            int diff = (7 + (dt.DayOfWeek - startOfWeek)) % 7;
+            return dt.AddDays(-1 * diff).Date;
         }
     }
 }

@@ -112,6 +112,7 @@
             this.tpDate.Name = "tpDate";
             this.tpDate.Size = new System.Drawing.Size(202, 23);
             this.tpDate.TabIndex = 13;
+            this.tpDate.ValueChanged += new System.EventHandler(this.tpDate_ValueChanged);
             // 
             // txtProductID
             // 

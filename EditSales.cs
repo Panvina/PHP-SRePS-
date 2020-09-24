@@ -177,5 +177,10 @@ namespace PHP
             lblQuantityError.Visible = false;
             lblRecordResult.Visible = false;
         }
+
+        private void tpDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -37,6 +37,7 @@
             this.lblMonth = new System.Windows.Forms.Label();
             this.txtMonth = new System.Windows.Forms.TextBox();
             this.lblMonthError = new System.Windows.Forms.Label();
+            this.tpDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,11 +132,22 @@
             this.lblMonthError.Text = "Invalid Month: 01-12";
             this.lblMonthError.Visible = false;
             // 
+            // tpDate
+            // 
+            this.tpDate.CalendarFont = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tpDate.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tpDate.Location = new System.Drawing.Point(476, 122);
+            this.tpDate.Name = "tpDate";
+            this.tpDate.Size = new System.Drawing.Size(202, 23);
+            this.tpDate.TabIndex = 26;
+            this.tpDate.ValueChanged += new System.EventHandler(this.tpDate_ValueChanged);
+            // 
             // DisplayWeeklySales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tpDate);
             this.Controls.Add(this.lblMonthError);
             this.Controls.Add(this.txtMonth);
             this.Controls.Add(this.lblMonth);
@@ -164,5 +176,6 @@
         private System.Windows.Forms.Label lblMonth;
         private System.Windows.Forms.TextBox txtMonth;
         private System.Windows.Forms.Label lblMonthError;
+        private System.Windows.Forms.DateTimePicker tpDate;
     }
 }
