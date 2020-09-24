@@ -52,5 +52,17 @@ namespace PHP
         {
 
         }
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            int temp;
+            DataTable dt = new DataTable();
+            if (int.TryParse(textBoxSearch.Text, out temp) && textBoxSearch.Text != "")     //ensuring that the input is in a correct format
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(@"SELECT * FROM dbo.Sales where SalesID = '" + textBoxSearch.Text + "'",Login.con);           
+                adapter.Fill(dt);
+            }               
+            dgvSales.DataSource = dt;    
+        }
     }
 }
