@@ -35,7 +35,7 @@
             // Connect
             // 
             this.Connect.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Connect.Location = new System.Drawing.Point(139, 153);
+            this.Connect.Location = new System.Drawing.Point(140, 156);
             this.Connect.Name = "Connect";
             this.Connect.Size = new System.Drawing.Size(187, 60);
             this.Connect.TabIndex = 0;

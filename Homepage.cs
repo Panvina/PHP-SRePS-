@@ -28,7 +28,7 @@ namespace PHP
 
         private void exit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close();           
             Login.con.Close();
             Application.Exit();
         }
@@ -94,6 +94,15 @@ namespace PHP
         {
             this.Hide();
             DisplayYearlySales d = new DisplayYearlySales();
+            Login.con.Close();
+            Login.con.Open();
+            d.Show();
+        }
+
+        private void btnDisplayWeeklySales_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DisplayWeeklySales d = new DisplayWeeklySales();
             Login.con.Close();
             Login.con.Open();
             d.Show();
