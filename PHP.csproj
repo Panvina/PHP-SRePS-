@@ -210,10 +210,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PHPdb.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="PHPdb_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>PHPdb.mdf</DependentUpon>
     </Content>
   </ItemGroup>
