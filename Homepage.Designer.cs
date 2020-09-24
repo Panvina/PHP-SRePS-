@@ -37,6 +37,8 @@
             this.displaySales = new System.Windows.Forms.Button();
             this.btnAllSales = new System.Windows.Forms.Button();
             this.btnDisplayMonthlySales = new System.Windows.Forms.Button();
+            this.btnDisplayYearlySales = new System.Windows.Forms.Button();
+            this.btnDisplayWeeklySales = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -52,7 +54,7 @@
             // 
             // product
             // 
-            this.product.Location = new System.Drawing.Point(228, 296);
+            this.product.Location = new System.Drawing.Point(311, 296);
             this.product.Name = "product";
             this.product.Size = new System.Drawing.Size(142, 58);
             this.product.TabIndex = 1;
@@ -73,7 +75,7 @@
             // 
             // addSales
             // 
-            this.addSales.Location = new System.Drawing.Point(65, 84);
+            this.addSales.Location = new System.Drawing.Point(170, 84);
             this.addSales.Name = "addSales";
             this.addSales.Size = new System.Drawing.Size(134, 57);
             this.addSales.TabIndex = 3;
@@ -83,7 +85,7 @@
             // 
             // deleteSales
             // 
-            this.deleteSales.Location = new System.Drawing.Point(311, 162);
+            this.deleteSales.Location = new System.Drawing.Point(311, 229);
             this.deleteSales.Name = "deleteSales";
             this.deleteSales.Size = new System.Drawing.Size(134, 57);
             this.deleteSales.TabIndex = 4;
@@ -93,7 +95,7 @@
             // 
             // editSales
             // 
-            this.editSales.Location = new System.Drawing.Point(137, 162);
+            this.editSales.Location = new System.Drawing.Point(145, 229);
             this.editSales.Name = "editSales";
             this.editSales.Size = new System.Drawing.Size(134, 57);
             this.editSales.TabIndex = 5;
@@ -103,7 +105,7 @@
             // 
             // displaySales
             // 
-            this.displaySales.Location = new System.Drawing.Point(228, 84);
+            this.displaySales.Location = new System.Drawing.Point(332, 84);
             this.displaySales.Name = "displaySales";
             this.displaySales.Size = new System.Drawing.Size(134, 57);
             this.displaySales.TabIndex = 6;
@@ -113,7 +115,7 @@
             // 
             // btnAllSales
             // 
-            this.btnAllSales.Location = new System.Drawing.Point(228, 241);
+            this.btnAllSales.Location = new System.Drawing.Point(137, 305);
             this.btnAllSales.Name = "btnAllSales";
             this.btnAllSales.Size = new System.Drawing.Size(142, 49);
             this.btnAllSales.TabIndex = 7;
@@ -123,7 +125,7 @@
             // 
             // btnDisplayMonthlySales
             // 
-            this.btnDisplayMonthlySales.Location = new System.Drawing.Point(402, 84);
+            this.btnDisplayMonthlySales.Location = new System.Drawing.Point(258, 156);
             this.btnDisplayMonthlySales.Name = "btnDisplayMonthlySales";
             this.btnDisplayMonthlySales.Size = new System.Drawing.Size(134, 57);
             this.btnDisplayMonthlySales.TabIndex = 8;
@@ -131,11 +133,32 @@
             this.btnDisplayMonthlySales.UseVisualStyleBackColor = true;
             this.btnDisplayMonthlySales.Click += new System.EventHandler(this.btnDisplayMonthlySales_Click);
             // 
+            // btnDisplayYearlySales
+            // 
+            this.btnDisplayYearlySales.Location = new System.Drawing.Point(107, 156);
+            this.btnDisplayYearlySales.Name = "btnDisplayYearlySales";
+            this.btnDisplayYearlySales.Size = new System.Drawing.Size(134, 57);
+            this.btnDisplayYearlySales.TabIndex = 9;
+            this.btnDisplayYearlySales.Text = "Display Yearly Sales Report";
+            this.btnDisplayYearlySales.UseVisualStyleBackColor = true;
+            this.btnDisplayYearlySales.Click += new System.EventHandler(this.btnDisplayYearlySales_Click);
+            // 
+            // btnDisplayWeeklySales
+            // 
+            this.btnDisplayWeeklySales.Location = new System.Drawing.Point(415, 156);
+            this.btnDisplayWeeklySales.Name = "btnDisplayWeeklySales";
+            this.btnDisplayWeeklySales.Size = new System.Drawing.Size(134, 57);
+            this.btnDisplayWeeklySales.TabIndex = 10;
+            this.btnDisplayWeeklySales.Text = "Display Weekly Sales Report";
+            this.btnDisplayWeeklySales.UseVisualStyleBackColor = true;
+            // 
             // Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(635, 385);
+            this.Controls.Add(this.btnDisplayWeeklySales);
+            this.Controls.Add(this.btnDisplayYearlySales);
             this.Controls.Add(this.btnDisplayMonthlySales);
             this.Controls.Add(this.btnAllSales);
             this.Controls.Add(this.displaySales);
@@ -164,5 +187,7 @@
         private System.Windows.Forms.Button displaySales;
         private System.Windows.Forms.Button btnAllSales;
         private System.Windows.Forms.Button btnDisplayMonthlySales;
+        private System.Windows.Forms.Button btnDisplayYearlySales;
+        private System.Windows.Forms.Button btnDisplayWeeklySales;
     }
 }

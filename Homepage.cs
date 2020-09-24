@@ -89,5 +89,14 @@ namespace PHP
             Login.con.Open();
             d.Show();
         }
+
+        private void btnDisplayYearlySales_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DisplayYearlySales d = new DisplayYearlySales();
+            Login.con.Close();
+            Login.con.Open();
+            d.Show();
+        }
     }
 }
