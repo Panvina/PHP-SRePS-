@@ -28,7 +28,7 @@ namespace PHP
         /// <returns>true if inputs valid</returns>
         public bool ValidateInputs()
 		{
-            return (ValidateDate(txtDate.Text) && ValidateQuantity(txtQuantity.Text));
+            return (/*ValidateDate(txtDate.Text) && */ValidateQuantity(txtQuantity.Text));
 		}
 
         /// <summary>
@@ -104,6 +104,9 @@ namespace PHP
         /// </summary>
 		private void AddSales_Load(object sender, EventArgs e)
 		{
+            // select custom date format for date time picker
+            dtpDate.CustomFormat = "yyyy-MM-dd";
+
             // load in combo box option for product ID.
             string query = "SELECT productID, productName FROM products";
 
@@ -133,7 +136,7 @@ namespace PHP
                 // add sales record to table
                 string prodID = cmbProductID.Text.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries)[1];
                 int quant = int.Parse(txtQuantity.Text);
-                string date = txtDate.Text;
+                string date = dtpDate.Text;
 
                 string query = $"INSERT INTO Sales (ProductID, Quantity, Date) VALUES ({prodID}, {quant}, '{date}')";
                 SqlCommand command = new SqlCommand(query, Login.con);
