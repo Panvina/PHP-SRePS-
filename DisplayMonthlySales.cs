@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace PHP
 {
-    public partial class DisplayMonthlySales : Form
+    public partial class frmDisplayMonthlySales : Form
     {
         struct Product
 		{
@@ -30,7 +30,7 @@ namespace PHP
 			}
 		}
 
-        public DisplayMonthlySales()
+        public frmDisplayMonthlySales()
         {
             InitializeComponent();
         }
@@ -38,7 +38,7 @@ namespace PHP
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Homepage home = new Homepage();
+            frmHomepage home = new frmHomepage();
             home.Show();
         }
 
@@ -92,7 +92,7 @@ namespace PHP
 			}
 
             SqlCommand cmd = new SqlCommand();
-            cmd.Connection = Login.con;
+            cmd.Connection = frmLogin.con;
             cmd.CommandText = $"SELECT * FROM SALES WHERE MONTH(DATE) = {txtMonth.Text} AND YEAR(DATE) = {txtYear.Text}";
 
    //         // create Table structure

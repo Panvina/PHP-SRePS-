@@ -1,6 +1,6 @@
 ﻿namespace PHP
 {
-    partial class AddSales
+    partial class frmAddSales
     {
         /// <summary>
         /// Required designer variable.
@@ -57,17 +57,17 @@
 			// lblDate
 			// 
 			this.lblDate.AutoSize = true;
-			this.lblDate.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblDate.Location = new System.Drawing.Point(40, 258);
+			this.lblDate.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+			this.lblDate.Location = new System.Drawing.Point(40, 260);
 			this.lblDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblDate.Name = "lblDate";
-			this.lblDate.Size = new System.Drawing.Size(61, 28);
+			this.lblDate.Size = new System.Drawing.Size(67, 29);
 			this.lblDate.TabIndex = 2;
 			this.lblDate.Text = "Date:";
 			// 
 			// btnSubmit
 			// 
-			this.btnSubmit.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
 			this.btnSubmit.Location = new System.Drawing.Point(46, 402);
 			this.btnSubmit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.btnSubmit.Name = "btnSubmit";
@@ -79,7 +79,7 @@
 			// 
 			// btnExit
 			// 
-			this.btnExit.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
 			this.btnExit.Location = new System.Drawing.Point(46, 480);
 			this.btnExit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.btnExit.Name = "btnExit";
@@ -109,34 +109,34 @@
 			// lblProduct
 			// 
 			this.lblProduct.AutoSize = true;
-			this.lblProduct.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblProduct.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblProduct.Location = new System.Drawing.Point(40, 17);
 			this.lblProduct.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblProduct.Name = "lblProduct";
-			this.lblProduct.Size = new System.Drawing.Size(83, 28);
+			this.lblProduct.Size = new System.Drawing.Size(92, 29);
 			this.lblProduct.TabIndex = 7;
 			this.lblProduct.Text = "Product";
 			// 
 			// lblQuantity
 			// 
 			this.lblQuantity.AutoSize = true;
-			this.lblQuantity.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblQuantity.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblQuantity.Location = new System.Drawing.Point(40, 128);
 			this.lblQuantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblQuantity.Name = "lblQuantity";
-			this.lblQuantity.Size = new System.Drawing.Size(92, 28);
+			this.lblQuantity.Size = new System.Drawing.Size(100, 29);
 			this.lblQuantity.TabIndex = 8;
 			this.lblQuantity.Text = "Quantity";
 			// 
 			// lblIDError
 			// 
 			this.lblIDError.AutoSize = true;
-			this.lblIDError.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblIDError.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblIDError.ForeColor = System.Drawing.Color.Red;
 			this.lblIDError.Location = new System.Drawing.Point(42, 78);
 			this.lblIDError.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblIDError.Name = "lblIDError";
-			this.lblIDError.Size = new System.Drawing.Size(144, 23);
+			this.lblIDError.Size = new System.Drawing.Size(130, 20);
 			this.lblIDError.TabIndex = 9;
 			this.lblIDError.Text = "Invalid ProductID";
 			this.lblIDError.Visible = false;
@@ -144,12 +144,12 @@
 			// lblDateError
 			// 
 			this.lblDateError.AutoSize = true;
-			this.lblDateError.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblDateError.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblDateError.ForeColor = System.Drawing.Color.Red;
 			this.lblDateError.Location = new System.Drawing.Point(42, 322);
 			this.lblDateError.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblDateError.Name = "lblDateError";
-			this.lblDateError.Size = new System.Drawing.Size(209, 23);
+			this.lblDateError.Size = new System.Drawing.Size(189, 20);
 			this.lblDateError.TabIndex = 10;
 			this.lblDateError.Text = "Invalid Date (yyyy-mm-dd)";
 			this.lblDateError.Visible = false;
@@ -158,13 +158,13 @@
 			// lblQuantityError
 			// 
 			this.lblQuantityError.AutoSize = true;
-			this.lblQuantityError.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblQuantityError.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblQuantityError.ForeColor = System.Drawing.Color.Red;
 			this.lblQuantityError.Location = new System.Drawing.Point(42, 191);
 			this.lblQuantityError.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblQuantityError.MaximumSize = new System.Drawing.Size(300, 100);
 			this.lblQuantityError.Name = "lblQuantityError";
-			this.lblQuantityError.Size = new System.Drawing.Size(296, 46);
+			this.lblQuantityError.Size = new System.Drawing.Size(275, 40);
 			this.lblQuantityError.TabIndex = 11;
 			this.lblQuantityError.Text = "Invalid Quantity, enter a value greater than 0";
 			this.lblQuantityError.Visible = false;
@@ -172,12 +172,12 @@
 			// lblRowsAffected
 			// 
 			this.lblRowsAffected.AutoSize = true;
-			this.lblRowsAffected.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblRowsAffected.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblRowsAffected.ForeColor = System.Drawing.Color.Black;
 			this.lblRowsAffected.Location = new System.Drawing.Point(42, 372);
 			this.lblRowsAffected.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblRowsAffected.Name = "lblRowsAffected";
-			this.lblRowsAffected.Size = new System.Drawing.Size(0, 23);
+			this.lblRowsAffected.Size = new System.Drawing.Size(0, 25);
 			this.lblRowsAffected.TabIndex = 12;
 			this.lblRowsAffected.Visible = false;
 			// 
@@ -189,7 +189,7 @@
 			this.dtpDate.Size = new System.Drawing.Size(300, 26);
 			this.dtpDate.TabIndex = 2;
 			// 
-			// AddSales
+			// frmAddSales
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -208,8 +208,9 @@
 			this.Controls.Add(this.lblDate);
 			this.Controls.Add(this.txtDate);
 			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.Name = "AddSales";
-			this.Text = "AddSales";
+			this.Name = "frmAddSales";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.Text = "Add Sales";
 			this.Load += new System.EventHandler(this.AddSales_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();

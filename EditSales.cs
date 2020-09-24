@@ -11,16 +11,16 @@ using System.Windows.Forms;
 
 namespace PHP
 {
-    public partial class EditSales : Form
+    public partial class frmEditSales : Form
     {
         private SqlConnection connection;
 
 
-        public EditSales()
+        public frmEditSales()
         {
             InitializeComponent();
 
-            connection = new SqlConnection(Login.conString);
+            connection = new SqlConnection(frmLogin.conString);
         }
 
         private void EditSales_Load(object sender, EventArgs e)
@@ -52,7 +52,7 @@ namespace PHP
         {
             this.Hide();
 
-            Homepage home = new Homepage();
+            frmHomepage home = new frmHomepage();
             home.Show();
         }
 

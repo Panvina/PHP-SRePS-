@@ -11,10 +11,10 @@ using System.Data.SqlClient;
 
 namespace PHP
 {
-    public partial class Homepage : Form
+    public partial class frmHomepage : Form
     {
 
-        public Homepage()
+        public frmHomepage()
         {
             InitializeComponent();
         }
@@ -22,42 +22,42 @@ namespace PHP
         private void product_Click(object sender, EventArgs e)
         {
             this.Hide();
-            InventoryList pl = new InventoryList();
+            frmInventoryList pl = new frmInventoryList();
             pl.Show();
         }
 
         private void exit_Click(object sender, EventArgs e)
         {
             this.Close();
-            Login.con.Close();
+            frmLogin.con.Close();
             Application.Exit();
         }
 
         private void addSales_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AddSales addSales = new AddSales();
+            frmAddSales addSales = new frmAddSales();
             addSales.Show();
         }
 
         private void deleteSales_Click(object sender, EventArgs e)
         {
             this.Hide();
-            DeleteSales deleteSales = new DeleteSales();
+            frmDeleteSales deleteSales = new frmDeleteSales();
             deleteSales.Show();
         }
 
         private void editSales_Click(object sender, EventArgs e)
         {
             this.Hide();
-            EditSales editSales = new EditSales();
+            frmEditSales editSales = new frmEditSales();
             editSales.Show();
         }
 
         private void displaySales_Click(object sender, EventArgs e)
         {
             this.Hide();
-            DisplaySales displaySales = new DisplaySales();
+            frmDisplaySales displaySales = new frmDisplaySales();
             displaySales.Show();
         }
 
@@ -69,9 +69,9 @@ namespace PHP
         private void btnAllSales_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AllSales s = new AllSales();
-            Login.con.Close();
-            Login.con.Open();
+            frmAllSales s = new frmAllSales();
+            frmLogin.con.Close();
+            frmLogin.con.Open();
             s.UpdateTable();
             s.Show();
         }
@@ -84,18 +84,18 @@ namespace PHP
         private void btnDisplayMonthlySales_Click(object sender, EventArgs e)
         {
             this.Hide();
-            DisplayMonthlySales d = new DisplayMonthlySales();
-            Login.con.Close();
-            Login.con.Open();
+            frmDisplayMonthlySales d = new frmDisplayMonthlySales();
+            frmLogin.con.Close();
+            frmLogin.con.Open();
             d.Show();
         }
 
         private void btnDisplayYearlySales_Click(object sender, EventArgs e)
         {
             this.Hide();
-            DisplayYearlySales d = new DisplayYearlySales();
-            Login.con.Close();
-            Login.con.Open();
+            frmDisplayYearlySales d = new frmDisplayYearlySales();
+            frmLogin.con.Close();
+            frmLogin.con.Open();
             d.Show();
         }
     }

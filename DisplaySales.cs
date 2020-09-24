@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace PHP
 {
-    public partial class DisplaySales : Form
+    public partial class frmDisplaySales : Form
     {
-        public DisplaySales()
+        public frmDisplaySales()
         {
             InitializeComponent();
         }
@@ -21,7 +21,7 @@ namespace PHP
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Homepage home = new Homepage();
+            frmHomepage home = new frmHomepage();
             home.Show();
         }
 
@@ -43,7 +43,7 @@ namespace PHP
                 return false;
             }
 
-            SqlCommand command = new SqlCommand($"SELECT COUNT(*) FROM Sales WHERE SalesID = @salesID", Login.con);
+            SqlCommand command = new SqlCommand($"SELECT COUNT(*) FROM Sales WHERE SalesID = @salesID", frmLogin.con);
             command.Parameters.AddWithValue("@salesID", txtIdInput.Text);
             var res = (int)command.ExecuteScalar();
             if (res <= 0)
@@ -59,7 +59,7 @@ namespace PHP
         {
             if(ValidateID())
             {
-                SqlCommand cmd = new SqlCommand($"Select * FROM dbo.Sales WHERE SalesID LIKE {txtIdInput.Text}", Login.con);
+                SqlCommand cmd = new SqlCommand($"Select * FROM dbo.Sales WHERE SalesID LIKE {txtIdInput.Text}", frmLogin.con);
 
                 SqlDataReader reader = cmd.ExecuteReader();
 

@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace PHP
 {
-    public partial class Login : Form
+    public partial class frmLogin : Form
     {
-        public Login()
+        public frmLogin()
         {
             InitializeComponent();
         }
@@ -29,7 +29,7 @@ namespace PHP
             con.Open();
             if (con.State == System.Data.ConnectionState.Open)
             {
-                Homepage hp = new Homepage();
+                frmHomepage hp = new frmHomepage();
                 hp.Show();               
                 this.Hide();              
             }

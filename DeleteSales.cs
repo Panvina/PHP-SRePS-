@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace PHP
 {
-    public partial class DeleteSales : Form
+    public partial class frmDeleteSales : Form
     {
-        public DeleteSales()
+        public frmDeleteSales()
         {
             InitializeComponent();
         }
@@ -25,7 +25,7 @@ namespace PHP
         /// <returns>true if input integer is found in table</returns>
         public bool ValidateSaleID(int salesID)
         {
-            SqlCommand command = new SqlCommand($"SELECT COUNT(*) FROM Sales WHERE SalesID = @salesID", Login.con);
+            SqlCommand command = new SqlCommand($"SELECT COUNT(*) FROM Sales WHERE SalesID = @salesID", frmLogin.con);
             command.Parameters.AddWithValue("@salesID", salesID);
             var res = (int)command.ExecuteScalar();
             if (res > 0)
@@ -44,7 +44,7 @@ namespace PHP
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Homepage home = new Homepage();
+            frmHomepage home = new frmHomepage();
             home.Show();
         }
 
@@ -56,7 +56,7 @@ namespace PHP
             int salesID = int.Parse(txtID.Text);
             if (ValidateSaleID(salesID))
             {            
-                SqlCommand command = new SqlCommand($"DELETE FROM Sales WHERE SalesID = @salesID", Login.con);
+                SqlCommand command = new SqlCommand($"DELETE FROM Sales WHERE SalesID = @salesID", frmLogin.con);
                 command.Parameters.AddWithValue("@salesID", salesID);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Sale deleted");

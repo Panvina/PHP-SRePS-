@@ -1,6 +1,6 @@
 ﻿namespace PHP
 {
-    partial class Login
+    partial class frmLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,44 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Connect = new System.Windows.Forms.Button();
-            this.lblLogin = new System.Windows.Forms.Label();
-            this.SuspendLayout();
-            // 
-            // Connect
-            // 
-            this.Connect.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Connect.Location = new System.Drawing.Point(139, 153);
-            this.Connect.Name = "Connect";
-            this.Connect.Size = new System.Drawing.Size(187, 60);
-            this.Connect.TabIndex = 0;
-            this.Connect.Text = "Connect";
-            this.Connect.UseVisualStyleBackColor = true;
-            this.Connect.Click += new System.EventHandler(this.Connect_Click);
-            // 
-            // lblLogin
-            // 
-            this.lblLogin.AutoSize = true;
-            this.lblLogin.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.Location = new System.Drawing.Point(25, 84);
-            this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(428, 29);
-            this.lblLogin.TabIndex = 3;
-            this.lblLogin.Text = "Press connect to access the invoice system";
-            this.lblLogin.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // Login
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(480, 370);
-            this.Controls.Add(this.lblLogin);
-            this.Controls.Add(this.Connect);
-            this.Name = "Login";
-            this.Text = "Login";
-            this.Load += new System.EventHandler(this.Login_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+			this.Connect = new System.Windows.Forms.Button();
+			this.lblLogin = new System.Windows.Forms.Label();
+			this.SuspendLayout();
+			// 
+			// Connect
+			// 
+			this.Connect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+			this.Connect.Location = new System.Drawing.Point(217, 228);
+			this.Connect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.Connect.Name = "Connect";
+			this.Connect.Size = new System.Drawing.Size(280, 92);
+			this.Connect.TabIndex = 0;
+			this.Connect.Text = "Connect";
+			this.Connect.UseVisualStyleBackColor = true;
+			this.Connect.Click += new System.EventHandler(this.Connect_Click);
+			// 
+			// lblLogin
+			// 
+			this.lblLogin.AutoSize = true;
+			this.lblLogin.Font = new System.Drawing.Font("Calibri", 15F);
+			this.lblLogin.Location = new System.Drawing.Point(108, 175);
+			this.lblLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lblLogin.Name = "lblLogin";
+			this.lblLogin.Size = new System.Drawing.Size(543, 37);
+			this.lblLogin.TabIndex = 3;
+			this.lblLogin.Text = "Press connect to access the invoice system";
+			this.lblLogin.Click += new System.EventHandler(this.label1_Click);
+			// 
+			// frmLogin
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(720, 569);
+			this.Controls.Add(this.lblLogin);
+			this.Controls.Add(this.Connect);
+			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.Name = "frmLogin";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.Text = "PHP-SRePS";
+			this.Load += new System.EventHandler(this.Login_Load);
+			this.ResumeLayout(false);
+			this.PerformLayout();
 
         }
 

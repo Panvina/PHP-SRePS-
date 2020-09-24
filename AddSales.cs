@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace PHP
 {
-    public partial class AddSales : Form
+    public partial class frmAddSales : Form
     {
-        public AddSales()
+        public frmAddSales()
         {
             InitializeComponent();
         }
@@ -18,7 +18,7 @@ namespace PHP
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Homepage home = new Homepage();
+            frmHomepage home = new frmHomepage();
             home.Show();
         }
 
@@ -110,7 +110,7 @@ namespace PHP
             // load in combo box option for product ID.
             string query = "SELECT productID, productName FROM products";
 
-            SqlCommand command = new SqlCommand(query, Login.con);
+            SqlCommand command = new SqlCommand(query, frmLogin.con);
 
             using (SqlDataReader reader = command.ExecuteReader())
 			{
@@ -139,7 +139,7 @@ namespace PHP
                 string date = dtpDate.Text;
 
                 string query = $"INSERT INTO Sales (ProductID, Quantity, Date) VALUES ({prodID}, {quant}, '{date}')";
-                SqlCommand command = new SqlCommand(query, Login.con);
+                SqlCommand command = new SqlCommand(query, frmLogin.con);
                 lblRowsAffected.Text = $"{command.ExecuteNonQuery()} affected rows.";
 
                 lblRowsAffected.Visible = true;

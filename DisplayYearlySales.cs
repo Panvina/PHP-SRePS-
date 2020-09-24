@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PHP
 {
-    public partial class DisplayYearlySales : Form
+    public partial class frmDisplayYearlySales : Form
     {
-        public DisplayYearlySales()
+        public frmDisplayYearlySales()
         {
             InitializeComponent();
         }
@@ -20,7 +20,7 @@ namespace PHP
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Homepage home = new Homepage();
+            frmHomepage home = new frmHomepage();
             home.Show();
         }
     }

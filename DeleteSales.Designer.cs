@@ -1,6 +1,6 @@
 ﻿namespace PHP
 {
-    partial class DeleteSales
+    partial class frmDeleteSales
     {
         /// <summary>
         /// Required designer variable.
@@ -28,62 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.lblID = new System.Windows.Forms.Label();
-            this.SuspendLayout();
-            // 
-            // btnExit
-            // 
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(31, 202);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(200, 49);
-            this.btnExit.TabIndex = 5;
-            this.btnExit.Text = "Exit to home page";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(31, 150);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(200, 36);
-            this.btnDelete.TabIndex = 6;
-            this.btnDelete.Text = "Delete Record";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(30, 65);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(201, 20);
-            this.txtID.TabIndex = 7;
-            // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(28, 49);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(47, 13);
-            this.lblID.TabIndex = 8;
-            this.lblID.Text = "Sales ID";
-            // 
-            // DeleteSales
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(265, 274);
-            this.Controls.Add(this.lblID);
-            this.Controls.Add(this.txtID);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnExit);
-            this.Name = "DeleteSales";
-            this.Text = "DeleteSales";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+			this.btnExit = new System.Windows.Forms.Button();
+			this.btnDelete = new System.Windows.Forms.Button();
+			this.txtID = new System.Windows.Forms.TextBox();
+			this.lblID = new System.Windows.Forms.Label();
+			this.SuspendLayout();
+			// 
+			// btnExit
+			// 
+			this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+			this.btnExit.Location = new System.Drawing.Point(46, 311);
+			this.btnExit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.btnExit.Name = "btnExit";
+			this.btnExit.Size = new System.Drawing.Size(300, 75);
+			this.btnExit.TabIndex = 5;
+			this.btnExit.Text = "Exit to home page";
+			this.btnExit.UseVisualStyleBackColor = true;
+			this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+			// 
+			// btnDelete
+			// 
+			this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+			this.btnDelete.Location = new System.Drawing.Point(46, 231);
+			this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.btnDelete.Name = "btnDelete";
+			this.btnDelete.Size = new System.Drawing.Size(300, 55);
+			this.btnDelete.TabIndex = 6;
+			this.btnDelete.Text = "Delete Record";
+			this.btnDelete.UseVisualStyleBackColor = true;
+			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+			// 
+			// txtID
+			// 
+			this.txtID.Location = new System.Drawing.Point(45, 100);
+			this.txtID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.txtID.Name = "txtID";
+			this.txtID.Size = new System.Drawing.Size(300, 26);
+			this.txtID.TabIndex = 7;
+			// 
+			// lblID
+			// 
+			this.lblID.AutoSize = true;
+			this.lblID.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+			this.lblID.Location = new System.Drawing.Point(41, 67);
+			this.lblID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lblID.Name = "lblID";
+			this.lblID.Size = new System.Drawing.Size(90, 29);
+			this.lblID.TabIndex = 8;
+			this.lblID.Text = "Sales ID";
+			// 
+			// frmDeleteSales
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(398, 422);
+			this.Controls.Add(this.lblID);
+			this.Controls.Add(this.txtID);
+			this.Controls.Add(this.btnDelete);
+			this.Controls.Add(this.btnExit);
+			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.Name = "frmDeleteSales";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.Text = "Delete Sales";
+			this.ResumeLayout(false);
+			this.PerformLayout();
 
         }
 

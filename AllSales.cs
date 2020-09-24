@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace PHP
 {
-    public partial class AllSales : Form
+    public partial class frmAllSales : Form
     {
-        public AllSales()
+        public frmAllSales()
         {
             InitializeComponent();
 
@@ -31,7 +31,7 @@ namespace PHP
             DataSet ds = new DataSet();                     // create new dataset
 
             SqlDataAdapter adapter = new SqlDataAdapter();
-            SqlCommand cmd = new SqlCommand("Select * FROM dbo.Sales", Login.con);
+            SqlCommand cmd = new SqlCommand("Select * FROM dbo.Sales", frmLogin.con);
             
             adapter.SelectCommand = cmd;        // stores records from command
             adapter.Fill(ds);                   // fills dataset with records
@@ -44,7 +44,7 @@ namespace PHP
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Homepage home = new Homepage();
+            frmHomepage home = new frmHomepage();
             home.Show();
         }
 
@@ -59,7 +59,7 @@ namespace PHP
             DataTable dt = new DataTable();
             if (int.TryParse(textBoxSearch.Text, out temp) && textBoxSearch.Text != "")     //ensuring that the input is in a correct format
             {
-                SqlDataAdapter adapter = new SqlDataAdapter(@"SELECT * FROM dbo.Sales where SalesID = '" + textBoxSearch.Text + "'",Login.con);           
+                SqlDataAdapter adapter = new SqlDataAdapter(@"SELECT * FROM dbo.Sales where SalesID = '" + textBoxSearch.Text + "'",frmLogin.con);           
                 adapter.Fill(dt);
             }               
             dgvSales.DataSource = dt;    
