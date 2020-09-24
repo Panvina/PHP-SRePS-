@@ -143,6 +143,9 @@ namespace PHP
                 lblRowsAffected.Text = $"{command.ExecuteNonQuery()} affected rows.";
 
                 lblRowsAffected.Visible = true;
+
+                // reset quantity. Prevent multiple entries accidentally.
+                txtQuantity.Clear();
             }
         }
 
