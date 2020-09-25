@@ -44,6 +44,8 @@
 			// 
 			// dgvInventory
 			// 
+			this.dgvInventory.AllowUserToAddRows = false;
+			this.dgvInventory.AllowUserToDeleteRows = false;
 			this.dgvInventory.AutoGenerateColumns = false;
 			this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvInventory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -54,6 +56,8 @@
 			this.dgvInventory.Location = new System.Drawing.Point(13, 14);
 			this.dgvInventory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.dgvInventory.Name = "dgvInventory";
+			this.dgvInventory.ReadOnly = true;
+			this.dgvInventory.RowHeadersVisible = false;
 			this.dgvInventory.RowHeadersWidth = 62;
 			this.dgvInventory.Size = new System.Drawing.Size(622, 505);
 			this.dgvInventory.TabIndex = 0;
@@ -65,7 +69,8 @@
 			this.productIDDataGridViewTextBoxColumn.HeaderText = "ProductID";
 			this.productIDDataGridViewTextBoxColumn.MinimumWidth = 8;
 			this.productIDDataGridViewTextBoxColumn.Name = "productIDDataGridViewTextBoxColumn";
-			this.productIDDataGridViewTextBoxColumn.Width = 150;
+			this.productIDDataGridViewTextBoxColumn.ReadOnly = true;
+			this.productIDDataGridViewTextBoxColumn.Width = 75;
 			// 
 			// unitsInStockDataGridViewTextBoxColumn
 			// 
@@ -73,7 +78,8 @@
 			this.unitsInStockDataGridViewTextBoxColumn.HeaderText = "UnitsInStock";
 			this.unitsInStockDataGridViewTextBoxColumn.MinimumWidth = 8;
 			this.unitsInStockDataGridViewTextBoxColumn.Name = "unitsInStockDataGridViewTextBoxColumn";
-			this.unitsInStockDataGridViewTextBoxColumn.Width = 150;
+			this.unitsInStockDataGridViewTextBoxColumn.ReadOnly = true;
+			this.unitsInStockDataGridViewTextBoxColumn.Width = 75;
 			// 
 			// unitsOnOrderDataGridViewTextBoxColumn
 			// 
@@ -81,7 +87,8 @@
 			this.unitsOnOrderDataGridViewTextBoxColumn.HeaderText = "UnitsOnOrder";
 			this.unitsOnOrderDataGridViewTextBoxColumn.MinimumWidth = 8;
 			this.unitsOnOrderDataGridViewTextBoxColumn.Name = "unitsOnOrderDataGridViewTextBoxColumn";
-			this.unitsOnOrderDataGridViewTextBoxColumn.Width = 150;
+			this.unitsOnOrderDataGridViewTextBoxColumn.ReadOnly = true;
+			this.unitsOnOrderDataGridViewTextBoxColumn.Width = 75;
 			// 
 			// inventoryBindingSource
 			// 
@@ -135,8 +142,8 @@
         private PHPdbDataSet pHPdbDataSet;
         private System.Windows.Forms.BindingSource inventoryBindingSource;
         private PHPdbDataSetTableAdapters.InventoryTableAdapter inventoryTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unitsInStockDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unitsOnOrderDataGridViewTextBoxColumn;
-    }
+		private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn unitsInStockDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn unitsOnOrderDataGridViewTextBoxColumn;
+	}
 }

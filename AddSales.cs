@@ -144,10 +144,25 @@ namespace PHP
 
                 lblRowsAffected.Visible = true;
 
+                UpdateInventory();
+
                 // reset quantity. Prevent multiple entries accidentally.
                 txtQuantity.Clear();
             }
         }
+
+        /// <summary>
+        /// Update inventory table's units in stock
+        /// </summary>
+        private void UpdateInventory()
+		{
+            string quant = txtQuantity.Text;
+            string prodID = cmbProductID.Text.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries)[1];
+
+            string query = $"UPDATE Inventory SET UnitsInStock = UnitsInStock - {quant} WHERE ProductID = {prodID}";
+            SqlCommand command = new SqlCommand(query, frmLogin.con);
+            command.ExecuteNonQuery();
+		}
 
         private void txtDate_TextChanged(object sender, EventArgs e)
         {

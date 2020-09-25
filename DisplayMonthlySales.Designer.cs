@@ -133,6 +133,7 @@
 			this.dgvDisplay.AllowUserToAddRows = false;
 			this.dgvDisplay.AllowUserToDeleteRows = false;
 			this.dgvDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvDisplay.Cursor = System.Windows.Forms.Cursors.Default;
 			this.dgvDisplay.Location = new System.Drawing.Point(240, 225);
 			this.dgvDisplay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.dgvDisplay.Name = "dgvDisplay";
@@ -159,6 +160,7 @@
 			this.Name = "frmDisplayMonthlySales";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Monthly Sales Report";
+			this.Load += new System.EventHandler(this.frmDisplayMonthlySales_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
