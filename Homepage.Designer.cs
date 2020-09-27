@@ -256,7 +256,7 @@
             this.btnEditSupplier.Name = "btnEditSupplier";
             this.btnEditSupplier.Size = new System.Drawing.Size(134, 57);
             this.btnEditSupplier.TabIndex = 2;
-            this.btnEditSupplier.Text = "Edit Current Supplier";
+            this.btnEditSupplier.Text = "Edit Supplier";
             this.btnEditSupplier.UseVisualStyleBackColor = true;
             // 
             // btnEditInventory
@@ -266,7 +266,7 @@
             this.btnEditInventory.Name = "btnEditInventory";
             this.btnEditInventory.Size = new System.Drawing.Size(134, 57);
             this.btnEditInventory.TabIndex = 3;
-            this.btnEditInventory.Text = "Edit Current Inventory";
+            this.btnEditInventory.Text = "Edit Product";
             this.btnEditInventory.UseVisualStyleBackColor = true;
             // 
             // btnDeleteProduct
