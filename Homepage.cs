@@ -76,11 +76,6 @@ namespace PHP
             s.Show();
         }
 
-		private void Homepage_Load(object sender, EventArgs e)
-		{
-
-		}
-
         private void btnDisplayMonthlySales_Click(object sender, EventArgs e)
         {
             this.Hide();
