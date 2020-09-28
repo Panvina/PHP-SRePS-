@@ -38,8 +38,8 @@
 			this.pHPdbDataSet = new PHP.PHPdbDataSet();
 			this.btnBack = new System.Windows.Forms.Button();
 			this.salesTableAdapter = new PHP.PHPdbDataSetTableAdapters.SalesTableAdapter();
-			this.label1 = new System.Windows.Forms.Label();
-			this.textBoxSearch = new System.Windows.Forms.TextBox();
+			this.lblSales = new System.Windows.Forms.Label();
+			this.txtSearch = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.dgvSales)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.salesBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pHPdbDataSet)).BeginInit();
@@ -49,6 +49,8 @@
 			// 
 			this.dgvSales.AllowUserToAddRows = false;
 			this.dgvSales.AllowUserToDeleteRows = false;
+			this.dgvSales.AllowUserToResizeColumns = false;
+			this.dgvSales.AllowUserToResizeRows = false;
 			this.dgvSales.AutoGenerateColumns = false;
 			this.dgvSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvSales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -57,14 +59,17 @@
             this.quantityDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn});
 			this.dgvSales.DataSource = this.salesBindingSource;
+			this.dgvSales.Enabled = false;
 			this.dgvSales.Location = new System.Drawing.Point(70, 126);
 			this.dgvSales.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.dgvSales.MultiSelect = false;
 			this.dgvSales.Name = "dgvSales";
 			this.dgvSales.ReadOnly = true;
+			this.dgvSales.RowHeadersVisible = false;
 			this.dgvSales.RowHeadersWidth = 62;
+			this.dgvSales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvSales.Size = new System.Drawing.Size(660, 432);
 			this.dgvSales.TabIndex = 0;
-			this.dgvSales.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSales_CellContentClick);
 			// 
 			// salesIDDataGridViewTextBoxColumn
 			// 
@@ -73,7 +78,7 @@
 			this.salesIDDataGridViewTextBoxColumn.MinimumWidth = 8;
 			this.salesIDDataGridViewTextBoxColumn.Name = "salesIDDataGridViewTextBoxColumn";
 			this.salesIDDataGridViewTextBoxColumn.ReadOnly = true;
-			this.salesIDDataGridViewTextBoxColumn.Width = 50;
+			this.salesIDDataGridViewTextBoxColumn.Width = 75;
 			// 
 			// productIDDataGridViewTextBoxColumn
 			// 
@@ -82,7 +87,7 @@
 			this.productIDDataGridViewTextBoxColumn.MinimumWidth = 8;
 			this.productIDDataGridViewTextBoxColumn.Name = "productIDDataGridViewTextBoxColumn";
 			this.productIDDataGridViewTextBoxColumn.ReadOnly = true;
-			this.productIDDataGridViewTextBoxColumn.Width = 150;
+			this.productIDDataGridViewTextBoxColumn.Width = 120;
 			// 
 			// quantityDataGridViewTextBoxColumn
 			// 
@@ -91,7 +96,7 @@
 			this.quantityDataGridViewTextBoxColumn.MinimumWidth = 8;
 			this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
 			this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
-			this.quantityDataGridViewTextBoxColumn.Width = 50;
+			this.quantityDataGridViewTextBoxColumn.Width = 150;
 			// 
 			// dateDataGridViewTextBoxColumn
 			// 
@@ -100,7 +105,7 @@
 			this.dateDataGridViewTextBoxColumn.MinimumWidth = 8;
 			this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
 			this.dateDataGridViewTextBoxColumn.ReadOnly = true;
-			this.dateDataGridViewTextBoxColumn.Width = 150;
+			this.dateDataGridViewTextBoxColumn.Width = 125;
 			// 
 			// salesBindingSource
 			// 
@@ -128,33 +133,33 @@
 			// 
 			this.salesTableAdapter.ClearBeforeFill = true;
 			// 
-			// label1
+			// lblSales
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-			this.label1.Location = new System.Drawing.Point(65, 38);
-			this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(162, 29);
-			this.label1.TabIndex = 2;
-			this.label1.Text = "Search Sales ID";
+			this.lblSales.AutoSize = true;
+			this.lblSales.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+			this.lblSales.Location = new System.Drawing.Point(65, 38);
+			this.lblSales.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lblSales.Name = "lblSales";
+			this.lblSales.Size = new System.Drawing.Size(162, 29);
+			this.lblSales.TabIndex = 2;
+			this.lblSales.Text = "Search Sales ID";
 			// 
-			// textBoxSearch
+			// txtSearch
 			// 
-			this.textBoxSearch.Location = new System.Drawing.Point(70, 72);
-			this.textBoxSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.textBoxSearch.Name = "textBoxSearch";
-			this.textBoxSearch.Size = new System.Drawing.Size(148, 26);
-			this.textBoxSearch.TabIndex = 3;
-			this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
+			this.txtSearch.Location = new System.Drawing.Point(70, 72);
+			this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.txtSearch.Name = "txtSearch";
+			this.txtSearch.Size = new System.Drawing.Size(148, 26);
+			this.txtSearch.TabIndex = 0;
+			this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
 			// 
 			// frmAllSales
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(818, 672);
-			this.Controls.Add(this.textBoxSearch);
-			this.Controls.Add(this.label1);
+			this.Controls.Add(this.txtSearch);
+			this.Controls.Add(this.lblSales);
 			this.Controls.Add(this.btnBack);
 			this.Controls.Add(this.dgvSales);
 			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -177,11 +182,11 @@
         private PHPdbDataSet pHPdbDataSet;
         private System.Windows.Forms.BindingSource salesBindingSource;
         private PHPdbDataSetTableAdapters.SalesTableAdapter salesTableAdapter;
+        private System.Windows.Forms.Label lblSales;
+        private System.Windows.Forms.TextBox txtSearch;
 		private System.Windows.Forms.DataGridViewTextBoxColumn salesIDDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxSearch;
-    }
+	}
 }

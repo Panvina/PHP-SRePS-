@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Globalization;
+using System.Media;
 using System.Windows.Forms;
 
 namespace PHP
@@ -145,9 +146,11 @@ namespace PHP
                 lblRowsAffected.Visible = true;
 
                 UpdateInventory();
+                SystemSounds.Asterisk.Play();
 
                 // reset quantity. Prevent multiple entries accidentally.
-                txtQuantity.Clear();
+                txtQuantity.Text = "0";
+                lblQuantityError.Visible = false;
             }
         }
 
@@ -164,14 +167,12 @@ namespace PHP
             command.ExecuteNonQuery();
 		}
 
-        private void txtDate_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblDateError_Click(object sender, EventArgs e)
-        {
-
-        }
-    }
+        /// <summary>
+        /// Event handler for quantity text changed
+        /// </summary>
+		private void txtQuantity_TextChanged(object sender, EventArgs e)
+		{
+            lblQuantityError.Visible = !ValidateQuantity(txtQuantity.Text);
+		}
+	}
 }

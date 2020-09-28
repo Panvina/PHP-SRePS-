@@ -13,18 +13,28 @@ namespace PHP
 {
     public partial class frmAllSales : Form
     {
+        /// <summary>
+        /// Public constructor
+        /// </summary>
         public frmAllSales()
         {
             InitializeComponent();
-
         }
 
+        /// <summary>
+        /// Load form event handler
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AllSales_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'pHPdbDataSet.Sales' table. You can move, or remove it, as needed.
             UpdateTable();
         }
 
+        /// <summary>
+        /// Update table with new data
+        /// </summary>
         public void UpdateTable()
 		{
             BindingSource bs = new BindingSource();
@@ -39,8 +49,14 @@ namespace PHP
             bs.DataSource = ds.Tables[0];       // set datasource of new BindingSource
 
             dgvSales.DataSource = bs;           // set datasource of data grid view
+            SetColWidths();
         }
 
+        /// <summary>
+        /// Event handler for back to homepage button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -48,21 +64,38 @@ namespace PHP
             home.Show();
         }
 
-        private void dgvSales_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+        /// <summary>
+        /// Set column widths for dgv
+        /// </summary>
+        private void SetColWidths()
+		{
+            dgvSales.Columns[0].Width = 75;
+            dgvSales.Columns[1].Width = 120;
+            dgvSales.Columns[2].Width = 150;
+            dgvSales.Columns[3].Width = 125;
         }
 
-        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        /// <summary>
+        /// Search function implementation for SalesID search
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             int temp;
             DataTable dt = new DataTable();
-            if (int.TryParse(textBoxSearch.Text, out temp) && textBoxSearch.Text != "")     //ensuring that the input is in a correct format
+            if (int.TryParse(txtSearch.Text, out temp) && txtSearch.Text != "")     //ensuring that the input is in a correct format
             {
-                SqlDataAdapter adapter = new SqlDataAdapter(@"SELECT * FROM dbo.Sales where SalesID = '" + textBoxSearch.Text + "'",frmLogin.con);           
+                SqlDataAdapter adapter = new SqlDataAdapter(@"SELECT * FROM dbo.Sales where SalesID = '" + txtSearch.Text + "'",frmLogin.con);           
                 adapter.Fill(dt);
-            }               
-            dgvSales.DataSource = dt;    
+                dgvSales.DataSource = dt;
+                SetColWidths();
+            }
+            else
+			{
+                UpdateTable();
+                SetColWidths();
+            } 
         }
     }
 }

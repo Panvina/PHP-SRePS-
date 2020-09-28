@@ -52,7 +52,6 @@
 			this.txtDate.Size = new System.Drawing.Size(300, 26);
 			this.txtDate.TabIndex = 50;
 			this.txtDate.Visible = false;
-			this.txtDate.TextChanged += new System.EventHandler(this.txtDate_TextChanged);
 			// 
 			// lblDate
 			// 
@@ -96,6 +95,7 @@
 			this.txtQuantity.Name = "txtQuantity";
 			this.txtQuantity.Size = new System.Drawing.Size(300, 26);
 			this.txtQuantity.TabIndex = 1;
+			this.txtQuantity.TextChanged += new System.EventHandler(this.txtQuantity_TextChanged);
 			// 
 			// cmbProductID
 			// 
@@ -153,7 +153,6 @@
 			this.lblDateError.TabIndex = 10;
 			this.lblDateError.Text = "Invalid Date (yyyy-mm-dd)";
 			this.lblDateError.Visible = false;
-			this.lblDateError.Click += new System.EventHandler(this.lblDateError_Click);
 			// 
 			// lblQuantityError
 			// 

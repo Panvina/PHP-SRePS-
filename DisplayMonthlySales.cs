@@ -8,22 +8,7 @@ namespace PHP
 {
     public partial class frmDisplayMonthlySales : Form
     {
-		// product abstraction
-        struct Product
-		{
-            public int id;
-            public string name;
-            public double price;
-
-            public Product(int aID, string aName, double aPrice)
-			{
-                id = aID;
-                name = aName;
-                price = aPrice;
-			}
-		}
-
-        public frmDisplayMonthlySales()
+		public frmDisplayMonthlySales()
         {
             InitializeComponent();
         }
@@ -102,8 +87,8 @@ namespace PHP
 			dgvDisplay.DataSource = DispBinding;           // set datasource of data grid view
 			dgvDisplay.Columns[0].Width = 60;
 			dgvDisplay.Columns[1].Width = 100;
-			dgvDisplay.Columns[2].Width = 60;
-			dgvDisplay.Columns[3].Width = 100;
+			dgvDisplay.Columns[2].Width = 65;
+			dgvDisplay.Columns[3].Width = 112;
 
 			// create Table structure
 			DataTable records = new DataTable("Monthly Record");
@@ -197,7 +182,7 @@ namespace PHP
 		private void SetColWidths()
 		{
 			dgvSum.Columns[0].Width = 50;
-			dgvSum.Columns[1].Width = 100;
+			dgvSum.Columns[1].Width = 107;
 			dgvSum.Columns[2].Width = 50;
 			dgvSum.Columns[3].Width = 50;
 			dgvSum.Columns[4].Width = 80;
