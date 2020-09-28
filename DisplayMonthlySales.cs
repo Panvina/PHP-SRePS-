@@ -89,6 +89,22 @@ namespace PHP
             cmd.Connection = frmLogin.con;
             cmd.CommandText = $"SELECT * FROM SALES WHERE MONTH(DATE) = {txtMonth.Text} AND YEAR(DATE) = {txtYear.Text}";
 
+			BindingSource DispBinding = new BindingSource();
+			DataSet DispData = new DataSet();                     // create new dataset
+
+			SqlDataAdapter adapter = new SqlDataAdapter();
+
+			adapter.SelectCommand = cmd;        // stores records from command
+			adapter.Fill(DispData);                   // fills dataset with records
+
+			DispBinding.DataSource = DispData.Tables[0];       // set datasource of new BindingSource
+
+			dgvDisplay.DataSource = DispBinding;           // set datasource of data grid view
+			dgvDisplay.Columns[0].Width = 60;
+			dgvDisplay.Columns[1].Width = 100;
+			dgvDisplay.Columns[2].Width = 60;
+			dgvDisplay.Columns[3].Width = 100;
+
 			// create Table structure
 			DataTable records = new DataTable("Monthly Record");
 			records.Columns.Add("ID");
@@ -148,36 +164,25 @@ namespace PHP
 			DataSet monthlyRecord = new DataSet();
 			monthlyRecord.Tables.Add(records);
 
-			BindingSource bs = new BindingSource();
-			bs.DataSource = monthlyRecord.Tables[0];
+			BindingSource SumBinding = new BindingSource();
+			SumBinding.DataSource = monthlyRecord.Tables[0];
 
-			dgvDisplay.Columns.Clear();
-			dgvDisplay.DataSource = bs;
+			dgvSum.Columns.Clear();
+			dgvSum.DataSource = SumBinding;
 			SetColWidths();
-
-			//BindingSource bs = new BindingSource();
-   //         DataSet ds = new DataSet();                     // create new dataset
-
-   //         SqlDataAdapter adapter = new SqlDataAdapter();
-
-   //         adapter.SelectCommand = cmd;        // stores records from command
-   //         adapter.Fill(ds);                   // fills dataset with records
-
-   //         bs.DataSource = ds.Tables[0];       // set datasource of new BindingSource
-
-   //         dgvDisplay.DataSource = bs;           // set datasource of data grid view
-        }
+		}
 
 		private void frmDisplayMonthlySales_Load(object sender, EventArgs e)
 		{
 			dgvDisplay.RowHeadersVisible = false;
+			dgvSum.RowHeadersVisible = false;
 
-			// placeholders for data grid view
-			dgvDisplay.Columns.Add("", "ID");
-			dgvDisplay.Columns.Add("", "Product name");
-			dgvDisplay.Columns.Add("", "Quantity");
-			dgvDisplay.Columns.Add("", "Price");
-			dgvDisplay.Columns.Add("", "ID");
+			//placeholders for data grid view
+			dgvSum.Columns.Add("", "ID");
+			dgvSum.Columns.Add("", "Product name");
+			dgvSum.Columns.Add("", "Quantity");
+			dgvSum.Columns.Add("", "Price");
+			dgvSum.Columns.Add("", "ID");
 
 			SetColWidths();
 
@@ -191,11 +196,26 @@ namespace PHP
 		/// </summary>
 		private void SetColWidths()
 		{
-			dgvDisplay.Columns[0].Width = 60;
-			dgvDisplay.Columns[1].Width = 160;
-			dgvDisplay.Columns[2].Width = 60;
-			dgvDisplay.Columns[3].Width = 50;
-			dgvDisplay.Columns[4].Width = 100;
+			dgvSum.Columns[0].Width = 50;
+			dgvSum.Columns[1].Width = 100;
+			dgvSum.Columns[2].Width = 50;
+			dgvSum.Columns[3].Width = 50;
+			dgvSum.Columns[4].Width = 80;
+		}
+
+		private void lblInvalidYear_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void txtYear_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void lblYear_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }
