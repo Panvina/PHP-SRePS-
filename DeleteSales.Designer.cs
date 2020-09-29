@@ -42,7 +42,7 @@
 			this.btnExit.Name = "btnExit";
 			this.btnExit.Size = new System.Drawing.Size(300, 75);
 			this.btnExit.TabIndex = 5;
-			this.btnExit.Text = "Exit to home page";
+			this.btnExit.Text = "Back to home page";
 			this.btnExit.UseVisualStyleBackColor = true;
 			this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
 			// 

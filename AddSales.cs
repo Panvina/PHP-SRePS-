@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Globalization;
+using System.Media;
 using System.Windows.Forms;
 
 namespace PHP
@@ -144,19 +145,34 @@ namespace PHP
 
                 lblRowsAffected.Visible = true;
 
+                UpdateInventory();
+                SystemSounds.Asterisk.Play();
+
                 // reset quantity. Prevent multiple entries accidentally.
-                txtQuantity.Clear();
+                txtQuantity.Text = "0";
+                lblQuantityError.Visible = false;
             }
         }
 
-        private void txtDate_TextChanged(object sender, EventArgs e)
-        {
+        /// <summary>
+        /// Update inventory table's units in stock
+        /// </summary>
+        private void UpdateInventory()
+		{
+            string quant = txtQuantity.Text;
+            string prodID = cmbProductID.Text.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries)[1];
 
-        }
+            string query = $"UPDATE Inventory SET UnitsInStock = UnitsInStock - {quant} WHERE ProductID = {prodID}";
+            SqlCommand command = new SqlCommand(query, frmLogin.con);
+            command.ExecuteNonQuery();
+		}
 
-        private void lblDateError_Click(object sender, EventArgs e)
-        {
-
-        }
-    }
+        /// <summary>
+        /// Event handler for quantity text changed
+        /// </summary>
+		private void txtQuantity_TextChanged(object sender, EventArgs e)
+		{
+            lblQuantityError.Visible = !ValidateQuantity(txtQuantity.Text);
+		}
+	}
 }
