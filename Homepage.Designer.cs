@@ -42,14 +42,14 @@
             this.grbSales = new System.Windows.Forms.GroupBox();
             this.grbReport = new System.Windows.Forms.GroupBox();
             this.grbProducts = new System.Windows.Forms.GroupBox();
+            this.btnAddProduct = new System.Windows.Forms.Button();
+            this.btnDeleteProduct = new System.Windows.Forms.Button();
+            this.btnEditInventory = new System.Windows.Forms.Button();
             this.grbSuppliers = new System.Windows.Forms.GroupBox();
+            this.btnDeleteSupplier = new System.Windows.Forms.Button();
+            this.btnDisplaySupplier = new System.Windows.Forms.Button();
             this.btnAddSupplier = new System.Windows.Forms.Button();
             this.btnEditSupplier = new System.Windows.Forms.Button();
-            this.btnEditInventory = new System.Windows.Forms.Button();
-            this.btnDeleteProduct = new System.Windows.Forms.Button();
-            this.btnAddProduct = new System.Windows.Forms.Button();
-            this.btnDisplaySupplier = new System.Windows.Forms.Button();
-            this.btnDeleteSupplier = new System.Windows.Forms.Button();
             this.grbSales.SuspendLayout();
             this.grbReport.SuspendLayout();
             this.grbProducts.SuspendLayout();
@@ -223,6 +223,39 @@
             this.grbProducts.TabStop = false;
             this.grbProducts.Text = "Products";
             // 
+            // btnAddProduct
+            // 
+            this.btnAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnAddProduct.Location = new System.Drawing.Point(16, 18);
+            this.btnAddProduct.Name = "btnAddProduct";
+            this.btnAddProduct.Size = new System.Drawing.Size(134, 57);
+            this.btnAddProduct.TabIndex = 5;
+            this.btnAddProduct.Text = "Add New Product";
+            this.btnAddProduct.UseVisualStyleBackColor = true;
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
+            // 
+            // btnDeleteProduct
+            // 
+            this.btnDeleteProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnDeleteProduct.Location = new System.Drawing.Point(16, 235);
+            this.btnDeleteProduct.Name = "btnDeleteProduct";
+            this.btnDeleteProduct.Size = new System.Drawing.Size(134, 57);
+            this.btnDeleteProduct.TabIndex = 4;
+            this.btnDeleteProduct.Text = "Delete Product";
+            this.btnDeleteProduct.UseVisualStyleBackColor = true;
+            this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click);
+            // 
+            // btnEditInventory
+            // 
+            this.btnEditInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnEditInventory.Location = new System.Drawing.Point(16, 90);
+            this.btnEditInventory.Name = "btnEditInventory";
+            this.btnEditInventory.Size = new System.Drawing.Size(134, 57);
+            this.btnEditInventory.TabIndex = 3;
+            this.btnEditInventory.Text = "Edit Product";
+            this.btnEditInventory.UseVisualStyleBackColor = true;
+            this.btnEditInventory.Click += new System.EventHandler(this.btnEditInventory_Click);
+            // 
             // grbSuppliers
             // 
             this.grbSuppliers.Controls.Add(this.btnDeleteSupplier);
@@ -238,6 +271,26 @@
             this.grbSuppliers.TabIndex = 14;
             this.grbSuppliers.TabStop = false;
             this.grbSuppliers.Text = "Suppliers";
+            // 
+            // btnDeleteSupplier
+            // 
+            this.btnDeleteSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnDeleteSupplier.Location = new System.Drawing.Point(16, 235);
+            this.btnDeleteSupplier.Name = "btnDeleteSupplier";
+            this.btnDeleteSupplier.Size = new System.Drawing.Size(134, 57);
+            this.btnDeleteSupplier.TabIndex = 4;
+            this.btnDeleteSupplier.Text = "Delete Supplier";
+            this.btnDeleteSupplier.UseVisualStyleBackColor = true;
+            // 
+            // btnDisplaySupplier
+            // 
+            this.btnDisplaySupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnDisplaySupplier.Location = new System.Drawing.Point(16, 162);
+            this.btnDisplaySupplier.Name = "btnDisplaySupplier";
+            this.btnDisplaySupplier.Size = new System.Drawing.Size(134, 57);
+            this.btnDisplaySupplier.TabIndex = 3;
+            this.btnDisplaySupplier.Text = "Display All Suppliers";
+            this.btnDisplaySupplier.UseVisualStyleBackColor = true;
             // 
             // btnAddSupplier
             // 
@@ -258,56 +311,6 @@
             this.btnEditSupplier.TabIndex = 2;
             this.btnEditSupplier.Text = "Edit Supplier";
             this.btnEditSupplier.UseVisualStyleBackColor = true;
-            // 
-            // btnEditInventory
-            // 
-            this.btnEditInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btnEditInventory.Location = new System.Drawing.Point(16, 90);
-            this.btnEditInventory.Name = "btnEditInventory";
-            this.btnEditInventory.Size = new System.Drawing.Size(134, 57);
-            this.btnEditInventory.TabIndex = 3;
-            this.btnEditInventory.Text = "Edit Product";
-            this.btnEditInventory.UseVisualStyleBackColor = true;
-            // 
-            // btnDeleteProduct
-            // 
-            this.btnDeleteProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btnDeleteProduct.Location = new System.Drawing.Point(16, 235);
-            this.btnDeleteProduct.Name = "btnDeleteProduct";
-            this.btnDeleteProduct.Size = new System.Drawing.Size(134, 57);
-            this.btnDeleteProduct.TabIndex = 4;
-            this.btnDeleteProduct.Text = "Delete Product";
-            this.btnDeleteProduct.UseVisualStyleBackColor = true;
-            // 
-            // btnAddProduct
-            // 
-            this.btnAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btnAddProduct.Location = new System.Drawing.Point(16, 18);
-            this.btnAddProduct.Name = "btnAddProduct";
-            this.btnAddProduct.Size = new System.Drawing.Size(134, 57);
-            this.btnAddProduct.TabIndex = 5;
-            this.btnAddProduct.Text = "Add New Product";
-            this.btnAddProduct.UseVisualStyleBackColor = true;
-            // 
-            // btnDisplaySupplier
-            // 
-            this.btnDisplaySupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btnDisplaySupplier.Location = new System.Drawing.Point(16, 162);
-            this.btnDisplaySupplier.Name = "btnDisplaySupplier";
-            this.btnDisplaySupplier.Size = new System.Drawing.Size(134, 57);
-            this.btnDisplaySupplier.TabIndex = 3;
-            this.btnDisplaySupplier.Text = "Display All Suppliers";
-            this.btnDisplaySupplier.UseVisualStyleBackColor = true;
-            // 
-            // btnDeleteSupplier
-            // 
-            this.btnDeleteSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btnDeleteSupplier.Location = new System.Drawing.Point(16, 235);
-            this.btnDeleteSupplier.Name = "btnDeleteSupplier";
-            this.btnDeleteSupplier.Size = new System.Drawing.Size(134, 57);
-            this.btnDeleteSupplier.TabIndex = 4;
-            this.btnDeleteSupplier.Text = "Delete Supplier";
-            this.btnDeleteSupplier.UseVisualStyleBackColor = true;
             // 
             // frmHomepage
             // 

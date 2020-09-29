@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,8 +20,18 @@ namespace PHP
 
         private void InventoryList_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'pHPdbDataSet.Inventory' table. You can move, or remove it, as needed.
-            this.inventoryTableAdapter.Fill(this.pHPdbDataSet.Inventory);
+            BindingSource bs = new BindingSource();
+            DataSet ds = new DataSet();
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlCommand cmd = new SqlCommand("Select * FROM dbo.Inventory", frmLogin.con);
+
+            adapter.SelectCommand = cmd;
+            adapter.Fill(ds);                   
+
+            bs.DataSource = ds.Tables[0];
+
+            dgvInventory.DataSource = bs;
         }
 
         private void btnBack_Click(object sender, EventArgs e)

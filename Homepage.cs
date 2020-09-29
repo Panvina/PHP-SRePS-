@@ -93,5 +93,32 @@ namespace PHP
             frmLogin.con.Open();
             d.Show();
         }
+
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddProduct d = new AddProduct();
+            frmLogin.con.Close();
+            frmLogin.con.Open();
+            d.Show();
+        }
+
+        private void btnEditInventory_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            EditProduct d = new EditProduct();
+            frmLogin.con.Close();
+            frmLogin.con.Open();
+            d.Show();
+        }
+
+        private void btnDeleteProduct_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DeleteProduct d = new DeleteProduct();
+            frmLogin.con.Close();
+            frmLogin.con.Open();
+            d.Show();
+        }
     }
 }

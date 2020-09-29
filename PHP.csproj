@@ -63,11 +63,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddProduct.Designer.cs">
+      <DependentUpon>AddProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="AllSales.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AllSales.Designer.cs">
       <DependentUpon>AllSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteProduct.Designer.cs">
+      <DependentUpon>DeleteProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="DeleteSales.cs">
       <SubType>Form</SubType>
@@ -92,6 +104,12 @@
     </Compile>
     <Compile Include="DisplayYearlySales.Designer.cs">
       <DependentUpon>DisplayYearlySales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditProduct.Designer.cs">
+      <DependentUpon>EditProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="EditSales.cs">
       <SubType>Form</SubType>
@@ -133,11 +151,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddProduct.resx">
+      <DependentUpon>AddProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddSales.resx">
       <DependentUpon>AddSales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AllSales.resx">
       <DependentUpon>AllSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteProduct.resx">
+      <DependentUpon>DeleteProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteSales.resx">
       <DependentUpon>DeleteSales.cs</DependentUpon>
@@ -150,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DisplayYearlySales.resx">
       <DependentUpon>DisplayYearlySales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditProduct.resx">
+      <DependentUpon>EditProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditSales.resx">
       <DependentUpon>EditSales.cs</DependentUpon>
