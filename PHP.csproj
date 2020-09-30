@@ -69,6 +69,10 @@
     <Compile Include="AddProduct.Designer.cs">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddSuppliers.cs" />
+    <Compile Include="AddSuppliers.Designer.cs">
+      <DependentUpon>AddSuppliers.cs</DependentUpon>
+    </Compile>
     <Compile Include="AllSales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +91,10 @@
     <Compile Include="DeleteSales.Designer.cs">
       <DependentUpon>DeleteSales.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeleteSuppliers.cs" />
+    <Compile Include="DeleteSuppliers.Designer.cs">
+      <DependentUpon>DeleteSuppliers.cs</DependentUpon>
+    </Compile>
     <Compile Include="DisplayMonthlySales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +106,10 @@
     </Compile>
     <Compile Include="DisplaySales.Designer.cs">
       <DependentUpon>DisplaySales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisplaySuppliers.cs" />
+    <Compile Include="DisplaySuppliers.Designer.cs">
+      <DependentUpon>DisplaySuppliers.cs</DependentUpon>
     </Compile>
     <Compile Include="DisplayYearlySales.cs">
       <SubType>Form</SubType>
@@ -122,6 +134,10 @@
     </Compile>
     <Compile Include="AddSales.Designer.cs">
       <DependentUpon>AddSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditSuppliers.cs" />
+    <Compile Include="EditSuppliers.Designer.cs">
+      <DependentUpon>EditSuppliers.cs</DependentUpon>
     </Compile>
     <Compile Include="Homepage.cs">
       <SubType>Form</SubType>
@@ -157,6 +173,9 @@
     <EmbeddedResource Include="AddSales.resx">
       <DependentUpon>AddSales.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddSuppliers.resx">
+      <DependentUpon>AddSuppliers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AllSales.resx">
       <DependentUpon>AllSales.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,11 +185,17 @@
     <EmbeddedResource Include="DeleteSales.resx">
       <DependentUpon>DeleteSales.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DeleteSuppliers.resx">
+      <DependentUpon>DeleteSuppliers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DisplayMonthlySales.resx">
       <DependentUpon>DisplayMonthlySales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DisplaySales.resx">
       <DependentUpon>DisplaySales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisplaySuppliers.resx">
+      <DependentUpon>DisplaySuppliers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DisplayYearlySales.resx">
       <DependentUpon>DisplayYearlySales.cs</DependentUpon>
@@ -180,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditSales.resx">
       <DependentUpon>EditSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditSuppliers.resx">
+      <DependentUpon>EditSuppliers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>
