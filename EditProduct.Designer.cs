@@ -110,6 +110,7 @@
             // 
             // cmbSupplierID
             // 
+            this.cmbSupplierID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSupplierID.FormattingEnabled = true;
             this.cmbSupplierID.Location = new System.Drawing.Point(47, 191);
             this.cmbSupplierID.Name = "cmbSupplierID";
@@ -139,11 +140,13 @@
             // 
             // cmbProductID
             // 
+            this.cmbProductID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProductID.FormattingEnabled = true;
             this.cmbProductID.Location = new System.Drawing.Point(47, 85);
             this.cmbProductID.Name = "cmbProductID";
             this.cmbProductID.Size = new System.Drawing.Size(200, 21);
             this.cmbProductID.TabIndex = 13;
+            this.cmbProductID.SelectedIndexChanged += new System.EventHandler(this.cmbProductID_SelectedIndexChanged);
             // 
             // EditProduct
             // 
@@ -164,6 +167,7 @@
             this.Controls.Add(this.label1);
             this.Name = "EditProduct";
             this.Text = "EditProduct";
+            this.Load += new System.EventHandler(this.EditProduct_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
