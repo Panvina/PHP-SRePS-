@@ -281,6 +281,7 @@
             this.btnDeleteSupplier.TabIndex = 4;
             this.btnDeleteSupplier.Text = "Delete Supplier";
             this.btnDeleteSupplier.UseVisualStyleBackColor = true;
+            this.btnDeleteSupplier.Click += new System.EventHandler(this.btnDeleteSupplier_Click);
             // 
             // btnDisplaySupplier
             // 
@@ -291,6 +292,7 @@
             this.btnDisplaySupplier.TabIndex = 3;
             this.btnDisplaySupplier.Text = "Display All Suppliers";
             this.btnDisplaySupplier.UseVisualStyleBackColor = true;
+            this.btnDisplaySupplier.Click += new System.EventHandler(this.btnDisplaySupplier_Click);
             // 
             // btnAddSupplier
             // 
@@ -301,6 +303,7 @@
             this.btnAddSupplier.TabIndex = 1;
             this.btnAddSupplier.Text = "Add New Supplier";
             this.btnAddSupplier.UseVisualStyleBackColor = true;
+            this.btnAddSupplier.Click += new System.EventHandler(this.btnAddSupplier_Click);
             // 
             // btnEditSupplier
             // 
@@ -311,6 +314,7 @@
             this.btnEditSupplier.TabIndex = 2;
             this.btnEditSupplier.Text = "Edit Supplier";
             this.btnEditSupplier.UseVisualStyleBackColor = true;
+            this.btnEditSupplier.Click += new System.EventHandler(this.btnEditSupplier_Click);
             // 
             // frmHomepage
             // 

@@ -120,5 +120,33 @@ namespace PHP
             frmLogin.con.Open();
             d.Show();
         }
+
+        private void btnAddSupplier_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmAddSuppliers addSupplier = new frmAddSuppliers();
+            addSupplier.Show();
+        }
+
+        private void btnEditSupplier_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmEditSuppliers editSupplier = new frmEditSuppliers();
+            editSupplier.Show();
+        }
+
+        private void btnDisplaySupplier_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmDisplaySuppliers displaySupplier = new frmDisplaySuppliers();
+            displaySupplier.Show();
+        }
+
+        private void btnDeleteSupplier_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmDeleteSuppliers deleteSupplier = new frmDeleteSuppliers();
+            deleteSupplier.Show();
+        }
     }
 }
