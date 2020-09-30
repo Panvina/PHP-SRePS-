@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtProductID = new System.Windows.Forms.TextBox();
@@ -42,6 +43,16 @@
             this.txtUnitsInStock = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtUnitsOnOrder = new System.Windows.Forms.TextBox();
+            this.errorProID = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProName = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorPrice = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorUIS = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorUOO = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorUIS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorUOO)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExit
@@ -70,6 +81,7 @@
             this.txtProductID.Name = "txtProductID";
             this.txtProductID.Size = new System.Drawing.Size(200, 20);
             this.txtProductID.TabIndex = 2;
+            this.txtProductID.Validating += new System.ComponentModel.CancelEventHandler(this.errorProID_validating);
             // 
             // txtProductName
             // 
@@ -77,6 +89,7 @@
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(200, 20);
             this.txtProductName.TabIndex = 3;
+            this.txtProductName.Validating += new System.ComponentModel.CancelEventHandler(this.errorProName_validating);
             // 
             // label2
             // 
@@ -120,6 +133,7 @@
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(200, 20);
             this.txtPrice.TabIndex = 8;
+            this.txtPrice.Validating += new System.ComponentModel.CancelEventHandler(this.errorPrice_validating);
             // 
             // btnSubmit
             // 
@@ -146,6 +160,7 @@
             this.txtUnitsInStock.Name = "txtUnitsInStock";
             this.txtUnitsInStock.Size = new System.Drawing.Size(200, 20);
             this.txtUnitsInStock.TabIndex = 11;
+            this.txtUnitsInStock.Validating += new System.ComponentModel.CancelEventHandler(this.errorUIS_validating);
             // 
             // label6
             // 
@@ -162,6 +177,27 @@
             this.txtUnitsOnOrder.Name = "txtUnitsOnOrder";
             this.txtUnitsOnOrder.Size = new System.Drawing.Size(200, 20);
             this.txtUnitsOnOrder.TabIndex = 13;
+            this.txtUnitsOnOrder.Validating += new System.ComponentModel.CancelEventHandler(this.errorUOO_validating);
+            // 
+            // errorProID
+            // 
+            this.errorProID.ContainerControl = this;
+            // 
+            // errorProName
+            // 
+            this.errorProName.ContainerControl = this;
+            // 
+            // errorPrice
+            // 
+            this.errorPrice.ContainerControl = this;
+            // 
+            // errorUIS
+            // 
+            this.errorUIS.ContainerControl = this;
+            // 
+            // errorUOO
+            // 
+            this.errorUOO.ContainerControl = this;
             // 
             // AddProduct
             // 
@@ -185,6 +221,11 @@
             this.Name = "AddProduct";
             this.Text = "AddProduct";
             this.Load += new System.EventHandler(this.AddProduct_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorUIS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorUOO)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,5 +247,10 @@
         private System.Windows.Forms.TextBox txtUnitsInStock;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtUnitsOnOrder;
+        private System.Windows.Forms.ErrorProvider errorProID;
+        private System.Windows.Forms.ErrorProvider errorProName;
+        private System.Windows.Forms.ErrorProvider errorPrice;
+        private System.Windows.Forms.ErrorProvider errorUIS;
+        private System.Windows.Forms.ErrorProvider errorUOO;
     }
 }
