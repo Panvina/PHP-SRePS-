@@ -80,7 +80,7 @@ namespace PHP
         {
             if (ValidateInputs())
             {
-                string query = $"UPDATE Suppliers SET CompanyName={txtName.Text}, CompanyEmail='{txtEmail.Text}', CompanyPhone={txtPhone.Text} WHERE SupplierID={cmbSupplierID.SelectedItem}";
+                string query = $"UPDATE Suppliers SET CompanyName='{txtName.Text}', CompanyEmail='{txtEmail.Text}', CompanyPhone='{txtPhone.Text}' WHERE SupplierID='{cmbSupplierID.SelectedItem}'";
 
                 SqlCommand command = new SqlCommand(query, frmLogin.con);
                 command.Transaction = frmLogin.con.BeginTransaction();

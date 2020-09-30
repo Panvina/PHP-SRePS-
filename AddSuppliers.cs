@@ -79,7 +79,7 @@ namespace PHP
 
             if (ValidateInputs())
             {
-                string query = $"INSERT INTO Suppliers (SupplierID, CompanyName, CompanyEmail, CompanyPhone) VALUES ({txtID.Text}, {txtName.Text}, '{txtEmail.Text}', {txtPhone.Text})";
+                string query = $"INSERT INTO Suppliers (SupplierID, CompanyName, CompanyEmail, CompanyPhone) VALUES ('{txtID.Text}', '{txtName.Text}', '{txtEmail.Text}', '{txtPhone.Text}')";
                 SqlCommand command = new SqlCommand(query, frmLogin.con);
                 lblRowsAffected.Text = $"{command.ExecuteNonQuery()} affected rows.";
 
