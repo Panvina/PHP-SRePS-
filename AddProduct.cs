@@ -47,7 +47,7 @@ namespace PHP
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message + " lease try again!");
+                    MessageBox.Show(ex.Message + " please try again!");
 
                 }
             }
