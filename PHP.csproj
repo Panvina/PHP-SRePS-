@@ -120,6 +120,12 @@
     <Compile Include="DisplaySuppliers.Designer.cs">
       <DependentUpon>DisplaySuppliers.cs</DependentUpon>
     </Compile>
+    <Compile Include="DisplayWeeklySales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisplayWeeklySales.Designer.cs">
+      <DependentUpon>DisplayWeeklySales.cs</DependentUpon>
+    </Compile>
     <Compile Include="DisplayYearlySales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DisplaySuppliers.resx">
       <DependentUpon>DisplaySuppliers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisplayWeeklySales.resx">
+      <DependentUpon>DisplayWeeklySales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DisplayYearlySales.resx">
       <DependentUpon>DisplayYearlySales.cs</DependentUpon>

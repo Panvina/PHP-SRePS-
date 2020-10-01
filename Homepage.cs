@@ -151,7 +151,8 @@ namespace PHP
         private void btnDisplayWeeklySales_Click(object sender, EventArgs e)
         {
             this.Hide();
-            
+            DisplayWeeklySales display = new DisplayWeeklySales();
+            display.Show();
         }
     }
 }

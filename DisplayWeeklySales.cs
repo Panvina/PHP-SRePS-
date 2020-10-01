@@ -23,7 +23,7 @@ namespace PHP
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Homepage home = new Homepage();
+            frmHomepage home = new frmHomepage();
             home.Show();
         }
 
@@ -42,7 +42,7 @@ namespace PHP
             string stringEndDate = EndDate.ToString("yyyy-MM-dd"); //gets rid of the time part of the date, and to be used for the query
         
             SqlCommand cmd = new SqlCommand();
-            cmd.Connection = Login.con;          
+            cmd.Connection = frmLogin.con;          
             cmd.CommandText = $"SELECT * FROM SALES WHERE DATE between '{stringStartDate}' AND '{stringEndDate}' ";
             BindingSource bs = new BindingSource();
             DataSet ds = new DataSet();                     // create new dataset
