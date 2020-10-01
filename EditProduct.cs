@@ -62,11 +62,7 @@ namespace PHP
             //Commit transaction and close connection.
             transaction.Commit();
             connection.Close();
-        }
-
-        private void txtUpdate_Click(object sender, EventArgs e)
-        {
-
+            HideErrorLabels();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -82,7 +78,7 @@ namespace PHP
             connection.Open();
 
             //Gets sales data for specific sales ID.
-            string query = $"SELECT ProductName, SupplierID, Price, UnitsInStock, UnitsOnOrder FROM Products, Inventory WHERE Products.ProductID={cmb.SelectedItem}";
+            string query = $"SELECT ProductName, SupplierID, Price, UnitsInStock, UnitsOnOrder FROM Products WHERE Products.ProductID={cmb.SelectedItem}";
 
             //Update textboxes to match Sales data.
             SqlCommand command = new SqlCommand(query, connection);
@@ -101,6 +97,7 @@ namespace PHP
                         cmbSupplierID.SelectedIndex = supplierIndex;
                     }
 
+                    txtPrice.Text = reader[2].ToString();
                     txtUnitsInStock.Text = reader[3].ToString();
                     txtUnitsOnOrder.Text = reader[4].ToString();
                 }
@@ -108,6 +105,7 @@ namespace PHP
 
             command.Transaction.Commit();
             connection.Close();
+            HideErrorLabels();
         }
 
 
@@ -129,6 +127,117 @@ namespace PHP
             }
 
             return -1;
+        }
+
+        private bool ValidateInputs()
+        {
+            return ValidateProductName() && ValidatePrice() && ValidateUnitsInStock() && ValidateUnitsOnOrder();
+        }
+
+        private bool ValidateProductName()
+        {
+            if(string.IsNullOrWhiteSpace(txtProductName.Text))
+            {
+                lblProductNameError.Visible = true;
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool ValidatePrice()
+        {
+            float price;
+
+            if(!float.TryParse(txtPrice.Text, out price))
+            {
+                lblPriceError.Visible = true;
+                return false;
+            }
+
+            if(price < 0)
+            {
+                lblPriceError.Visible = true;
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool ValidateUnitsInStock()
+        {
+            int units;
+
+            if (!int.TryParse(txtUnitsInStock.Text, out units))
+            {
+                lblUnitsInStockError.Visible = true;
+                return false;
+            }
+
+            if(units < 0)
+            {
+                lblUnitsInStockError.Visible = true;
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool ValidateUnitsOnOrder()
+        {
+            int units;
+
+            if (!int.TryParse(txtUnitsOnOrder.Text, out units))
+            {
+                txtUnitsOnOrder.Visible = true;
+                return false;
+            }
+
+            if (units < 0)
+            {
+                lblUnitsInStockError.Visible = true;
+                return false;
+            }
+
+            return true;
+        }
+
+        private void HideErrorLabels()
+        {
+            lblProductNameError.Visible = false;
+            lblPriceError.Visible = false;
+            lblUnitsInStockError.Visible = false;
+            lblUnitsOnOrderError.Visible = false;
+            lblRecordResult.Visible = false;
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if(ValidateInputs())
+            {
+                string productID = cmbProductID.SelectedItem.ToString();
+                string productName = txtProductName.Text;
+                float price = float.Parse(txtPrice.Text);
+                int unitsInStock = int.Parse(txtUnitsInStock.Text);
+                int unitsOnOrder = int.Parse(txtUnitsOnOrder.Text);
+
+                string supplierID = cmbSupplierID.SelectedItem != null ? cmbSupplierID.SelectedItem.ToString().Split(',')[1].Trim() : "";
+
+                string query = $"UPDATE Products SET ProductName='{productName}', SupplierID='{supplierID}', Price='{price}', UnitsInStock='{unitsInStock}', UnitsOnOrder='{unitsOnOrder}' " +
+                    $"WHERE ProductID={productID}";
+
+                connection.Open();
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Transaction = connection.BeginTransaction();
+
+                int rowsAffected = command.ExecuteNonQuery();
+
+                lblRecordResult.Text = $"Success! {rowsAffected} records affected.";
+                lblRecordResult.Visible = true;
+
+                command.Transaction.Commit();
+                connection.Close();
+            }
         }
     }
 }

@@ -47,7 +47,7 @@
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnExit.Location = new System.Drawing.Point(47, 432);
+            this.btnExit.Location = new System.Drawing.Point(47, 454);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(200, 49);
             this.btnExit.TabIndex = 0;
@@ -123,7 +123,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(47, 382);
+            this.btnSubmit.Location = new System.Drawing.Point(47, 404);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(200, 44);
             this.btnSubmit.TabIndex = 9;

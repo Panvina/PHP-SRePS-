@@ -22,7 +22,7 @@ namespace PHP
         private void product_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmInventoryList pl = new frmInventoryList();
+            ProductList pl = new ProductList();
             pl.Show();
         }
 

@@ -53,20 +53,98 @@ namespace PHP
         /// </summary>
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            int salesID = int.Parse(txtID.Text);
-            if (ValidateSaleID(salesID))
-            {            
+            if (cmbSales.Items.Count != 0)
+			{
+                int salesID = int.Parse(cmbSales.Text);
+
+                // no need to validate salesID
                 SqlCommand command = new SqlCommand($"DELETE FROM Sales WHERE SalesID = @salesID", frmLogin.con);
                 command.Parameters.AddWithValue("@salesID", salesID);
                 command.ExecuteNonQuery();
-                MessageBox.Show("Sale deleted");
+
+                cmbSales.Items.RemoveAt(cmbSales.SelectedIndex);
+                
+                if (cmbSales.Items.Count != 0)
+				{
+                    cmbSales.SelectedIndex = 0;
+                }
+                else
+                {
+                    cmbSales.Text = "";
+                    txtProductID.Text = "";
+                    txtProductName.Text = "";
+                    txtQuantity.Text = "";
+                    txtDate.Text = "";
+                }
             }
-            else
-            {
-                MessageBox.Show("Sale not found");
-            }
+
+            //if (ValidateSaleID(salesID))
+            //{            
+            //    SqlCommand command = new SqlCommand($"DELETE FROM Sales WHERE SalesID = @salesID", frmLogin.con);
+            //    command.Parameters.AddWithValue("@salesID", salesID);
+            //    command.ExecuteNonQuery();
+            //    MessageBox.Show("Sale deleted");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Sale not found");
+            //}
             
         }
 
-    }
+		private void frmDeleteSales_Load(object sender, EventArgs e)
+		{
+            string query = "SELECT SalesID from Sales";
+            SqlCommand cmd = new SqlCommand(query, frmLogin.con);
+
+            using (SqlDataReader reader = cmd.ExecuteReader())
+			{
+                while(reader.Read())
+				{
+                    cmbSales.Items.Add($"{reader[0]}");
+				}
+			}
+
+            if(cmbSales.Items.Count != 0)
+			{
+                cmbSales.SelectedIndex = 0;
+            }
+		}
+
+		private void cmbSales_SelectedIndexChanged(object sender, EventArgs e)
+		{
+            if (cmbSales.Items.Count != 0)
+			{
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = frmLogin.con;
+
+                string query = $"SELECT * FROM Sales WHERE SalesID = {cmbSales.Text}";
+                cmd.CommandText = query;
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    reader.Read();
+                    txtProductID.Text = $"{reader[1]}";
+                    txtQuantity.Text = $"{reader[2]}";
+                    txtDate.Text = DateTime.Parse($"{reader[3]}").ToString("dd/MM/yyyy");
+                }
+
+                query = $"SELECT * FROM Products WHERE ProductID = {txtProductID.Text}";
+                cmd.CommandText = query;
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    reader.Read();
+                    txtProductName.Text = $"{reader[1]}";
+                }
+            }
+            else
+			{
+                txtProductID.Text = "";
+                txtProductName.Text = "";
+                txtQuantity.Text = "";
+                txtDate.Text = "";
+			}
+        }
+	}
 }

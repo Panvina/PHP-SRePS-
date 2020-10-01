@@ -28,109 +28,87 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtProductName = new System.Windows.Forms.TextBox();
-            this.txtUnitsOnOrder = new System.Windows.Forms.TextBox();
-            this.txtUnitsInStock = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cmbSupplierID = new System.Windows.Forms.ComboBox();
-            this.txtUpdate = new System.Windows.Forms.Button();
+            this.lblProductID = new System.Windows.Forms.Label();
+            this.lblProductName = new System.Windows.Forms.Label();
+            this.lblSupplierID = new System.Windows.Forms.Label();
+            this.lblUnitsOnOrder = new System.Windows.Forms.Label();
+            this.lblUnitsInStock = new System.Windows.Forms.Label();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.txtUnitsOnOrder = new System.Windows.Forms.TextBox();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.cmbSupplierID = new System.Windows.Forms.ComboBox();
+            this.txtProductName = new System.Windows.Forms.TextBox();
             this.cmbProductID = new System.Windows.Forms.ComboBox();
+            this.txtUnitsInStock = new System.Windows.Forms.TextBox();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.lblProductNameError = new System.Windows.Forms.Label();
+            this.lblPriceError = new System.Windows.Forms.Label();
+            this.lblUnitsInStockError = new System.Windows.Forms.Label();
+            this.lblUnitsOnOrderError = new System.Windows.Forms.Label();
+            this.lblRecordResult = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // lblProductID
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "ProductID";
+            this.lblProductID.AutoSize = true;
+            this.lblProductID.Location = new System.Drawing.Point(63, 36);
+            this.lblProductID.Name = "lblProductID";
+            this.lblProductID.Size = new System.Drawing.Size(55, 13);
+            this.lblProductID.TabIndex = 1;
+            this.lblProductID.Text = "ProductID";
             // 
-            // label2
+            // lblProductName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 123);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Product Name";
+            this.lblProductName.AutoSize = true;
+            this.lblProductName.Location = new System.Drawing.Point(55, 104);
+            this.lblProductName.Name = "lblProductName";
+            this.lblProductName.Size = new System.Drawing.Size(75, 13);
+            this.lblProductName.TabIndex = 4;
+            this.lblProductName.Text = "Product Name";
             // 
-            // label3
+            // lblSupplierID
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 175);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Supplier ID";
+            this.lblSupplierID.AutoSize = true;
+            this.lblSupplierID.Location = new System.Drawing.Point(55, 165);
+            this.lblSupplierID.Name = "lblSupplierID";
+            this.lblSupplierID.Size = new System.Drawing.Size(59, 13);
+            this.lblSupplierID.TabIndex = 6;
+            this.lblSupplierID.Text = "Supplier ID";
             // 
-            // txtProductName
+            // lblUnitsOnOrder
             // 
-            this.txtProductName.Location = new System.Drawing.Point(47, 139);
-            this.txtProductName.Name = "txtProductName";
-            this.txtProductName.Size = new System.Drawing.Size(200, 20);
-            this.txtProductName.TabIndex = 4;
+            this.lblUnitsOnOrder.AutoSize = true;
+            this.lblUnitsOnOrder.Location = new System.Drawing.Point(56, 331);
+            this.lblUnitsOnOrder.Name = "lblUnitsOnOrder";
+            this.lblUnitsOnOrder.Size = new System.Drawing.Size(77, 13);
+            this.lblUnitsOnOrder.TabIndex = 12;
+            this.lblUnitsOnOrder.Text = "Units On Order";
             // 
-            // txtUnitsOnOrder
+            // lblUnitsInStock
             // 
-            this.txtUnitsOnOrder.Location = new System.Drawing.Point(47, 297);
-            this.txtUnitsOnOrder.Name = "txtUnitsOnOrder";
-            this.txtUnitsOnOrder.Size = new System.Drawing.Size(200, 20);
-            this.txtUnitsOnOrder.TabIndex = 5;
+            this.lblUnitsInStock.AutoSize = true;
+            this.lblUnitsInStock.Location = new System.Drawing.Point(56, 278);
+            this.lblUnitsInStock.Name = "lblUnitsInStock";
+            this.lblUnitsInStock.Size = new System.Drawing.Size(74, 13);
+            this.lblUnitsInStock.TabIndex = 10;
+            this.lblUnitsInStock.Text = "Units In Stock";
             // 
-            // txtUnitsInStock
+            // btnUpdate
             // 
-            this.txtUnitsInStock.Location = new System.Drawing.Point(47, 247);
-            this.txtUnitsInStock.Name = "txtUnitsInStock";
-            this.txtUnitsInStock.Size = new System.Drawing.Size(200, 20);
-            this.txtUnitsInStock.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(44, 281);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 13);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Units On Order";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(44, 231);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Units In Stock";
-            // 
-            // cmbSupplierID
-            // 
-            this.cmbSupplierID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSupplierID.FormattingEnabled = true;
-            this.cmbSupplierID.Location = new System.Drawing.Point(47, 191);
-            this.cmbSupplierID.Name = "cmbSupplierID";
-            this.cmbSupplierID.Size = new System.Drawing.Size(200, 21);
-            this.cmbSupplierID.TabIndex = 9;
-            // 
-            // txtUpdate
-            // 
-            this.txtUpdate.Location = new System.Drawing.Point(47, 354);
-            this.txtUpdate.Name = "txtUpdate";
-            this.txtUpdate.Size = new System.Drawing.Size(200, 37);
-            this.txtUpdate.TabIndex = 10;
-            this.txtUpdate.Text = "Update";
-            this.txtUpdate.UseVisualStyleBackColor = true;
-            this.txtUpdate.Click += new System.EventHandler(this.txtUpdate_Click);
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(66, 411);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(200, 37);
+            this.btnUpdate.TabIndex = 10;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnExit.Location = new System.Drawing.Point(47, 397);
+            this.btnExit.Location = new System.Drawing.Point(66, 454);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(200, 49);
             this.btnExit.TabIndex = 0;
@@ -138,33 +116,137 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // txtUnitsOnOrder
+            // 
+            this.txtUnitsOnOrder.Location = new System.Drawing.Point(58, 347);
+            this.txtUnitsOnOrder.Name = "txtUnitsOnOrder";
+            this.txtUnitsOnOrder.Size = new System.Drawing.Size(200, 20);
+            this.txtUnitsOnOrder.TabIndex = 5;
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.Location = new System.Drawing.Point(58, 237);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(200, 20);
+            this.txtPrice.TabIndex = 6;
+            // 
+            // cmbSupplierID
+            // 
+            this.cmbSupplierID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSupplierID.FormattingEnabled = true;
+            this.cmbSupplierID.Location = new System.Drawing.Point(58, 181);
+            this.cmbSupplierID.Name = "cmbSupplierID";
+            this.cmbSupplierID.Size = new System.Drawing.Size(200, 21);
+            this.cmbSupplierID.TabIndex = 9;
+            // 
+            // txtProductName
+            // 
+            this.txtProductName.Location = new System.Drawing.Point(58, 120);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(200, 20);
+            this.txtProductName.TabIndex = 4;
+            // 
             // cmbProductID
             // 
             this.cmbProductID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProductID.FormattingEnabled = true;
-            this.cmbProductID.Location = new System.Drawing.Point(47, 85);
+            this.cmbProductID.Location = new System.Drawing.Point(58, 52);
             this.cmbProductID.Name = "cmbProductID";
             this.cmbProductID.Size = new System.Drawing.Size(200, 21);
             this.cmbProductID.TabIndex = 13;
             this.cmbProductID.SelectedIndexChanged += new System.EventHandler(this.cmbProductID_SelectedIndexChanged);
             // 
+            // txtUnitsInStock
+            // 
+            this.txtUnitsInStock.Location = new System.Drawing.Point(58, 294);
+            this.txtUnitsInStock.Name = "txtUnitsInStock";
+            this.txtUnitsInStock.Size = new System.Drawing.Size(200, 20);
+            this.txtUnitsInStock.TabIndex = 14;
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Location = new System.Drawing.Point(55, 221);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(31, 13);
+            this.lblPrice.TabIndex = 15;
+            this.lblPrice.Text = "Price";
+            // 
+            // lblProductNameError
+            // 
+            this.lblProductNameError.AutoSize = true;
+            this.lblProductNameError.ForeColor = System.Drawing.Color.Red;
+            this.lblProductNameError.Location = new System.Drawing.Point(57, 143);
+            this.lblProductNameError.Name = "lblProductNameError";
+            this.lblProductNameError.Size = new System.Drawing.Size(109, 13);
+            this.lblProductNameError.TabIndex = 16;
+            this.lblProductNameError.Text = "Invalid Product Name";
+            // 
+            // lblPriceError
+            // 
+            this.lblPriceError.AutoSize = true;
+            this.lblPriceError.ForeColor = System.Drawing.Color.Red;
+            this.lblPriceError.Location = new System.Drawing.Point(57, 260);
+            this.lblPriceError.Name = "lblPriceError";
+            this.lblPriceError.Size = new System.Drawing.Size(65, 13);
+            this.lblPriceError.TabIndex = 17;
+            this.lblPriceError.Text = "Invalid Price";
+            // 
+            // lblUnitsInStockError
+            // 
+            this.lblUnitsInStockError.AutoSize = true;
+            this.lblUnitsInStockError.ForeColor = System.Drawing.Color.Red;
+            this.lblUnitsInStockError.Location = new System.Drawing.Point(58, 315);
+            this.lblUnitsInStockError.Name = "lblUnitsInStockError";
+            this.lblUnitsInStockError.Size = new System.Drawing.Size(108, 13);
+            this.lblUnitsInStockError.TabIndex = 18;
+            this.lblUnitsInStockError.Text = "Invalid Units In Stock";
+            // 
+            // lblUnitsOnOrderError
+            // 
+            this.lblUnitsOnOrderError.AutoSize = true;
+            this.lblUnitsOnOrderError.ForeColor = System.Drawing.Color.Red;
+            this.lblUnitsOnOrderError.Location = new System.Drawing.Point(58, 370);
+            this.lblUnitsOnOrderError.Name = "lblUnitsOnOrderError";
+            this.lblUnitsOnOrderError.Size = new System.Drawing.Size(111, 13);
+            this.lblUnitsOnOrderError.TabIndex = 19;
+            this.lblUnitsOnOrderError.Text = "Invalid Units On Order";
+            // 
+            // lblRecordResult
+            // 
+            this.lblRecordResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblRecordResult.AutoSize = true;
+            this.lblRecordResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecordResult.Location = new System.Drawing.Point(70, 391);
+            this.lblRecordResult.Name = "lblRecordResult";
+            this.lblRecordResult.Size = new System.Drawing.Size(188, 17);
+            this.lblRecordResult.TabIndex = 20;
+            this.lblRecordResult.Text = "Success! X records affected.";
+            // 
             // EditProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(299, 484);
+            this.ClientSize = new System.Drawing.Size(317, 515);
+            this.Controls.Add(this.lblRecordResult);
+            this.Controls.Add(this.lblUnitsOnOrderError);
+            this.Controls.Add(this.lblUnitsInStockError);
+            this.Controls.Add(this.lblPriceError);
+            this.Controls.Add(this.lblProductNameError);
+            this.Controls.Add(this.lblPrice);
+            this.Controls.Add(this.txtUnitsInStock);
             this.Controls.Add(this.cmbProductID);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.txtUpdate);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.cmbSupplierID);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtUnitsInStock);
+            this.Controls.Add(this.lblUnitsInStock);
+            this.Controls.Add(this.lblUnitsOnOrder);
+            this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtUnitsOnOrder);
             this.Controls.Add(this.txtProductName);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblSupplierID);
+            this.Controls.Add(this.lblProductName);
+            this.Controls.Add(this.lblProductID);
             this.Name = "EditProduct";
             this.Text = "EditProduct";
             this.Load += new System.EventHandler(this.EditProduct_Load);
@@ -175,17 +257,24 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtProductName;
-        private System.Windows.Forms.TextBox txtUnitsOnOrder;
-        private System.Windows.Forms.TextBox txtUnitsInStock;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cmbSupplierID;
-        private System.Windows.Forms.Button txtUpdate;
+        private System.Windows.Forms.Label lblProductID;
+        private System.Windows.Forms.Label lblProductName;
+        private System.Windows.Forms.Label lblSupplierID;
+        private System.Windows.Forms.Label lblUnitsOnOrder;
+        private System.Windows.Forms.Label lblUnitsInStock;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.TextBox txtUnitsOnOrder;
+        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.ComboBox cmbSupplierID;
+        private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.ComboBox cmbProductID;
+        private System.Windows.Forms.TextBox txtUnitsInStock;
+        private System.Windows.Forms.Label lblPrice;
+        private System.Windows.Forms.Label lblProductNameError;
+        private System.Windows.Forms.Label lblPriceError;
+        private System.Windows.Forms.Label lblUnitsInStockError;
+        private System.Windows.Forms.Label lblUnitsOnOrderError;
+        private System.Windows.Forms.Label lblRecordResult;
     }
 }

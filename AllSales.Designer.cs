@@ -59,7 +59,6 @@
             this.quantityDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn});
 			this.dgvSales.DataSource = this.salesBindingSource;
-			this.dgvSales.Enabled = false;
 			this.dgvSales.Location = new System.Drawing.Point(70, 126);
 			this.dgvSales.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.dgvSales.MultiSelect = false;
