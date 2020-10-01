@@ -84,7 +84,7 @@ namespace PHP
 
         private void errorProID_validating(object sender, CancelEventArgs e)
         {
-            blankValidating(errorProID, txtProductID, e, "ProductID");
+            blankValidating(errorProdID, txtProductID, e, "ProductID");
         }
 
         private void errorPrice_validating(object sender, CancelEventArgs e)
