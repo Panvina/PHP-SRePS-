@@ -162,7 +162,7 @@ namespace PHP
             string quant = txtQuantity.Text;
             string prodID = cmbProductID.Text.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries)[1];
 
-            string query = $"UPDATE Inventory SET UnitsInStock = UnitsInStock - {quant} WHERE ProductID = {prodID}";
+            string query = $"UPDATE Products SET UnitsInStock = UnitsInStock - {quant} WHERE ProductID = {prodID}";
             SqlCommand command = new SqlCommand(query, frmLogin.con);
             command.ExecuteNonQuery();
 		}
