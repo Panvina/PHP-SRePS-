@@ -250,7 +250,7 @@ SELECT SupplierID, CompanyName, CompanyEmail, CompanyPhone FROM Suppliers WHERE 
   <xs:element name="PHPdbDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="PHPdbDataSet" msprop:Generator_UserDSName="PHPdbDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Orders" msprop:Generator_TableClassName="OrdersDataTable" msprop:Generator_TableVarName="tableOrders" msprop:Generator_RowChangedName="OrdersRowChanged" msprop:Generator_TablePropName="Orders" msprop:Generator_RowDeletingName="OrdersRowDeleting" msprop:Generator_RowChangingName="OrdersRowChanging" msprop:Generator_RowEvHandlerName="OrdersRowChangeEventHandler" msprop:Generator_RowDeletedName="OrdersRowDeleted" msprop:Generator_RowClassName="OrdersRow" msprop:Generator_UserTableName="Orders" msprop:Generator_RowEvArgName="OrdersRowChangeEvent">
+        <xs:element name="Orders" msprop:Generator_TableClassName="OrdersDataTable" msprop:Generator_TableVarName="tableOrders" msprop:Generator_TablePropName="Orders" msprop:Generator_RowDeletingName="OrdersRowDeleting" msprop:Generator_RowChangingName="OrdersRowChanging" msprop:Generator_RowEvHandlerName="OrdersRowChangeEventHandler" msprop:Generator_RowDeletedName="OrdersRowDeleted" msprop:Generator_UserTableName="Orders" msprop:Generator_RowChangedName="OrdersRowChanged" msprop:Generator_RowEvArgName="OrdersRowChangeEvent" msprop:Generator_RowClassName="OrdersRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Orders" msprop:Generator_ColumnVarNameInTable="columnOrders" msprop:Generator_ColumnPropNameInRow="Orders" msprop:Generator_ColumnPropNameInTable="OrdersColumn" msprop:Generator_UserColumnName="Orders">
@@ -271,7 +271,7 @@ SELECT SupplierID, CompanyName, CompanyEmail, CompanyPhone FROM Suppliers WHERE 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Products" msprop:Generator_TableClassName="ProductsDataTable" msprop:Generator_TableVarName="tableProducts" msprop:Generator_RowChangedName="ProductsRowChanged" msprop:Generator_TablePropName="Products" msprop:Generator_RowDeletingName="ProductsRowDeleting" msprop:Generator_RowChangingName="ProductsRowChanging" msprop:Generator_RowEvHandlerName="ProductsRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductsRowDeleted" msprop:Generator_RowClassName="ProductsRow" msprop:Generator_UserTableName="Products" msprop:Generator_RowEvArgName="ProductsRowChangeEvent">
+        <xs:element name="Products" msprop:Generator_TableClassName="ProductsDataTable" msprop:Generator_TableVarName="tableProducts" msprop:Generator_TablePropName="Products" msprop:Generator_RowDeletingName="ProductsRowDeleting" msprop:Generator_RowChangingName="ProductsRowChanging" msprop:Generator_RowEvHandlerName="ProductsRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductsRowDeleted" msprop:Generator_UserTableName="Products" msprop:Generator_RowChangedName="ProductsRowChanged" msprop:Generator_RowEvArgName="ProductsRowChangeEvent" msprop:Generator_RowClassName="ProductsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ProductID" msprop:Generator_ColumnVarNameInTable="columnProductID" msprop:Generator_ColumnPropNameInRow="ProductID" msprop:Generator_ColumnPropNameInTable="ProductIDColumn" msprop:Generator_UserColumnName="ProductID">
@@ -301,7 +301,7 @@ SELECT SupplierID, CompanyName, CompanyEmail, CompanyPhone FROM Suppliers WHERE 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Sales" msprop:Generator_TableClassName="SalesDataTable" msprop:Generator_TableVarName="tableSales" msprop:Generator_RowChangedName="SalesRowChanged" msprop:Generator_TablePropName="Sales" msprop:Generator_RowDeletingName="SalesRowDeleting" msprop:Generator_RowChangingName="SalesRowChanging" msprop:Generator_RowEvHandlerName="SalesRowChangeEventHandler" msprop:Generator_RowDeletedName="SalesRowDeleted" msprop:Generator_RowClassName="SalesRow" msprop:Generator_UserTableName="Sales" msprop:Generator_RowEvArgName="SalesRowChangeEvent">
+        <xs:element name="Sales" msprop:Generator_TableClassName="SalesDataTable" msprop:Generator_TableVarName="tableSales" msprop:Generator_TablePropName="Sales" msprop:Generator_RowDeletingName="SalesRowDeleting" msprop:Generator_RowChangingName="SalesRowChanging" msprop:Generator_RowEvHandlerName="SalesRowChangeEventHandler" msprop:Generator_RowDeletedName="SalesRowDeleted" msprop:Generator_UserTableName="Sales" msprop:Generator_RowChangedName="SalesRowChanged" msprop:Generator_RowEvArgName="SalesRowChangeEvent" msprop:Generator_RowClassName="SalesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SalesID" msprop:Generator_ColumnVarNameInTable="columnSalesID" msprop:Generator_ColumnPropNameInRow="SalesID" msprop:Generator_ColumnPropNameInTable="SalesIDColumn" msprop:Generator_UserColumnName="SalesID">
@@ -323,7 +323,7 @@ SELECT SupplierID, CompanyName, CompanyEmail, CompanyPhone FROM Suppliers WHERE 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Suppliers" msprop:Generator_TableClassName="SuppliersDataTable" msprop:Generator_TableVarName="tableSuppliers" msprop:Generator_RowChangedName="SuppliersRowChanged" msprop:Generator_TablePropName="Suppliers" msprop:Generator_RowDeletingName="SuppliersRowDeleting" msprop:Generator_RowChangingName="SuppliersRowChanging" msprop:Generator_RowEvHandlerName="SuppliersRowChangeEventHandler" msprop:Generator_RowDeletedName="SuppliersRowDeleted" msprop:Generator_RowClassName="SuppliersRow" msprop:Generator_UserTableName="Suppliers" msprop:Generator_RowEvArgName="SuppliersRowChangeEvent">
+        <xs:element name="Suppliers" msprop:Generator_TableClassName="SuppliersDataTable" msprop:Generator_TableVarName="tableSuppliers" msprop:Generator_TablePropName="Suppliers" msprop:Generator_RowDeletingName="SuppliersRowDeleting" msprop:Generator_RowChangingName="SuppliersRowChanging" msprop:Generator_RowEvHandlerName="SuppliersRowChangeEventHandler" msprop:Generator_RowDeletedName="SuppliersRowDeleted" msprop:Generator_UserTableName="Suppliers" msprop:Generator_RowChangedName="SuppliersRowChanged" msprop:Generator_RowEvArgName="SuppliersRowChangeEvent" msprop:Generator_RowClassName="SuppliersRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SupplierID" msprop:Generator_ColumnVarNameInTable="columnSupplierID" msprop:Generator_ColumnPropNameInRow="SupplierID" msprop:Generator_ColumnPropNameInTable="SupplierIDColumn" msprop:Generator_UserColumnName="SupplierID">
@@ -347,7 +347,7 @@ SELECT SupplierID, CompanyName, CompanyEmail, CompanyPhone FROM Suppliers WHERE 
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="CompanyPhone" msprop:Generator_ColumnVarNameInTable="columnCompanyPhone" msprop:Generator_ColumnPropNameInRow="CompanyPhone" msprop:Generator_ColumnPropNameInTable="CompanyPhoneColumn" msprop:Generator_UserColumnName="CompanyPhone" type="xs:int" />
+              <xs:element name="CompanyPhone" msprop:Generator_ColumnVarNameInTable="columnCompanyPhone" msprop:Generator_ColumnPropNameInRow="CompanyPhone" msprop:Generator_ColumnPropNameInTable="CompanyPhoneColumn" msprop:Generator_UserColumnName="CompanyPhone" type="xs:string" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

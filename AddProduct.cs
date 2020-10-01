@@ -76,7 +76,7 @@ namespace PHP
             cmbSupplierID.SelectedIndex = 0;
 
         }
-
+        /*
         private void errorProName_validating(object sender, CancelEventArgs e)
         {
             blankValidating(errorProName, txtProductName, e, "ProductName");
@@ -116,5 +116,6 @@ namespace PHP
                 ep.SetError(tb, "");
             }
         }
+        */
     }
 }

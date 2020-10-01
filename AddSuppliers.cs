@@ -77,6 +77,7 @@ namespace PHP
         {
             lblRowsAffected.Visible = false;
 
+            txtPhone.ToString();
             if (ValidateInputs())
             {
                 string query = $"INSERT INTO Suppliers (SupplierID, CompanyName, CompanyEmail, CompanyPhone) VALUES ('{txtID.Text}', '{txtName.Text}', '{txtEmail.Text}', '{txtPhone.Text}')";
