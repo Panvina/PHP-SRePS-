@@ -43,12 +43,12 @@
             this.txtUnitsInStock = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtUnitsOnOrder = new System.Windows.Forms.TextBox();
-            this.errorProID = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProdID = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProName = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorPrice = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorUIS = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorUOO = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProdID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorUIS)).BeginInit();
@@ -179,9 +179,9 @@
             this.txtUnitsOnOrder.TabIndex = 13;
             this.txtUnitsOnOrder.Validating += new System.ComponentModel.CancelEventHandler(this.errorUOO_validating);
             // 
-            // errorProID
+            // errorProdID
             // 
-            this.errorProID.ContainerControl = this;
+            this.errorProdID.ContainerControl = this;
             // 
             // errorProName
             // 
@@ -221,7 +221,7 @@
             this.Name = "AddProduct";
             this.Text = "AddProduct";
             this.Load += new System.EventHandler(this.AddProduct_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProdID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorUIS)).EndInit();
@@ -247,7 +247,7 @@
         private System.Windows.Forms.TextBox txtUnitsInStock;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtUnitsOnOrder;
-        private System.Windows.Forms.ErrorProvider errorProID;
+        private System.Windows.Forms.ErrorProvider errorProdID;
         private System.Windows.Forms.ErrorProvider errorProName;
         private System.Windows.Forms.ErrorProvider errorPrice;
         private System.Windows.Forms.ErrorProvider errorUIS;
