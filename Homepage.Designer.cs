@@ -175,6 +175,7 @@
             this.btnDisplayWeeklySales.TabIndex = 10;
             this.btnDisplayWeeklySales.Text = "Display Weekly Sales Report";
             this.btnDisplayWeeklySales.UseVisualStyleBackColor = true;
+            this.btnDisplayWeeklySales.Click += new System.EventHandler(this.btnDisplayWeeklySales_Click);
             // 
             // grbSales
             // 

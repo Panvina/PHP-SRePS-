@@ -147,5 +147,11 @@ namespace PHP
             frmDeleteSuppliers deleteSupplier = new frmDeleteSuppliers();
             deleteSupplier.Show();
         }
+
+        private void btnDisplayWeeklySales_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            
+        }
     }
 }

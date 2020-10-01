@@ -1,6 +1,6 @@
 ﻿namespace PHP
 {
-    partial class DisplayYearlySales
+    partial class frmDisplayYearlySales
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.dgvDisplay = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).BeginInit();
-            this.SuspendLayout();
+            //this.SuspendLayout();
             // 
             // btnBack
             // 

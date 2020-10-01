@@ -81,7 +81,7 @@
             this.txtProductID.Name = "txtProductID";
             this.txtProductID.Size = new System.Drawing.Size(200, 20);
             this.txtProductID.TabIndex = 2;
-            this.txtProductID.Validating += new System.ComponentModel.CancelEventHandler(this.errorProID_validating);
+            //this.txtProductID.Validating += new System.ComponentModel.CancelEventHandler(this.errorProID_validating);
             // 
             // txtProductName
             // 
@@ -89,7 +89,7 @@
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(200, 20);
             this.txtProductName.TabIndex = 3;
-            this.txtProductName.Validating += new System.ComponentModel.CancelEventHandler(this.errorProName_validating);
+            //this.txtProductName.Validating += new System.ComponentModel.CancelEventHandler(this.errorProName_validating);
             // 
             // label2
             // 
@@ -133,7 +133,7 @@
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(200, 20);
             this.txtPrice.TabIndex = 8;
-            this.txtPrice.Validating += new System.ComponentModel.CancelEventHandler(this.errorPrice_validating);
+            //this.txtPrice.Validating += new System.ComponentModel.CancelEventHandler(this.errorPrice_validating);
             // 
             // btnSubmit
             // 
@@ -160,7 +160,7 @@
             this.txtUnitsInStock.Name = "txtUnitsInStock";
             this.txtUnitsInStock.Size = new System.Drawing.Size(200, 20);
             this.txtUnitsInStock.TabIndex = 11;
-            this.txtUnitsInStock.Validating += new System.ComponentModel.CancelEventHandler(this.errorUIS_validating);
+            //this.txtUnitsInStock.Validating += new System.ComponentModel.CancelEventHandler(this.errorUIS_validating);
             // 
             // label6
             // 
@@ -177,7 +177,7 @@
             this.txtUnitsOnOrder.Name = "txtUnitsOnOrder";
             this.txtUnitsOnOrder.Size = new System.Drawing.Size(200, 20);
             this.txtUnitsOnOrder.TabIndex = 13;
-            this.txtUnitsOnOrder.Validating += new System.ComponentModel.CancelEventHandler(this.errorUOO_validating);
+            //this.txtUnitsOnOrder.Validating += new System.ComponentModel.CancelEventHandler(this.errorUOO_validating);
             // 
             // errorProdID
             // 

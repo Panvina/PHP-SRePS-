@@ -45,7 +45,7 @@ namespace PHP
             }
 
             SqlCommand cmd = new SqlCommand();
-            cmd.Connection = Login.con;
+            cmd.Connection = frmLogin.con;
             cmd.CommandText = $"SELECT * FROM SALES WHERE YEAR(DATE) = {txtYear.Text}";
 
             BindingSource bs = new BindingSource();
