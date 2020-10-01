@@ -120,7 +120,6 @@ namespace PHP
             frmLogin.con.Open();
             d.Show();
         }
-
         private void btnAddSupplier_Click(object sender, EventArgs e)
         {
             this.Hide();
