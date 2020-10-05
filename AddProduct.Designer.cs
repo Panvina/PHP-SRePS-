@@ -48,6 +48,10 @@
             this.errorPrice = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorUIS = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorUOO = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtMin = new System.Windows.Forms.TextBox();
+            this.txtMax = new System.Windows.Forms.TextBox();
+            this.lblMin = new System.Windows.Forms.Label();
+            this.lblMax = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProdID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorPrice)).BeginInit();
@@ -58,7 +62,7 @@
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnExit.Location = new System.Drawing.Point(47, 432);
+            this.btnExit.Location = new System.Drawing.Point(47, 491);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(200, 49);
             this.btnExit.TabIndex = 0;
@@ -81,7 +85,6 @@
             this.txtProductID.Name = "txtProductID";
             this.txtProductID.Size = new System.Drawing.Size(200, 20);
             this.txtProductID.TabIndex = 2;
-            //this.txtProductID.Validating += new System.ComponentModel.CancelEventHandler(this.errorProID_validating);
             // 
             // txtProductName
             // 
@@ -89,7 +92,6 @@
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(200, 20);
             this.txtProductName.TabIndex = 3;
-            //this.txtProductName.Validating += new System.ComponentModel.CancelEventHandler(this.errorProName_validating);
             // 
             // label2
             // 
@@ -133,11 +135,10 @@
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(200, 20);
             this.txtPrice.TabIndex = 8;
-            //this.txtPrice.Validating += new System.ComponentModel.CancelEventHandler(this.errorPrice_validating);
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(47, 382);
+            this.btnSubmit.Location = new System.Drawing.Point(47, 441);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(200, 44);
             this.btnSubmit.TabIndex = 9;
@@ -160,7 +161,6 @@
             this.txtUnitsInStock.Name = "txtUnitsInStock";
             this.txtUnitsInStock.Size = new System.Drawing.Size(200, 20);
             this.txtUnitsInStock.TabIndex = 11;
-            //this.txtUnitsInStock.Validating += new System.ComponentModel.CancelEventHandler(this.errorUIS_validating);
             // 
             // label6
             // 
@@ -177,7 +177,6 @@
             this.txtUnitsOnOrder.Name = "txtUnitsOnOrder";
             this.txtUnitsOnOrder.Size = new System.Drawing.Size(200, 20);
             this.txtUnitsOnOrder.TabIndex = 13;
-            //this.txtUnitsOnOrder.Validating += new System.ComponentModel.CancelEventHandler(this.errorUOO_validating);
             // 
             // errorProdID
             // 
@@ -199,11 +198,47 @@
             // 
             this.errorUOO.ContainerControl = this;
             // 
+            // txtMin
+            // 
+            this.txtMin.Location = new System.Drawing.Point(47, 401);
+            this.txtMin.Name = "txtMin";
+            this.txtMin.Size = new System.Drawing.Size(74, 20);
+            this.txtMin.TabIndex = 14;
+            // 
+            // txtMax
+            // 
+            this.txtMax.Location = new System.Drawing.Point(173, 401);
+            this.txtMax.Name = "txtMax";
+            this.txtMax.Size = new System.Drawing.Size(74, 20);
+            this.txtMax.TabIndex = 15;
+            // 
+            // lblMin
+            // 
+            this.lblMin.AutoSize = true;
+            this.lblMin.Location = new System.Drawing.Point(75, 385);
+            this.lblMin.Name = "lblMin";
+            this.lblMin.Size = new System.Drawing.Size(24, 13);
+            this.lblMin.TabIndex = 16;
+            this.lblMin.Text = "Min";
+            // 
+            // lblMax
+            // 
+            this.lblMax.AutoSize = true;
+            this.lblMax.Location = new System.Drawing.Point(198, 385);
+            this.lblMax.Name = "lblMax";
+            this.lblMax.Size = new System.Drawing.Size(27, 13);
+            this.lblMax.TabIndex = 17;
+            this.lblMax.Text = "Max";
+            // 
             // AddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(317, 515);
+            this.ClientSize = new System.Drawing.Size(317, 561);
+            this.Controls.Add(this.lblMax);
+            this.Controls.Add(this.lblMin);
+            this.Controls.Add(this.txtMax);
+            this.Controls.Add(this.txtMin);
             this.Controls.Add(this.txtUnitsOnOrder);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtUnitsInStock);
@@ -252,5 +287,9 @@
         private System.Windows.Forms.ErrorProvider errorPrice;
         private System.Windows.Forms.ErrorProvider errorUIS;
         private System.Windows.Forms.ErrorProvider errorUOO;
+        private System.Windows.Forms.Label lblMax;
+        private System.Windows.Forms.Label lblMin;
+        private System.Windows.Forms.TextBox txtMax;
+        private System.Windows.Forms.TextBox txtMin;
     }
 }

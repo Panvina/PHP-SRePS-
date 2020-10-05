@@ -78,7 +78,7 @@ namespace PHP
             connection.Open();
 
             //Gets sales data for specific sales ID.
-            string query = $"SELECT ProductName, SupplierID, Price, UnitsInStock, UnitsOnOrder FROM Products WHERE Products.ProductID={cmb.SelectedItem}";
+            string query = $"SELECT ProductName, SupplierID, Price, UnitsInStock, UnitsOnOrder, MinProducts, MaxProducts FROM Products WHERE ProductID={cmb.SelectedItem}";
 
             //Update textboxes to match Sales data.
             SqlCommand command = new SqlCommand(query, connection);
@@ -100,6 +100,12 @@ namespace PHP
                     txtPrice.Text = reader[2].ToString();
                     txtUnitsInStock.Text = reader[3].ToString();
                     txtUnitsOnOrder.Text = reader[4].ToString();
+
+                    txtMin.Text = reader[5].ToString();
+                    txtMax.Text = reader[6].ToString();
+
+                    Console.WriteLine(reader[5]);
+                    Console.WriteLine(reader[6]);
                 }
             }
 
@@ -131,7 +137,7 @@ namespace PHP
 
         private bool ValidateInputs()
         {
-            return ValidateProductName() && ValidatePrice() && ValidateUnitsInStock() && ValidateUnitsOnOrder();
+            return ValidateProductName() && ValidatePrice() && ValidateUnitsInStock() && ValidateUnitsOnOrder() && ValidateMinMax();
         }
 
         private bool ValidateProductName()
@@ -202,6 +208,41 @@ namespace PHP
             return true;
         }
 
+        private bool ValidateMinMax()
+        {
+            int min, max;
+
+            if(!int.TryParse(txtMin.Text, out min))
+            {
+                lblInvalidMinMax.Visible = true;
+                return false;
+            }
+
+            if(!int.TryParse(txtMax.Text, out max))
+            {
+                lblInvalidMinMax.Visible = true;
+                return false;
+            }
+
+            //Both min/max need to be greater than 0.
+            if(min < 0 || max < 0)
+            {
+                lblInvalidMinMax.Text = "Min/Max must be greater than 0";
+                lblInvalidMinMax.Visible = true;
+                return false;
+            }
+
+            //Min can't be lower than max.
+            if(min > max)
+            {
+                lblInvalidMinMax.Text = "Min cannot be larger than Max";
+                lblInvalidMinMax.Visible = true;
+                return false;
+            }
+
+            return true;
+        }
+
         private void HideErrorLabels()
         {
             lblProductNameError.Visible = false;
@@ -209,6 +250,9 @@ namespace PHP
             lblUnitsInStockError.Visible = false;
             lblUnitsOnOrderError.Visible = false;
             lblRecordResult.Visible = false;
+
+            lblInvalidMinMax.Text = "Invalid Min/Max";
+            lblInvalidMinMax.Visible = false;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -220,11 +264,16 @@ namespace PHP
                 float price = float.Parse(txtPrice.Text);
                 int unitsInStock = int.Parse(txtUnitsInStock.Text);
                 int unitsOnOrder = int.Parse(txtUnitsOnOrder.Text);
+                int minProducts = int.Parse(txtMin.Text);
+                int maxProducts= int.Parse(txtMax.Text);
 
                 string supplierID = cmbSupplierID.SelectedItem != null ? cmbSupplierID.SelectedItem.ToString().Split(',')[1].Trim() : "";
 
-                string query = $"UPDATE Products SET ProductName='{productName}', SupplierID='{supplierID}', Price='{price}', UnitsInStock='{unitsInStock}', UnitsOnOrder='{unitsOnOrder}' " +
+                string query = $"UPDATE Products SET " +
+                    $"ProductName='{productName}', SupplierID='{supplierID}', Price='{price}', UnitsInStock='{unitsInStock}', UnitsOnOrder='{unitsOnOrder}', MinProducts='{minProducts}', MaxProducts='{maxProducts}' " +
                     $"WHERE ProductID={productID}";
+
+                Console.WriteLine(query);
 
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);

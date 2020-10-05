@@ -38,8 +38,12 @@ namespace PHP
                     int uIS = int.Parse(txtUnitsInStock.Text);
                     int uOO = int.Parse(txtUnitsOnOrder.Text);
 
-                    string prodQuery = "INSERT INTO Products values ('"
-                        + proID + "','" + proName + "','" + supID + "','" + price + "','" + uIS + "','" + uOO + "')";
+                    int min = int.Parse(txtMin.Text);
+                    int max = int.Parse(txtMax.Text);
+                    string prodQuery = $"INSERT INTO Products values (" +
+                        $"'{proID}', '{proName}', '{supID}', '{price}', '{uIS}', '{uOO}', '{min}', '{max}')";
+
+                    Console.WriteLine(prodQuery);
 
                     SqlCommand command = new SqlCommand(prodQuery, frmLogin.con);
                     command.ExecuteNonQuery();

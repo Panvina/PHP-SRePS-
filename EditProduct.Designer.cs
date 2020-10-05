@@ -47,6 +47,11 @@
             this.lblUnitsInStockError = new System.Windows.Forms.Label();
             this.lblUnitsOnOrderError = new System.Windows.Forms.Label();
             this.lblRecordResult = new System.Windows.Forms.Label();
+            this.txtMin = new System.Windows.Forms.TextBox();
+            this.txtMax = new System.Windows.Forms.TextBox();
+            this.lblMin = new System.Windows.Forms.Label();
+            this.lblMax = new System.Windows.Forms.Label();
+            this.lblInvalidMinMax = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblProductID
@@ -97,7 +102,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(66, 411);
+            this.btnUpdate.Location = new System.Drawing.Point(66, 475);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(200, 37);
             this.btnUpdate.TabIndex = 10;
@@ -108,7 +113,7 @@
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnExit.Location = new System.Drawing.Point(66, 454);
+            this.btnExit.Location = new System.Drawing.Point(66, 518);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(200, 49);
             this.btnExit.TabIndex = 0;
@@ -217,17 +222,64 @@
             this.lblRecordResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblRecordResult.AutoSize = true;
             this.lblRecordResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecordResult.Location = new System.Drawing.Point(70, 391);
+            this.lblRecordResult.Location = new System.Drawing.Point(70, 451);
             this.lblRecordResult.Name = "lblRecordResult";
             this.lblRecordResult.Size = new System.Drawing.Size(188, 17);
             this.lblRecordResult.TabIndex = 20;
             this.lblRecordResult.Text = "Success! X records affected.";
             // 
+            // txtMin
+            // 
+            this.txtMin.Location = new System.Drawing.Point(58, 411);
+            this.txtMin.Name = "txtMin";
+            this.txtMin.Size = new System.Drawing.Size(72, 20);
+            this.txtMin.TabIndex = 21;
+            // 
+            // txtMax
+            // 
+            this.txtMax.Location = new System.Drawing.Point(186, 411);
+            this.txtMax.Name = "txtMax";
+            this.txtMax.Size = new System.Drawing.Size(72, 20);
+            this.txtMax.TabIndex = 22;
+            // 
+            // lblMin
+            // 
+            this.lblMin.AutoSize = true;
+            this.lblMin.Location = new System.Drawing.Point(79, 395);
+            this.lblMin.Name = "lblMin";
+            this.lblMin.Size = new System.Drawing.Size(24, 13);
+            this.lblMin.TabIndex = 23;
+            this.lblMin.Text = "Min";
+            // 
+            // lblMax
+            // 
+            this.lblMax.AutoSize = true;
+            this.lblMax.Location = new System.Drawing.Point(211, 395);
+            this.lblMax.Name = "lblMax";
+            this.lblMax.Size = new System.Drawing.Size(27, 13);
+            this.lblMax.TabIndex = 24;
+            this.lblMax.Text = "Max";
+            // 
+            // lblInvalidMinMax
+            // 
+            this.lblInvalidMinMax.AutoSize = true;
+            this.lblInvalidMinMax.ForeColor = System.Drawing.Color.Red;
+            this.lblInvalidMinMax.Location = new System.Drawing.Point(55, 438);
+            this.lblInvalidMinMax.Name = "lblInvalidMinMax";
+            this.lblInvalidMinMax.Size = new System.Drawing.Size(117, 13);
+            this.lblInvalidMinMax.TabIndex = 25;
+            this.lblInvalidMinMax.Text = "Invalid Min/Max inputs.";
+            // 
             // EditProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(317, 515);
+            this.ClientSize = new System.Drawing.Size(317, 586);
+            this.Controls.Add(this.lblInvalidMinMax);
+            this.Controls.Add(this.lblMax);
+            this.Controls.Add(this.lblMin);
+            this.Controls.Add(this.txtMax);
+            this.Controls.Add(this.txtMin);
             this.Controls.Add(this.lblRecordResult);
             this.Controls.Add(this.lblUnitsOnOrderError);
             this.Controls.Add(this.lblUnitsInStockError);
@@ -276,5 +328,10 @@
         private System.Windows.Forms.Label lblUnitsInStockError;
         private System.Windows.Forms.Label lblUnitsOnOrderError;
         private System.Windows.Forms.Label lblRecordResult;
+        private System.Windows.Forms.TextBox txtMin;
+        private System.Windows.Forms.TextBox txtMax;
+        private System.Windows.Forms.Label lblMin;
+        private System.Windows.Forms.Label lblMax;
+        private System.Windows.Forms.Label lblInvalidMinMax;
     }
 }

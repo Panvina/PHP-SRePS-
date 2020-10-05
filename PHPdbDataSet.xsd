@@ -298,6 +298,8 @@ SELECT SupplierID, CompanyName, CompanyEmail, CompanyPhone FROM Suppliers WHERE 
               <xs:element name="Price" msprop:Generator_ColumnVarNameInTable="columnPrice" msprop:Generator_ColumnPropNameInRow="Price" msprop:Generator_ColumnPropNameInTable="PriceColumn" msprop:Generator_UserColumnName="Price" type="xs:decimal" />
               <xs:element name="UnitsInStock" msprop:Generator_ColumnVarNameInTable="columnUnitsInStock" msprop:Generator_ColumnPropNameInRow="UnitsInStock" msprop:Generator_ColumnPropNameInTable="UnitsInStockColumn" msprop:Generator_UserColumnName="UnitsInStock" type="xs:int" />
               <xs:element name="UnitsOnOrder" msprop:Generator_ColumnVarNameInTable="columnUnitsOnOrder" msprop:Generator_ColumnPropNameInRow="UnitsOnOrder" msprop:Generator_ColumnPropNameInTable="UnitsOnOrderColumn" msprop:Generator_UserColumnName="UnitsOnOrder" type="xs:int" />
+              <xs:element name="MinProducts" msprop:Generator_ColumnVarNameInTable="columnMinProducts" msprop:Generator_ColumnPropNameInRow="MinProducts" msprop:Generator_ColumnPropNameInTable="MinProductsColumn" msprop:Generator_UserColumnName="MinProducts" type="xs:int" default="0" />
+              <xs:element name="MaxProducts" msprop:Generator_ColumnVarNameInTable="columnMaxProducts" msprop:Generator_ColumnPropNameInRow="MaxProducts" msprop:Generator_ColumnPropNameInTable="MaxProductsColumn" msprop:Generator_UserColumnName="MaxProducts" type="xs:int" default="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
