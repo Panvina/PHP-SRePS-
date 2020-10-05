@@ -40,6 +40,8 @@
             this.pHPdbDataSet = new PHP.PHPdbDataSet();
             this.productsTableAdapter = new PHP.PHPdbDataSetTableAdapters.ProductsTableAdapter();
             this.btnBack = new System.Windows.Forms.Button();
+            this.MinProducts = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaxProducts = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pHPdbDataSet)).BeginInit();
@@ -55,11 +57,13 @@
             this.supplierIDDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn,
             this.unitsInStockDataGridViewTextBoxColumn,
-            this.unitsOnOrderDataGridViewTextBoxColumn});
+            this.unitsOnOrderDataGridViewTextBoxColumn,
+            this.MinProducts,
+            this.MaxProducts});
             this.dgvProduct.DataSource = this.productsBindingSource;
             this.dgvProduct.Location = new System.Drawing.Point(33, 33);
             this.dgvProduct.Name = "dgvProduct";
-            this.dgvProduct.Size = new System.Drawing.Size(642, 307);
+            this.dgvProduct.Size = new System.Drawing.Size(843, 307);
             this.dgvProduct.TabIndex = 0;
             this.dgvProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellContentClick);
             // 
@@ -116,7 +120,7 @@
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnBack.Location = new System.Drawing.Point(542, 357);
+            this.btnBack.Location = new System.Drawing.Point(743, 377);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(133, 53);
             this.btnBack.TabIndex = 1;
@@ -124,11 +128,23 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // MinProducts
+            // 
+            this.MinProducts.DataPropertyName = "MinProducts";
+            this.MinProducts.HeaderText = "MinProducts";
+            this.MinProducts.Name = "MinProducts";
+            // 
+            // MaxProducts
+            // 
+            this.MaxProducts.DataPropertyName = "MaxProducts";
+            this.MaxProducts.HeaderText = "MaxProducts";
+            this.MaxProducts.Name = "MaxProducts";
+            // 
             // ProductList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(713, 452);
+            this.ClientSize = new System.Drawing.Size(904, 452);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dgvProduct);
             this.Name = "ProductList";
@@ -154,5 +170,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn unitsInStockDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitsOnOrderDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MinProducts;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaxProducts;
     }
 }

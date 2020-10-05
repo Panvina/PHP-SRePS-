@@ -43,8 +43,6 @@ namespace PHP
                     string prodQuery = $"INSERT INTO Products values (" +
                         $"'{proID}', '{proName}', '{supID}', '{price}', '{uIS}', '{uOO}', '{min}', '{max}')";
 
-                    Console.WriteLine(prodQuery);
-
                     SqlCommand command = new SqlCommand(prodQuery, frmLogin.con);
                     command.ExecuteNonQuery();
                     MessageBox.Show("The product has been added.");
