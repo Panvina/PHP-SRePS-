@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace PHP
 {
@@ -50,6 +51,8 @@ namespace PHP
 			PopulateSingle(cmd);
 
 			PopulateTotals(cmd);
+
+			btnGen.Enabled = (dgvSum.Rows.Count > 0);
 		}
 
 		private void PopulateSingle(SqlCommand cmd)
@@ -256,6 +259,50 @@ namespace PHP
 			this.Hide();
 			frmHomepage home = new frmHomepage();
 			home.Show();
+		}
+
+		private void btnGen_Click(object sender, EventArgs e)
+		{
+			WriteToFile("test.txt", dgvSum);
+
+			MessageBox.Show($"Report for {DateTime.Now.ToString("MM/yyyy")} generated");
+		}
+
+		private void WriteToFile(String fileName, DataGridView dgv)
+		{
+			StreamWriter sw = new StreamWriter(fileName);
+
+			int rows = dgv.RowCount;
+			int cols = dgv.ColumnCount;
+
+			for(int i = 0; i < cols; i++)
+			{
+				if (i != cols - 1)
+				{
+					sw.Write($"{dgv.Columns[i].HeaderText}, ");
+				}
+				else
+				{
+					sw.WriteLine($"{dgv.Columns[i].HeaderText}");
+				}
+			}
+
+			for(int i = 0; i < rows; i++)
+			{
+				for (int j = 0; j < cols; j++)
+				{
+					if (j != cols - 1)
+					{
+						sw.Write($"{dgv.Rows[i].Cells[j].Value}, ");
+					}
+					else
+					{
+						sw.WriteLine($"{dgv.Rows[i].Cells[j].Value}");
+					}
+				}
+			}
+
+			sw.Close();
 		}
 	}
 }

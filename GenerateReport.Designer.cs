@@ -38,6 +38,7 @@
 			this.btnSearch = new System.Windows.Forms.Button();
 			this.lblYear = new System.Windows.Forms.Label();
 			this.btnBack = new System.Windows.Forms.Button();
+			this.btnGen = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvSum)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).BeginInit();
 			this.SuspendLayout();
@@ -100,7 +101,7 @@
 			this.txtYear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.txtYear.Name = "txtYear";
 			this.txtYear.Size = new System.Drawing.Size(151, 26);
-			this.txtYear.TabIndex = 27;
+			this.txtYear.TabIndex = 1;
 			this.txtYear.TextChanged += new System.EventHandler(this.txtYear_TextChanged);
 			// 
 			// lblMonth
@@ -133,7 +134,7 @@
 			this.txtMonth.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.txtMonth.Name = "txtMonth";
 			this.txtMonth.Size = new System.Drawing.Size(151, 26);
-			this.txtMonth.TabIndex = 24;
+			this.txtMonth.TabIndex = 0;
 			this.txtMonth.TextChanged += new System.EventHandler(this.txtMonth_TextChanged);
 			// 
 			// btnSearch
@@ -142,8 +143,8 @@
 			this.btnSearch.Location = new System.Drawing.Point(538, 240);
 			this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.btnSearch.Name = "btnSearch";
-			this.btnSearch.Size = new System.Drawing.Size(132, 52);
-			this.btnSearch.TabIndex = 23;
+			this.btnSearch.Size = new System.Drawing.Size(161, 60);
+			this.btnSearch.TabIndex = 2;
 			this.btnSearch.Text = "Search";
 			this.btnSearch.UseVisualStyleBackColor = true;
 			this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -166,10 +167,23 @@
 			this.btnBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.btnBack.Name = "btnBack";
 			this.btnBack.Size = new System.Drawing.Size(200, 82);
-			this.btnBack.TabIndex = 21;
+			this.btnBack.TabIndex = 4;
 			this.btnBack.Text = "Back to Homepage";
 			this.btnBack.UseVisualStyleBackColor = true;
 			this.btnBack.Click += new System.EventHandler(this.btnBack_Click_1);
+			// 
+			// btnGen
+			// 
+			this.btnGen.Enabled = false;
+			this.btnGen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+			this.btnGen.Location = new System.Drawing.Point(538, 310);
+			this.btnGen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.btnGen.Name = "btnGen";
+			this.btnGen.Size = new System.Drawing.Size(161, 60);
+			this.btnGen.TabIndex = 3;
+			this.btnGen.Text = "Generate Report";
+			this.btnGen.UseVisualStyleBackColor = true;
+			this.btnGen.Click += new System.EventHandler(this.btnGen_Click);
 			// 
 			// frmGenerateCSV
 			// 
@@ -177,6 +191,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
 			this.ClientSize = new System.Drawing.Size(872, 898);
+			this.Controls.Add(this.btnGen);
 			this.Controls.Add(this.dgvSum);
 			this.Controls.Add(this.lblInvalidYear);
 			this.Controls.Add(this.dgvDisplay);
@@ -210,5 +225,6 @@
 		private System.Windows.Forms.Button btnSearch;
 		private System.Windows.Forms.Label lblYear;
 		private System.Windows.Forms.Button btnBack;
+		private System.Windows.Forms.Button btnGen;
 	}
 }
