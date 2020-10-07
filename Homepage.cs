@@ -13,12 +13,13 @@ namespace PHP
 {
     public partial class frmHomepage : Form
     {
-
+        
         public frmHomepage()
         {
             InitializeComponent();
         }
 
+        public static readonly string LowStockSettingFile = $"{Environment.CurrentDirectory}\\LowStockSetting.txt";
         private void product_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -153,6 +154,16 @@ namespace PHP
             this.Hide();
             DisplayWeeklySales display = new DisplayWeeklySales();
             display.Show();
+        }
+
+        private void frmHomepage_Load(object sender, EventArgs e)
+        {
+            string[] text = System.IO.File.ReadAllLines(LowStockSettingFile);
+
+            if (text[1] == "true" && text[3] == "false")
+            {
+                System.Windows.MessageBox.Show(text[0]);
+            }
         }
     }
 }

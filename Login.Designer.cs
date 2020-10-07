@@ -54,7 +54,6 @@
 			this.lblLogin.Size = new System.Drawing.Size(543, 37);
 			this.lblLogin.TabIndex = 3;
 			this.lblLogin.Text = "Press connect to access the invoice system";
-			this.lblLogin.Click += new System.EventHandler(this.label1_Click);
 			// 
 			// frmLogin
 			// 
@@ -67,7 +66,6 @@
 			this.Name = "frmLogin";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "PHP-SRePS";
-			this.Load += new System.EventHandler(this.Login_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

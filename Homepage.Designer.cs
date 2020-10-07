@@ -332,6 +332,7 @@
             this.Name = "frmHomepage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Homepage";
+            this.Load += new System.EventHandler(this.frmHomepage_Load);
             this.grbSales.ResumeLayout(false);
             this.grbReport.ResumeLayout(false);
             this.grbProducts.ResumeLayout(false);
