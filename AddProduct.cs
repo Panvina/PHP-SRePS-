@@ -35,13 +35,15 @@ namespace PHP
                     string proName = txtProductName.Text;
                     decimal price = decimal.Parse(txtPrice.Text);
                     string supID = cmbSupplierID.Text.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries)[0];
+                    string catID = cmbCategoryID.Text.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries)[0];
                     int uIS = int.Parse(txtUnitsInStock.Text);
                     int uOO = int.Parse(txtUnitsOnOrder.Text);
+                    
 
                     int min = int.Parse(txtMin.Text);
                     int max = int.Parse(txtMax.Text);
                     string prodQuery = $"INSERT INTO Products values (" +
-                        $"'{proID}', '{proName}', '{supID}', '{price}', '{uIS}', '{uOO}', '{min}', '{max}')";
+                        $"'{proID}', '{proName}', '{supID}', '{price}', '{uIS}', '{uOO}', '{catID}', '{min}', '{max}')";
 
                     SqlCommand command = new SqlCommand(prodQuery, frmLogin.con);
                     command.ExecuteNonQuery();
@@ -63,25 +65,30 @@ namespace PHP
 
         private void AddProduct_Load(object sender, EventArgs e)
         {
-            string query = "SELECT SupplierID, CompanyName FROM Suppliers";
+            string supQuery = "SELECT SupplierID, CompanyName FROM Suppliers";
+            string catQuery = "SELECT categoryID, catName FROM Category";
+            loadData(supQuery, cmbSupplierID);
+            loadData(catQuery, cmbCategoryID);
+        }
 
+        private void loadData(string query, ComboBox cb)
+        {
             SqlCommand command = new SqlCommand(query, frmLogin.con);
-
-            using (SqlDataReader reader = command.ExecuteReader())
+            SqlDataReader reader = command.ExecuteReader();
+            using (reader)
             {
                 while (reader.Read())
                 {
-                    cmbSupplierID.Items.Add($"{reader[0]}, {reader[1]}");
+                    cb.Items.Add($"{reader[0]}, {reader[1]}");
                 }
             }
-
-            cmbSupplierID.SelectedIndex = 0;
-
+            cb.SelectedIndex = 0;
+            reader.Close();
         }
-        /*
+        
         private void errorProName_validating(object sender, CancelEventArgs e)
         {
-            blankValidating(errorProName, txtProductName, e, "ProductName");
+            blankValidating(errorProName, txtProductName, e, "Product Name");
         }
 
         private void errorProID_validating(object sender, CancelEventArgs e)
@@ -118,6 +125,6 @@ namespace PHP
                 ep.SetError(tb, "");
             }
         }
-        */
+        
     }
 }

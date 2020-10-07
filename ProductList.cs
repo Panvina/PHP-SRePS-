@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
 
 namespace PHP
@@ -18,10 +19,6 @@ namespace PHP
             InitializeComponent();
         }
 
-        private void ProductList_Load(object sender, EventArgs e)
-        {
-            UpdateDB();
-        }
 
         private void UpdateDB()
         {
@@ -39,7 +36,7 @@ namespace PHP
 
             dgvProduct.DataSource = bindingS;
 
-            DataSet changes = proDS.GetChanges();
+            /*DataSet changes = proDS.GetChanges();
             if (changes != null)
             {
                 SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
@@ -48,7 +45,7 @@ namespace PHP
                 adapter.Update(changes);
                 proDS.AcceptChanges();
             }
-            //this.productsTableAdapter.Update(this.pHPdbDataSet.Products);       //send the data in the dataset to the database
+            //this.productsTableAdapter.Update(this.pHPdbDataSet.Products);       //send the data in the dataset to the database*/
             
         }
 
@@ -59,9 +56,22 @@ namespace PHP
             home.Show();
         }
 
-        private void dgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void ProductList_Load(object sender, EventArgs e)
         {
+            string[] file = System.IO.File.ReadAllLines(frmHomepage.LowStockSettingFile);
+            if (file[2] == "true" && file[3] == "false")
+            {
+                System.Windows.MessageBox.Show(file[0]);
+            }
 
+            UpdateDB();
+        }
+
+        private void btnAlert_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LowStockAlert alert = new LowStockAlert();
+            alert.Show();
         }
     }
 }
