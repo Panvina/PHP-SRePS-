@@ -204,7 +204,7 @@
 			this.Controls.Add(this.btnBack);
 			this.Name = "frmGenerateCSV";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Generate Report";
+			this.Text = " ";
 			this.Load += new System.EventHandler(this.frmGenerateCSV_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dgvSum)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).EndInit();
