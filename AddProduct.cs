@@ -38,8 +38,6 @@ namespace PHP
                     string catID = cmbCategoryID.Text.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries)[0];
                     int uIS = int.Parse(txtUnitsInStock.Text);
                     int uOO = int.Parse(txtUnitsOnOrder.Text);
-                    
-
                     int min = int.Parse(txtMin.Text);
                     int max = int.Parse(txtMax.Text);
                     string prodQuery = $"INSERT INTO Products values (" +

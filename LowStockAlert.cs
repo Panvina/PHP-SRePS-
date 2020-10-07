@@ -27,10 +27,9 @@ namespace PHP
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            File.ReadAllLines(frmHomepage.LowStockSettingFile);
+            File.ReadAllLines(frmLogin.LowStockSettingFile);
             string homeOption = "false";
             string productListOption = "false";
-            string noNotif = "false";
 
             if (checkBoxNotifyHome.Checked)
             {
@@ -42,19 +41,15 @@ namespace PHP
                 productListOption = "true";
             }
 
-            if (checkBoxNoNotify.Checked)
-            {
-                noNotif = "true";
-            }
-            string[] write = { tbQuantity.Text, homeOption, productListOption, noNotif};
-            File.WriteAllLines(frmHomepage.LowStockSettingFile, write);
+            string[] write = { tbQuantity.Text, homeOption, productListOption};
+            File.WriteAllLines(frmLogin.LowStockSettingFile, write);
             
             MessageBox.Show("Your settings have been saved!");
         }
 
         private void LowStockAlert_Load(object sender, EventArgs e)
         {
-            string[] read = File.ReadAllLines(frmHomepage.LowStockSettingFile);
+            string[] read = File.ReadAllLines(frmLogin.LowStockSettingFile);
             tbQuantity.Text = read[0];
             if (read[1] == "true")
             {
@@ -64,11 +59,6 @@ namespace PHP
             if (read[2] == "true")
             {
                 checkBoxNotifyProd.Checked = true;
-            }
-
-            if (read[3] == "true")
-            {
-                checkBoxNoNotify.Checked = true;
             }
         }
     }

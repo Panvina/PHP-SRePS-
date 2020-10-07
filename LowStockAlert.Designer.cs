@@ -32,7 +32,6 @@
             this.tbQuantity = new System.Windows.Forms.TextBox();
             this.checkBoxNotifyHome = new System.Windows.Forms.CheckBox();
             this.checkBoxNotifyProd = new System.Windows.Forms.CheckBox();
-            this.checkBoxNoNotify = new System.Windows.Forms.CheckBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnBackToHomepage = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -75,16 +74,6 @@
             this.checkBoxNotifyProd.Text = "Notify me on the product list";
             this.checkBoxNotifyProd.UseVisualStyleBackColor = true;
             // 
-            // checkBoxNoNotify
-            // 
-            this.checkBoxNoNotify.AutoSize = true;
-            this.checkBoxNoNotify.Location = new System.Drawing.Point(66, 173);
-            this.checkBoxNoNotify.Name = "checkBoxNoNotify";
-            this.checkBoxNoNotify.Size = new System.Drawing.Size(103, 17);
-            this.checkBoxNoNotify.TabIndex = 4;
-            this.checkBoxNoNotify.Text = "Do not notify me";
-            this.checkBoxNoNotify.UseVisualStyleBackColor = true;
-            // 
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
@@ -114,7 +103,6 @@
             this.ClientSize = new System.Drawing.Size(376, 331);
             this.Controls.Add(this.btnBackToHomepage);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.checkBoxNoNotify);
             this.Controls.Add(this.checkBoxNotifyProd);
             this.Controls.Add(this.checkBoxNotifyHome);
             this.Controls.Add(this.tbQuantity);
@@ -133,7 +121,6 @@
         private System.Windows.Forms.TextBox tbQuantity;
         private System.Windows.Forms.CheckBox checkBoxNotifyHome;
         private System.Windows.Forms.CheckBox checkBoxNotifyProd;
-        private System.Windows.Forms.CheckBox checkBoxNoNotify;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnBackToHomepage;
     }

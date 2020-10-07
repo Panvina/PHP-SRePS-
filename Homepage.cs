@@ -19,7 +19,6 @@ namespace PHP
             InitializeComponent();
         }
 
-        public static readonly string LowStockSettingFile = $"{Environment.CurrentDirectory}\\LowStockSetting.txt";
         private void product_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -156,15 +155,6 @@ namespace PHP
             display.Show();
         }
 
-        private void frmHomepage_Load(object sender, EventArgs e)
-        {
-            string[] text = System.IO.File.ReadAllLines(LowStockSettingFile);
-
-            if (text[1] == "true" && text[3] == "false")
-            {
-                System.Windows.MessageBox.Show(text[0]);
-            }
-        }
         private void btnExport_Click(object sender, EventArgs e)
         {
             this.Hide();

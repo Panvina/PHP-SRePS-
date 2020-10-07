@@ -49,19 +49,14 @@ namespace PHP
             
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmHomepage home = new frmHomepage();
-            home.Show();
-        }
+        
 
         private void ProductList_Load(object sender, EventArgs e)
         {
-            string[] file = System.IO.File.ReadAllLines(frmHomepage.LowStockSettingFile);
-            if (file[2] == "true" && file[3] == "false")
+            string[] file = System.IO.File.ReadAllLines(frmLogin.LowStockSettingFile);
+            if (file[2] == "true")
             {
-                System.Windows.MessageBox.Show(file[0]);
+                System.Windows.MessageBox.Show("[include num] products are running low!\n Please check the inventory list for more information.");
             }
 
             UpdateDB();
@@ -72,6 +67,13 @@ namespace PHP
             this.Hide();
             LowStockAlert alert = new LowStockAlert();
             alert.Show();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+                this.Hide();
+                frmHomepage home = new frmHomepage();
+                home.Show();
         }
     }
 }

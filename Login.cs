@@ -17,6 +17,7 @@ namespace PHP
         {
             InitializeComponent();
         }
+        public static readonly string LowStockSettingFile = $"{Environment.CurrentDirectory}\\LowStockSetting.txt";
         private static readonly string databaseLocation = $"{Environment.CurrentDirectory}\\PHPdb.mdf";        //should be the machine name
         private static readonly string userName = @"(LocalDB)\MSSQLLocalDB";
 
@@ -31,7 +32,12 @@ namespace PHP
             {
                 frmHomepage hp = new frmHomepage();
                 hp.Show();               
-                this.Hide();              
+                this.Hide();
+                string[] text = System.IO.File.ReadAllLines(LowStockSettingFile);
+                if (text[1] == "true")
+                {
+                    System.Windows.MessageBox.Show("[include num] products are running low!\n Please check the inventory list for more information.");
+                }
             }
         }
     }
