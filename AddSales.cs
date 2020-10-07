@@ -88,7 +88,7 @@ namespace PHP
 			}
             
             // ensure positive integer
-            if (intQuant <= 0)
+            if (!VerifyPositive(intQuant))
 			{
                 lblQuantityError.Visible = true;
                 return false;
@@ -165,6 +165,21 @@ namespace PHP
             string query = $"UPDATE Products SET UnitsInStock = UnitsInStock - {quant} WHERE ProductID = {prodID}";
             SqlCommand command = new SqlCommand(query, frmLogin.con);
             command.ExecuteNonQuery();
+
+            int unitInStock = 0;
+
+            query = $"SELECT UnitsInStock FROM Products WHERE ProductID = {prodID}";
+            command.CommandText = query;
+            using (SqlDataReader reader = command.ExecuteReader())
+			{
+                reader.Read();
+                unitInStock = int.Parse($"{reader[0]}");
+			}
+
+            if (unitInStock < GetMin(prodID))
+			{
+                Reorder(prodID);
+			}
 		}
 
         /// <summary>
@@ -173,6 +188,83 @@ namespace PHP
 		private void txtQuantity_TextChanged(object sender, EventArgs e)
 		{
             lblQuantityError.Visible = !ValidateQuantity(txtQuantity.Text);
+		}
+
+        /// <summary>
+        /// Reorder stock for a given product with some ID
+        /// 
+        /// Placeholder. This system will never order real stock, so
+        /// placeholder functions will be in place, and stock will
+        /// be incremented by some number.
+        /// </summary>
+        /// <param name="prodID"></param>
+        private void Reorder(string prodID)
+		{
+            ContactSupplier();
+            AddStock(prodID, GetReorderQuantity(prodID));
+		}
+
+        private void ContactSupplier()
+        { }
+
+        /// <summary>
+        /// Add stock to some product
+        /// </summary>
+        /// <param name="prodID">product ID</param>
+        /// <param name="quant">quantity to add</param>
+        private void AddStock(string prodID, int quant)
+		{
+            if (!VerifyPositive(quant))
+			{
+                MessageBox.Show($"{quant} is not a positive integer.\nOrdered stock must be >= 0.");
+                return;
+			}
+
+            string query = $"UPDATE Products SET UnitsInStock = UnitsInStock + {quant} WHERE ProductID = {prodID}";
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = frmLogin.con;
+
+            int success = cmd.ExecuteNonQuery();
+
+            if (success == 1)
+			{
+                MessageBox.Show($"{quant} items has been added to {prodID}");
+			}
+		}
+
+        /// <summary>
+        /// Verifies that some value is positive
+        /// </summary>
+        /// <param name="val"></param>
+        /// <returns></returns>
+        private bool VerifyPositive(int val)
+		{
+            return (val >= 0);
+		}
+
+        /// <summary>
+        /// Determines the amount to reorder
+        /// 
+        /// Currently a constant number
+        /// </summary>
+        /// <param name="ProdID">Product ID</param>
+        /// <returns>Amount to reorder</returns>
+        private int GetReorderQuantity(string ProdID)
+		{
+            return 100;
+		}
+
+        /// <summary>
+        /// Determine minimum stock threshold for product
+        /// 
+        /// Placeholder
+        /// </summary>
+        /// <param name="ProdID">Product ID</param>
+        /// <returns>Minimum stock threshold</returns>
+        private int GetMin(string ProdID)
+		{
+            return 100;
 		}
 	}
 }

@@ -154,5 +154,12 @@ namespace PHP
             DisplayWeeklySales display = new DisplayWeeklySales();
             display.Show();
         }
-    }
+
+		private void btnExport_Click(object sender, EventArgs e)
+		{
+            this.Hide();
+            frmGenerateCSV rep = new frmGenerateCSV();
+            rep.Show();
+		}
+	}
 }
