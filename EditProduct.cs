@@ -103,9 +103,6 @@ namespace PHP
 
                     txtMin.Text = reader[5].ToString();
                     txtMax.Text = reader[6].ToString();
-
-                    Console.WriteLine(reader[5]);
-                    Console.WriteLine(reader[6]);
                 }
             }
 
@@ -123,8 +120,6 @@ namespace PHP
                 var supplierIDBox = cmbSupplierID.Items[i];
 
                 string supplierIDString = supplierIDBox.ToString().Split(',')[1].Trim();
-
-                Console.WriteLine($"Testing {id} : {supplierIDString}");
 
                 if (supplierIDString.Equals(id))
                 {
