@@ -131,6 +131,7 @@
             this.cmbSupplierID.Name = "cmbSupplierID";
             this.cmbSupplierID.Size = new System.Drawing.Size(201, 21);
             this.cmbSupplierID.TabIndex = 21;
+            this.cmbSupplierID.SelectedIndexChanged += new System.EventHandler(this.cmbSupplierID_SelectedIndexChanged);
             // 
             // btnExit
             // 
@@ -209,6 +210,7 @@
             this.Controls.Add(this.cmbSupplierID);
             this.Controls.Add(this.btnExit);
             this.Name = "frmEditSuppliers";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditSuppliers";
             this.Load += new System.EventHandler(this.frmEditSuppliers_Load);
             this.ResumeLayout(false);

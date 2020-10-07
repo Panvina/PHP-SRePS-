@@ -101,5 +101,29 @@ namespace PHP
             frmHomepage home = new frmHomepage();
             home.Show();
         }
+
+        private void cmbSupplierID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox cmb = (ComboBox)sender;
+
+            //Gets sales data for specific sales ID.
+            string query = $"SELECT CompanyName, CompanyEmail, CompanyPhone FROM Suppliers WHERE Suppliers.SupplierID={cmb.SelectedItem}";
+
+            //Update textboxes to match Sales data.
+            SqlCommand command = new SqlCommand(query, frmLogin.con);
+            command.Transaction = frmLogin.con.BeginTransaction();
+
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    txtName.Text = reader[0].ToString();
+                    txtEmail.Text = reader[1].ToString();
+                    txtPhone.Text = reader[2].ToString();
+                }
+            }
+
+            command.Transaction.Commit();
+        }
     }
 }

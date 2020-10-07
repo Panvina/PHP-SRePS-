@@ -50,6 +50,7 @@
             this.btnDisplaySupplier = new System.Windows.Forms.Button();
             this.btnAddSupplier = new System.Windows.Forms.Button();
             this.btnEditSupplier = new System.Windows.Forms.Button();
+            this.btnPredictCategory = new System.Windows.Forms.Button();
             this.grbSales.SuspendLayout();
             this.grbReport.SuspendLayout();
             this.grbProducts.SuspendLayout();
@@ -317,11 +318,23 @@
             this.btnEditSupplier.UseVisualStyleBackColor = true;
             this.btnEditSupplier.Click += new System.EventHandler(this.btnEditSupplier_Click);
             // 
+            // btnPredictCategory
+            // 
+            this.btnPredictCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnPredictCategory.Location = new System.Drawing.Point(575, 392);
+            this.btnPredictCategory.Name = "btnPredictCategory";
+            this.btnPredictCategory.Size = new System.Drawing.Size(134, 57);
+            this.btnPredictCategory.TabIndex = 5;
+            this.btnPredictCategory.Text = "Predict by Category";
+            this.btnPredictCategory.UseVisualStyleBackColor = true;
+            this.btnPredictCategory.Click += new System.EventHandler(this.btnPredictCategory_Click);
+            // 
             // frmHomepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 461);
+            this.Controls.Add(this.btnPredictCategory);
             this.Controls.Add(this.grbSuppliers);
             this.Controls.Add(this.grbProducts);
             this.Controls.Add(this.grbReport);
@@ -365,5 +378,6 @@
         private System.Windows.Forms.Button btnEditSupplier;
         private System.Windows.Forms.Button btnDeleteSupplier;
         private System.Windows.Forms.Button btnDisplaySupplier;
+        private System.Windows.Forms.Button btnPredictCategory;
     }
 }

@@ -20,6 +20,8 @@ namespace PHP
 
         private void ProductList_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'pHPdbDataSet1.Products' table. You can move, or remove it, as needed.
+            this.productsTableAdapter.Fill(this.pHPdbDataSet1.Products);
             UpdateDB();
         }
 
@@ -57,11 +59,6 @@ namespace PHP
             this.Hide();
             frmHomepage home = new frmHomepage();
             home.Show();
-        }
-
-        private void dgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

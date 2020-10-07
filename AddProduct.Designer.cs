@@ -48,6 +48,8 @@
             this.errorPrice = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorUIS = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorUOO = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtCategory = new System.Windows.Forms.TextBox();
+            this.lblCategory = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProdID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorPrice)).BeginInit();
@@ -58,7 +60,7 @@
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnExit.Location = new System.Drawing.Point(47, 432);
+            this.btnExit.Location = new System.Drawing.Point(47, 442);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(200, 49);
             this.btnExit.TabIndex = 0;
@@ -69,7 +71,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 46);
+            this.label1.Location = new System.Drawing.Point(44, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 1;
@@ -77,24 +79,22 @@
             // 
             // txtProductID
             // 
-            this.txtProductID.Location = new System.Drawing.Point(47, 62);
+            this.txtProductID.Location = new System.Drawing.Point(47, 32);
             this.txtProductID.Name = "txtProductID";
             this.txtProductID.Size = new System.Drawing.Size(200, 20);
             this.txtProductID.TabIndex = 2;
-            //this.txtProductID.Validating += new System.ComponentModel.CancelEventHandler(this.errorProID_validating);
             // 
             // txtProductName
             // 
-            this.txtProductName.Location = new System.Drawing.Point(47, 115);
+            this.txtProductName.Location = new System.Drawing.Point(47, 85);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(200, 20);
             this.txtProductName.TabIndex = 3;
-            //this.txtProductName.Validating += new System.ComponentModel.CancelEventHandler(this.errorProName_validating);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(47, 99);
+            this.label2.Location = new System.Drawing.Point(47, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 13);
             this.label2.TabIndex = 4;
@@ -103,7 +103,7 @@
             // cmbSupplierID
             // 
             this.cmbSupplierID.FormattingEnabled = true;
-            this.cmbSupplierID.Location = new System.Drawing.Point(47, 171);
+            this.cmbSupplierID.Location = new System.Drawing.Point(47, 141);
             this.cmbSupplierID.Name = "cmbSupplierID";
             this.cmbSupplierID.Size = new System.Drawing.Size(200, 21);
             this.cmbSupplierID.TabIndex = 5;
@@ -112,7 +112,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(47, 155);
+            this.label3.Location = new System.Drawing.Point(47, 125);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 13);
             this.label3.TabIndex = 6;
@@ -121,7 +121,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(47, 214);
+            this.label4.Location = new System.Drawing.Point(47, 184);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 13);
             this.label4.TabIndex = 7;
@@ -129,15 +129,14 @@
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(47, 231);
+            this.txtPrice.Location = new System.Drawing.Point(47, 201);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(200, 20);
             this.txtPrice.TabIndex = 8;
-            //this.txtPrice.Validating += new System.ComponentModel.CancelEventHandler(this.errorPrice_validating);
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(47, 382);
+            this.btnSubmit.Location = new System.Drawing.Point(47, 392);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(200, 44);
             this.btnSubmit.TabIndex = 9;
@@ -148,7 +147,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(47, 274);
+            this.label5.Location = new System.Drawing.Point(47, 244);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 13);
             this.label5.TabIndex = 10;
@@ -156,16 +155,15 @@
             // 
             // txtUnitsInStock
             // 
-            this.txtUnitsInStock.Location = new System.Drawing.Point(47, 291);
+            this.txtUnitsInStock.Location = new System.Drawing.Point(47, 261);
             this.txtUnitsInStock.Name = "txtUnitsInStock";
             this.txtUnitsInStock.Size = new System.Drawing.Size(200, 20);
             this.txtUnitsInStock.TabIndex = 11;
-            //this.txtUnitsInStock.Validating += new System.ComponentModel.CancelEventHandler(this.errorUIS_validating);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(47, 328);
+            this.label6.Location = new System.Drawing.Point(47, 298);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 13);
             this.label6.TabIndex = 12;
@@ -173,11 +171,10 @@
             // 
             // txtUnitsOnOrder
             // 
-            this.txtUnitsOnOrder.Location = new System.Drawing.Point(47, 345);
+            this.txtUnitsOnOrder.Location = new System.Drawing.Point(47, 315);
             this.txtUnitsOnOrder.Name = "txtUnitsOnOrder";
             this.txtUnitsOnOrder.Size = new System.Drawing.Size(200, 20);
             this.txtUnitsOnOrder.TabIndex = 13;
-            //this.txtUnitsOnOrder.Validating += new System.ComponentModel.CancelEventHandler(this.errorUOO_validating);
             // 
             // errorProdID
             // 
@@ -199,11 +196,29 @@
             // 
             this.errorUOO.ContainerControl = this;
             // 
+            // txtCategory
+            // 
+            this.txtCategory.Location = new System.Drawing.Point(47, 366);
+            this.txtCategory.Name = "txtCategory";
+            this.txtCategory.Size = new System.Drawing.Size(200, 20);
+            this.txtCategory.TabIndex = 15;
+            // 
+            // lblCategory
+            // 
+            this.lblCategory.AutoSize = true;
+            this.lblCategory.Location = new System.Drawing.Point(47, 349);
+            this.lblCategory.Name = "lblCategory";
+            this.lblCategory.Size = new System.Drawing.Size(49, 13);
+            this.lblCategory.TabIndex = 14;
+            this.lblCategory.Text = "Category";
+            // 
             // AddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(317, 515);
+            this.Controls.Add(this.txtCategory);
+            this.Controls.Add(this.lblCategory);
             this.Controls.Add(this.txtUnitsOnOrder);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtUnitsInStock);
@@ -252,5 +267,7 @@
         private System.Windows.Forms.ErrorProvider errorPrice;
         private System.Windows.Forms.ErrorProvider errorUIS;
         private System.Windows.Forms.ErrorProvider errorUOO;
+        private System.Windows.Forms.TextBox txtCategory;
+        private System.Windows.Forms.Label lblCategory;
     }
 }

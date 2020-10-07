@@ -154,5 +154,12 @@ namespace PHP
             DisplayWeeklySales display = new DisplayWeeklySales();
             display.Show();
         }
+
+        private void btnPredictCategory_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CategoryPrediction catpred = new CategoryPrediction();
+            catpred.Show();
+        }
     }
 }

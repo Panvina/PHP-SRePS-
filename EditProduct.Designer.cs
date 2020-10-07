@@ -47,12 +47,14 @@
             this.lblUnitsInStockError = new System.Windows.Forms.Label();
             this.lblUnitsOnOrderError = new System.Windows.Forms.Label();
             this.lblRecordResult = new System.Windows.Forms.Label();
+            this.lblCategory = new System.Windows.Forms.Label();
+            this.txtCategory = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblProductID
             // 
             this.lblProductID.AutoSize = true;
-            this.lblProductID.Location = new System.Drawing.Point(63, 36);
+            this.lblProductID.Location = new System.Drawing.Point(61, 18);
             this.lblProductID.Name = "lblProductID";
             this.lblProductID.Size = new System.Drawing.Size(55, 13);
             this.lblProductID.TabIndex = 1;
@@ -61,7 +63,7 @@
             // lblProductName
             // 
             this.lblProductName.AutoSize = true;
-            this.lblProductName.Location = new System.Drawing.Point(55, 104);
+            this.lblProductName.Location = new System.Drawing.Point(53, 67);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(75, 13);
             this.lblProductName.TabIndex = 4;
@@ -70,7 +72,7 @@
             // lblSupplierID
             // 
             this.lblSupplierID.AutoSize = true;
-            this.lblSupplierID.Location = new System.Drawing.Point(55, 165);
+            this.lblSupplierID.Location = new System.Drawing.Point(53, 128);
             this.lblSupplierID.Name = "lblSupplierID";
             this.lblSupplierID.Size = new System.Drawing.Size(59, 13);
             this.lblSupplierID.TabIndex = 6;
@@ -79,7 +81,7 @@
             // lblUnitsOnOrder
             // 
             this.lblUnitsOnOrder.AutoSize = true;
-            this.lblUnitsOnOrder.Location = new System.Drawing.Point(56, 331);
+            this.lblUnitsOnOrder.Location = new System.Drawing.Point(54, 294);
             this.lblUnitsOnOrder.Name = "lblUnitsOnOrder";
             this.lblUnitsOnOrder.Size = new System.Drawing.Size(77, 13);
             this.lblUnitsOnOrder.TabIndex = 12;
@@ -88,7 +90,7 @@
             // lblUnitsInStock
             // 
             this.lblUnitsInStock.AutoSize = true;
-            this.lblUnitsInStock.Location = new System.Drawing.Point(56, 278);
+            this.lblUnitsInStock.Location = new System.Drawing.Point(54, 241);
             this.lblUnitsInStock.Name = "lblUnitsInStock";
             this.lblUnitsInStock.Size = new System.Drawing.Size(74, 13);
             this.lblUnitsInStock.TabIndex = 10;
@@ -97,7 +99,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(66, 411);
+            this.btnUpdate.Location = new System.Drawing.Point(64, 409);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(200, 37);
             this.btnUpdate.TabIndex = 10;
@@ -108,7 +110,7 @@
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnExit.Location = new System.Drawing.Point(66, 454);
+            this.btnExit.Location = new System.Drawing.Point(64, 452);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(200, 49);
             this.btnExit.TabIndex = 0;
@@ -118,14 +120,14 @@
             // 
             // txtUnitsOnOrder
             // 
-            this.txtUnitsOnOrder.Location = new System.Drawing.Point(58, 347);
+            this.txtUnitsOnOrder.Location = new System.Drawing.Point(56, 310);
             this.txtUnitsOnOrder.Name = "txtUnitsOnOrder";
             this.txtUnitsOnOrder.Size = new System.Drawing.Size(200, 20);
             this.txtUnitsOnOrder.TabIndex = 5;
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(58, 237);
+            this.txtPrice.Location = new System.Drawing.Point(56, 200);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(200, 20);
             this.txtPrice.TabIndex = 6;
@@ -134,14 +136,14 @@
             // 
             this.cmbSupplierID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSupplierID.FormattingEnabled = true;
-            this.cmbSupplierID.Location = new System.Drawing.Point(58, 181);
+            this.cmbSupplierID.Location = new System.Drawing.Point(56, 144);
             this.cmbSupplierID.Name = "cmbSupplierID";
             this.cmbSupplierID.Size = new System.Drawing.Size(200, 21);
             this.cmbSupplierID.TabIndex = 9;
             // 
             // txtProductName
             // 
-            this.txtProductName.Location = new System.Drawing.Point(58, 120);
+            this.txtProductName.Location = new System.Drawing.Point(56, 83);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(200, 20);
             this.txtProductName.TabIndex = 4;
@@ -150,7 +152,7 @@
             // 
             this.cmbProductID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProductID.FormattingEnabled = true;
-            this.cmbProductID.Location = new System.Drawing.Point(58, 52);
+            this.cmbProductID.Location = new System.Drawing.Point(56, 34);
             this.cmbProductID.Name = "cmbProductID";
             this.cmbProductID.Size = new System.Drawing.Size(200, 21);
             this.cmbProductID.TabIndex = 13;
@@ -158,7 +160,7 @@
             // 
             // txtUnitsInStock
             // 
-            this.txtUnitsInStock.Location = new System.Drawing.Point(58, 294);
+            this.txtUnitsInStock.Location = new System.Drawing.Point(56, 257);
             this.txtUnitsInStock.Name = "txtUnitsInStock";
             this.txtUnitsInStock.Size = new System.Drawing.Size(200, 20);
             this.txtUnitsInStock.TabIndex = 14;
@@ -166,7 +168,7 @@
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(55, 221);
+            this.lblPrice.Location = new System.Drawing.Point(53, 184);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(31, 13);
             this.lblPrice.TabIndex = 15;
@@ -176,7 +178,7 @@
             // 
             this.lblProductNameError.AutoSize = true;
             this.lblProductNameError.ForeColor = System.Drawing.Color.Red;
-            this.lblProductNameError.Location = new System.Drawing.Point(57, 143);
+            this.lblProductNameError.Location = new System.Drawing.Point(55, 106);
             this.lblProductNameError.Name = "lblProductNameError";
             this.lblProductNameError.Size = new System.Drawing.Size(109, 13);
             this.lblProductNameError.TabIndex = 16;
@@ -186,7 +188,7 @@
             // 
             this.lblPriceError.AutoSize = true;
             this.lblPriceError.ForeColor = System.Drawing.Color.Red;
-            this.lblPriceError.Location = new System.Drawing.Point(57, 260);
+            this.lblPriceError.Location = new System.Drawing.Point(55, 223);
             this.lblPriceError.Name = "lblPriceError";
             this.lblPriceError.Size = new System.Drawing.Size(65, 13);
             this.lblPriceError.TabIndex = 17;
@@ -196,7 +198,7 @@
             // 
             this.lblUnitsInStockError.AutoSize = true;
             this.lblUnitsInStockError.ForeColor = System.Drawing.Color.Red;
-            this.lblUnitsInStockError.Location = new System.Drawing.Point(58, 315);
+            this.lblUnitsInStockError.Location = new System.Drawing.Point(56, 278);
             this.lblUnitsInStockError.Name = "lblUnitsInStockError";
             this.lblUnitsInStockError.Size = new System.Drawing.Size(108, 13);
             this.lblUnitsInStockError.TabIndex = 18;
@@ -206,7 +208,7 @@
             // 
             this.lblUnitsOnOrderError.AutoSize = true;
             this.lblUnitsOnOrderError.ForeColor = System.Drawing.Color.Red;
-            this.lblUnitsOnOrderError.Location = new System.Drawing.Point(58, 370);
+            this.lblUnitsOnOrderError.Location = new System.Drawing.Point(56, 333);
             this.lblUnitsOnOrderError.Name = "lblUnitsOnOrderError";
             this.lblUnitsOnOrderError.Size = new System.Drawing.Size(111, 13);
             this.lblUnitsOnOrderError.TabIndex = 19;
@@ -217,17 +219,35 @@
             this.lblRecordResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblRecordResult.AutoSize = true;
             this.lblRecordResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecordResult.Location = new System.Drawing.Point(70, 391);
+            this.lblRecordResult.Location = new System.Drawing.Point(68, 389);
             this.lblRecordResult.Name = "lblRecordResult";
             this.lblRecordResult.Size = new System.Drawing.Size(188, 17);
             this.lblRecordResult.TabIndex = 20;
             this.lblRecordResult.Text = "Success! X records affected.";
+            // 
+            // lblCategory
+            // 
+            this.lblCategory.AutoSize = true;
+            this.lblCategory.Location = new System.Drawing.Point(57, 351);
+            this.lblCategory.Name = "lblCategory";
+            this.lblCategory.Size = new System.Drawing.Size(49, 13);
+            this.lblCategory.TabIndex = 22;
+            this.lblCategory.Text = "Category";
+            // 
+            // txtCategory
+            // 
+            this.txtCategory.Location = new System.Drawing.Point(59, 367);
+            this.txtCategory.Name = "txtCategory";
+            this.txtCategory.Size = new System.Drawing.Size(200, 20);
+            this.txtCategory.TabIndex = 21;
             // 
             // EditProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(317, 515);
+            this.Controls.Add(this.lblCategory);
+            this.Controls.Add(this.txtCategory);
             this.Controls.Add(this.lblRecordResult);
             this.Controls.Add(this.lblUnitsOnOrderError);
             this.Controls.Add(this.lblUnitsInStockError);
@@ -248,6 +268,7 @@
             this.Controls.Add(this.lblProductName);
             this.Controls.Add(this.lblProductID);
             this.Name = "EditProduct";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditProduct";
             this.Load += new System.EventHandler(this.EditProduct_Load);
             this.ResumeLayout(false);
@@ -276,5 +297,7 @@
         private System.Windows.Forms.Label lblUnitsInStockError;
         private System.Windows.Forms.Label lblUnitsOnOrderError;
         private System.Windows.Forms.Label lblRecordResult;
+        private System.Windows.Forms.Label lblCategory;
+        private System.Windows.Forms.TextBox txtCategory;
     }
 }

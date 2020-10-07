@@ -30,19 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pHPdbDataSet = new PHP.PHPdbDataSet();
+            this.productsTableAdapter = new PHP.PHPdbDataSetTableAdapters.ProductsTableAdapter();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.pHPdbDataSet1 = new PHP.PHPdbDataSet();
+            this.productsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.supplierIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitsInStockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitsOnOrderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pHPdbDataSet = new PHP.PHPdbDataSet();
-            this.productsTableAdapter = new PHP.PHPdbDataSetTableAdapters.ProductsTableAdapter();
-            this.btnBack = new System.Windows.Forms.Button();
+            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pHPdbDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pHPdbDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvProduct
@@ -55,13 +60,48 @@
             this.supplierIDDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn,
             this.unitsInStockDataGridViewTextBoxColumn,
-            this.unitsOnOrderDataGridViewTextBoxColumn});
-            this.dgvProduct.DataSource = this.productsBindingSource;
+            this.unitsOnOrderDataGridViewTextBoxColumn,
+            this.Category});
+            this.dgvProduct.DataSource = this.productsBindingSource1;
             this.dgvProduct.Location = new System.Drawing.Point(33, 33);
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.Size = new System.Drawing.Size(642, 307);
             this.dgvProduct.TabIndex = 0;
-            this.dgvProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellContentClick);
+            // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataMember = "Products";
+            this.productsBindingSource.DataSource = this.pHPdbDataSet;
+            // 
+            // pHPdbDataSet
+            // 
+            this.pHPdbDataSet.DataSetName = "PHPdbDataSet";
+            this.pHPdbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productsTableAdapter
+            // 
+            this.productsTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnBack
+            // 
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnBack.Location = new System.Drawing.Point(542, 357);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(133, 53);
+            this.btnBack.TabIndex = 1;
+            this.btnBack.Text = "Back to Homepage";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // pHPdbDataSet1
+            // 
+            this.pHPdbDataSet1.DataSetName = "PHPdbDataSet";
+            this.pHPdbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productsBindingSource1
+            // 
+            this.productsBindingSource1.DataMember = "Products";
+            this.productsBindingSource1.DataSource = this.pHPdbDataSet1;
             // 
             // productIDDataGridViewTextBoxColumn
             // 
@@ -99,30 +139,11 @@
             this.unitsOnOrderDataGridViewTextBoxColumn.HeaderText = "UnitsOnOrder";
             this.unitsOnOrderDataGridViewTextBoxColumn.Name = "unitsOnOrderDataGridViewTextBoxColumn";
             // 
-            // productsBindingSource
+            // Category
             // 
-            this.productsBindingSource.DataMember = "Products";
-            this.productsBindingSource.DataSource = this.pHPdbDataSet;
-            // 
-            // pHPdbDataSet
-            // 
-            this.pHPdbDataSet.DataSetName = "PHPdbDataSet";
-            this.pHPdbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productsTableAdapter
-            // 
-            this.productsTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnBack
-            // 
-            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnBack.Location = new System.Drawing.Point(542, 357);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(133, 53);
-            this.btnBack.TabIndex = 1;
-            this.btnBack.Text = "Back to Homepage";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.Category.DataPropertyName = "Category";
+            this.Category.HeaderText = "Category";
+            this.Category.Name = "Category";
             // 
             // ProductList
             // 
@@ -137,6 +158,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pHPdbDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pHPdbDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -147,12 +170,15 @@
         private PHPdbDataSet pHPdbDataSet;
         private System.Windows.Forms.BindingSource productsBindingSource;
         private PHPdbDataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
+        private System.Windows.Forms.Button btnBack;
+        private PHPdbDataSet pHPdbDataSet1;
+        private System.Windows.Forms.BindingSource productsBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn supplierIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitsInStockDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitsOnOrderDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Category;
     }
 }

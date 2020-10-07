@@ -78,7 +78,7 @@ namespace PHP
             connection.Open();
 
             //Gets sales data for specific sales ID.
-            string query = $"SELECT ProductName, SupplierID, Price, UnitsInStock, UnitsOnOrder FROM Products WHERE Products.ProductID={cmb.SelectedItem}";
+            string query = $"SELECT ProductName, SupplierID, Price, UnitsInStock, UnitsOnOrder, Category FROM Products WHERE Products.ProductID={cmb.SelectedItem}";
 
             //Update textboxes to match Sales data.
             SqlCommand command = new SqlCommand(query, connection);
@@ -100,6 +100,7 @@ namespace PHP
                     txtPrice.Text = reader[2].ToString();
                     txtUnitsInStock.Text = reader[3].ToString();
                     txtUnitsOnOrder.Text = reader[4].ToString();
+                    txtCategory.Text = reader[5].ToString();
                 }
             }
 
@@ -220,10 +221,15 @@ namespace PHP
                 float price = float.Parse(txtPrice.Text);
                 int unitsInStock = int.Parse(txtUnitsInStock.Text);
                 int unitsOnOrder = int.Parse(txtUnitsOnOrder.Text);
+                string category = txtCategory.Text;
+                if(category == "")
+                {
+                    category = null;
+                }
 
                 string supplierID = cmbSupplierID.SelectedItem != null ? cmbSupplierID.SelectedItem.ToString().Split(',')[1].Trim() : "";
 
-                string query = $"UPDATE Products SET ProductName='{productName}', SupplierID='{supplierID}', Price='{price}', UnitsInStock='{unitsInStock}', UnitsOnOrder='{unitsOnOrder}' " +
+                string query = $"UPDATE Products SET ProductName='{productName}', SupplierID='{supplierID}', Price='{price}', UnitsInStock='{unitsInStock}', UnitsOnOrder='{unitsOnOrder}', Category='{category}' " +
                     $"WHERE ProductID={productID}";
 
                 connection.Open();

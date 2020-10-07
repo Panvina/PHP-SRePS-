@@ -37,9 +37,10 @@ namespace PHP
                     string supID = cmbSupplierID.Text.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries)[0];
                     int uIS = int.Parse(txtUnitsInStock.Text);
                     int uOO = int.Parse(txtUnitsOnOrder.Text);
+                    string cat = txtCategory.Text;
 
                     string prodQuery = "INSERT INTO Products values ('"
-                        + proID + "','" + proName + "','" + supID + "','" + price + "','" + uIS + "','" + uOO + "')";
+                        + proID + "','" + proName + "','" + supID + "','" + price + "','" + uIS + "','" + uOO + "','" + cat + "')";
 
                     SqlCommand command = new SqlCommand(prodQuery, frmLogin.con);
                     command.ExecuteNonQuery();
