@@ -41,10 +41,16 @@ namespace PHP
                 productListOption = "true";
             }
 
-            string[] write = { tbQuantity.Text, homeOption, productListOption};
-            File.WriteAllLines(frmLogin.LowStockSettingFile, write);
-            
-            MessageBox.Show("Your settings have been saved!");
+                if (tbQuantity.Text != "")
+                {
+                    string[] write = { tbQuantity.Text, homeOption, productListOption };
+                    File.WriteAllLines(frmLogin.LowStockSettingFile, write);
+
+                    MessageBox.Show("Your settings have been saved!");
+                } else
+                {
+                MessageBox.Show("Your input cannot be blank!");
+                }
         }
 
         private void LowStockAlert_Load(object sender, EventArgs e)

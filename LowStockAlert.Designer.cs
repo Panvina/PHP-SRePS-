@@ -34,6 +34,7 @@
             this.checkBoxNotifyProd = new System.Windows.Forms.CheckBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnBackToHomepage = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -50,7 +51,7 @@
             // 
             this.tbQuantity.Location = new System.Drawing.Point(66, 89);
             this.tbQuantity.Name = "tbQuantity";
-            this.tbQuantity.Size = new System.Drawing.Size(237, 20);
+            this.tbQuantity.Size = new System.Drawing.Size(80, 20);
             this.tbQuantity.TabIndex = 1;
             this.tbQuantity.Text = "0";
             // 
@@ -96,11 +97,22 @@
             this.btnBackToHomepage.UseVisualStyleBackColor = true;
             this.btnBackToHomepage.Click += new System.EventHandler(this.btnBackToHomepage_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label2.Location = new System.Drawing.Point(152, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 17);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Percent";
+            // 
             // LowStockAlert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(376, 331);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnBackToHomepage);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.checkBoxNotifyProd);
@@ -123,5 +135,6 @@
         private System.Windows.Forms.CheckBox checkBoxNotifyProd;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnBackToHomepage;
+        private System.Windows.Forms.Label label2;
     }
 }

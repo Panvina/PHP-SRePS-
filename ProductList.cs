@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -18,7 +19,6 @@ namespace PHP
         {
             InitializeComponent();
         }
-
 
         private void UpdateDB()
         {
@@ -35,31 +35,42 @@ namespace PHP
             bindingS.DataSource = proDS.Tables[0];
 
             dgvProduct.DataSource = bindingS;
-
-            /*DataSet changes = proDS.GetChanges();
-            if (changes != null)
-            {
-                SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
-                adapter.UpdateCommand = builder.GetUpdateCommand();
-
-                adapter.Update(changes);
-                proDS.AcceptChanges();
-            }
-            //this.productsTableAdapter.Update(this.pHPdbDataSet.Products);       //send the data in the dataset to the database*/
             
         }
 
-        
+        private int alertStock()
+        {
+            int proCount = 0;
+            SqlCommand command = new SqlCommand("Select UnitsInStock, MaxProducts from dbo.Products", frmLogin.con);
+            string[] read = System.IO.File.ReadAllLines(frmLogin.LowStockSettingFile);
+            
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    int toIntUIS = int.Parse(reader["UnitsInStock"].ToString());
+                    int toIntMP = int.Parse(reader["MaxProducts"].ToString());
+                    double percent = (toIntUIS / (double)toIntMP) * 100;
+                        if (percent < int.Parse(read[0]))
+                        {
+                            proCount++;
+                        }                   
+                }
+            }
+            return proCount;
+        }
 
         private void ProductList_Load(object sender, EventArgs e)
         {
+            
+            UpdateDB();
+            int proCount = alertStock();
+        
             string[] file = System.IO.File.ReadAllLines(frmLogin.LowStockSettingFile);
             if (file[2] == "true")
             {
-                System.Windows.MessageBox.Show("[include num] products are running low!\n Please check the inventory list for more information.");
+                System.Windows.MessageBox.Show(proCount + " products are running low!");
             }
-
-            UpdateDB();
         }
 
         private void btnAlert_Click(object sender, EventArgs e)

@@ -36,7 +36,7 @@ namespace PHP
                 string[] text = System.IO.File.ReadAllLines(LowStockSettingFile);
                 if (text[1] == "true")
                 {
-                    System.Windows.MessageBox.Show("[include num] products are running low!\n Please check the inventory list for more information.");
+                    MessageBox.Show( "Your product(s) are running low!\n Please check the inventory list for more information.");
                 }
             }
         }
