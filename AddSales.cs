@@ -166,18 +166,13 @@ namespace PHP
             SqlCommand command = new SqlCommand(query, frmLogin.con);
             command.ExecuteNonQuery();
 
-            int unitInStock = 0;
-
-            query = $"SELECT UnitsInStock FROM Products WHERE ProductID = {prodID}";
-            command.CommandText = query;
-            using (SqlDataReader reader = command.ExecuteReader())
-			{
-                reader.Read();
-                unitInStock = int.Parse($"{reader[0]}");
-			}
+            int unitInStock = GetUnitsInStock(prodID);
 
             if (unitInStock < GetMin(prodID))
 			{
+                //Let the user know they run out of stock.
+                MessageBox.Show("PRODUCT OUT OF STOCK! Ordering more...");
+
                 Reorder(prodID);
 			}
 		}
@@ -224,12 +219,13 @@ namespace PHP
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = frmLogin.con;
+            cmd.CommandText = query;
 
             int success = cmd.ExecuteNonQuery();
 
             if (success == 1)
 			{
-                MessageBox.Show($"{quant} items has been added to {prodID}");
+                MessageBox.Show($"{quant} items have been ordered for {prodID}");
 			}
 		}
 
@@ -245,14 +241,16 @@ namespace PHP
 
         /// <summary>
         /// Determines the amount to reorder
-        /// 
-        /// Currently a constant number
         /// </summary>
         /// <param name="ProdID">Product ID</param>
         /// <returns>Amount to reorder</returns>
         private int GetReorderQuantity(string ProdID)
 		{
-            return 100;
+            int unitsInStock = GetUnitsInStock(ProdID);
+            int maxProducts = GetMax(ProdID);
+            
+            return maxProducts - unitsInStock;
+
 		}
 
         /// <summary>
@@ -264,7 +262,59 @@ namespace PHP
         /// <returns>Minimum stock threshold</returns>
         private int GetMin(string ProdID)
 		{
-            return 100;
+            string query = $"SELECT MinProducts FROM Products WHERE ProductID ='{ProdID}'";
+
+            SqlCommand command = new SqlCommand(query, frmLogin.con);
+
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    int min = int.Parse(reader[0].ToString());
+                    return min;
+                }
+            }
+            return 0;
 		}
-	}
+
+        /// <summary>
+        /// Determines the maximum stock threshold for pre-ordering stock.
+        /// </summary>
+        /// <param name="ProdID">Product ID</param>
+        /// <returns>Maximum stock threshold</returns>
+        private int GetMax(string ProdID)
+        {
+            string query = $"SELECT MaxProducts FROM Products WHERE ProductID ='{ProdID}'";
+
+            SqlCommand command = new SqlCommand(query, frmLogin.con);
+
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    int max = int.Parse(reader[0].ToString());
+                    return max;
+                }
+            }
+
+            return 0;
+        }
+
+        private int GetUnitsInStock(string ProdID)
+        {
+            string query = $"SELECT UnitsInStock FROM Products WHERE ProductID ='{ProdID}'";
+
+            SqlCommand command = new SqlCommand(query, frmLogin.con);
+
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    int unitsInStock = int.Parse(reader[0].ToString());
+                    return unitsInStock;
+                }
+            }
+            return 0;
+        }
+    }
 }
