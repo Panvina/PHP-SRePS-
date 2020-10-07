@@ -41,6 +41,7 @@
 			this.btnDisplayWeeklySales = new System.Windows.Forms.Button();
 			this.grbSales = new System.Windows.Forms.GroupBox();
 			this.grbReport = new System.Windows.Forms.GroupBox();
+			this.btnExport = new System.Windows.Forms.Button();
 			this.grbProducts = new System.Windows.Forms.GroupBox();
 			this.btnAddProduct = new System.Windows.Forms.Button();
 			this.btnDeleteProduct = new System.Windows.Forms.Button();
@@ -50,7 +51,6 @@
 			this.btnDisplaySupplier = new System.Windows.Forms.Button();
 			this.btnAddSupplier = new System.Windows.Forms.Button();
 			this.btnEditSupplier = new System.Windows.Forms.Button();
-			this.btnExport = new System.Windows.Forms.Button();
 			this.grbSales.SuspendLayout();
 			this.grbReport.SuspendLayout();
 			this.grbProducts.SuspendLayout();
@@ -217,6 +217,18 @@
 			this.grbReport.TabStop = false;
 			this.grbReport.Text = "Reporting";
 			// 
+			// btnExport
+			// 
+			this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+			this.btnExport.Location = new System.Drawing.Point(21, 362);
+			this.btnExport.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.btnExport.Name = "btnExport";
+			this.btnExport.Size = new System.Drawing.Size(201, 88);
+			this.btnExport.TabIndex = 11;
+			this.btnExport.Text = "Export Monthly Report";
+			this.btnExport.UseVisualStyleBackColor = true;
+			this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+			// 
 			// grbProducts
 			// 
 			this.grbProducts.Controls.Add(this.btnAddProduct);
@@ -328,18 +340,6 @@
 			this.btnEditSupplier.Text = "Edit Supplier";
 			this.btnEditSupplier.UseVisualStyleBackColor = true;
 			this.btnEditSupplier.Click += new System.EventHandler(this.btnEditSupplier_Click);
-			// 
-			// btnExport
-			// 
-			this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-			this.btnExport.Location = new System.Drawing.Point(21, 362);
-			this.btnExport.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.btnExport.Name = "btnExport";
-			this.btnExport.Size = new System.Drawing.Size(201, 88);
-			this.btnExport.TabIndex = 11;
-			this.btnExport.Text = "Export Monty Report";
-			this.btnExport.UseVisualStyleBackColor = true;
-			this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
 			// 
 			// frmHomepage
 			// 

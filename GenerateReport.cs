@@ -9,11 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using System.Diagnostics;
 
 namespace PHP
 {
 	public partial class frmGenerateCSV : Form
 	{
+		private string exportDirectory = Environment.CurrentDirectory + @"\reports";
+		private string ext = ".csv";
+
 		public frmGenerateCSV()
 		{
 			InitializeComponent();
@@ -263,11 +267,32 @@ namespace PHP
 
 		private void btnGen_Click(object sender, EventArgs e)
 		{
-			WriteToFile("test.txt", dgvSum);
+			// create directory if it does not exist
+			if (!Directory.Exists(exportDirectory))
+			{
+				Directory.CreateDirectory(exportDirectory);
+			}
 
-			MessageBox.Show($"Report for {DateTime.Now.ToString("MM/yyyy")} generated");
+			string dateSelected = $"{int.Parse(txtMonth.Text)}-{int.Parse(txtYear.Text)}";
+			string individualRepName = $"{dateSelected} Transaction Report";
+			string sumRepName = $"{dateSelected} Summary Report";
+
+			WriteToFile($"{exportDirectory}\\{individualRepName}{ext}", dgvDisplay);
+			WriteToFile($"{exportDirectory}\\{sumRepName}{ext}", dgvSum);
+
+			// open file directory if requested
+			DialogResult result = MessageBox.Show($"Report for {dateSelected} generated.\nOpen directory?", "Report generated", MessageBoxButtons.YesNo);
+			if (result == DialogResult.Yes)
+			{
+				Process.Start($"{exportDirectory}");
+			}
 		}
 
+		/// <summary>
+		/// Writes contents of a data grid view to a file
+		/// </summary>
+		/// <param name="fileName"></param>
+		/// <param name="dgv"></param>
 		private void WriteToFile(String fileName, DataGridView dgv)
 		{
 			StreamWriter sw = new StreamWriter(fileName);
