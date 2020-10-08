@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,8 @@ namespace PHP
 {
     public partial class PredictItemSales : Form
     {
+        private SqlConnection connection;
+
         public PredictItemSales()
         {
             InitializeComponent();
@@ -32,6 +35,64 @@ namespace PHP
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnPredict_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbProductID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void txtProductID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPriceError_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPrice_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPrice_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbProductID_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            ComboBox cmb = (ComboBox)sender;
+            connection.Open();
+
+            //Gets sales data for specific sales ID.
+            string query = $"SELECT ProductName, Price FROM Products WHERE ProductID={cmb.SelectedItem}";
+
+            //Update textboxes to match Sales data.
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Transaction = connection.BeginTransaction();
+
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    txtProductName.Text = reader[0].ToString();
+                    //cmbSupplierID.selecteDI.Text = reader[1].ToString();
+                    
+                    txtPrice.Text = reader[2].ToString();
+                                     
+                }
+            }
+
+            command.Transaction.Commit();
+            connection.Close();
+        
         }
     }
 }

@@ -31,7 +31,6 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtProductName = new System.Windows.Forms.TextBox();
-            this.txtProductID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblChooseProduct = new System.Windows.Forms.Label();
             this.lblInvalidYear = new System.Windows.Forms.Label();
@@ -44,6 +43,9 @@
             this.lblPrediction = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnPredict = new System.Windows.Forms.Button();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.cmbProductID = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnBack
@@ -61,7 +63,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(70, 164);
+            this.label2.Location = new System.Drawing.Point(70, 149);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 19);
             this.label2.TabIndex = 8;
@@ -69,17 +71,10 @@
             // 
             // txtProductName
             // 
-            this.txtProductName.Location = new System.Drawing.Point(31, 186);
+            this.txtProductName.Location = new System.Drawing.Point(31, 171);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(200, 20);
             this.txtProductName.TabIndex = 7;
-            // 
-            // txtProductID
-            // 
-            this.txtProductID.Location = new System.Drawing.Point(31, 115);
-            this.txtProductID.Name = "txtProductID";
-            this.txtProductID.Size = new System.Drawing.Size(200, 20);
-            this.txtProductID.TabIndex = 6;
             // 
             // label1
             // 
@@ -197,12 +192,45 @@
             this.btnPredict.TabIndex = 29;
             this.btnPredict.Text = "Predict";
             this.btnPredict.UseVisualStyleBackColor = true;
+            this.btnPredict.Click += new System.EventHandler(this.btnPredict_Click);
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+            this.lblPrice.Location = new System.Drawing.Point(100, 203);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(43, 19);
+            this.lblPrice.TabIndex = 31;
+            this.lblPrice.Text = "Price";
+            this.lblPrice.Click += new System.EventHandler(this.lblPrice_Click);
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.Location = new System.Drawing.Point(31, 227);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(200, 20);
+            this.txtPrice.TabIndex = 30;
+            this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
+            // 
+            // cmbProductID
+            // 
+            this.cmbProductID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProductID.FormattingEnabled = true;
+            this.cmbProductID.Location = new System.Drawing.Point(31, 115);
+            this.cmbProductID.Name = "cmbProductID";
+            this.cmbProductID.Size = new System.Drawing.Size(200, 21);
+            this.cmbProductID.TabIndex = 32;
+            this.cmbProductID.SelectedIndexChanged += new System.EventHandler(this.cmbProductID_SelectedIndexChanged_1);
             // 
             // PredictItemSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 450);
+            this.Controls.Add(this.cmbProductID);
+            this.Controls.Add(this.lblPrice);
+            this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.btnPredict);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblPrediction);
@@ -216,7 +244,6 @@
             this.Controls.Add(this.lblChooseProduct);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtProductName);
-            this.Controls.Add(this.txtProductID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBack);
             this.Name = "PredictItemSales";
@@ -231,7 +258,6 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtProductName;
-        private System.Windows.Forms.TextBox txtProductID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblChooseProduct;
         private System.Windows.Forms.Label lblInvalidYear;
@@ -244,5 +270,8 @@
         private System.Windows.Forms.Label lblPrediction;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnPredict;
+        private System.Windows.Forms.Label lblPrice;
+        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.ComboBox cmbProductID;
     }
 }
