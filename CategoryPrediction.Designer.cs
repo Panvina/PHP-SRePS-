@@ -37,6 +37,7 @@
             this.UnitsInStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UnitsOnOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.likelihood = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,16 +51,17 @@
             this.Price,
             this.UnitsInStock,
             this.UnitsOnOrder,
-            this.Category});
-            this.dgvProducts.Location = new System.Drawing.Point(30, 48);
+            this.Category,
+            this.likelihood});
+            this.dgvProducts.Location = new System.Drawing.Point(12, 48);
             this.dgvProducts.Name = "dgvProducts";
-            this.dgvProducts.Size = new System.Drawing.Size(744, 307);
+            this.dgvProducts.Size = new System.Drawing.Size(831, 307);
             this.dgvProducts.TabIndex = 1;
             // 
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnBack.Location = new System.Drawing.Point(631, 376);
+            this.btnBack.Location = new System.Drawing.Point(709, 375);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(133, 53);
             this.btnBack.TabIndex = 2;
@@ -102,14 +104,20 @@
             this.Category.HeaderText = "Category";
             this.Category.Name = "Category";
             // 
+            // likelihood
+            // 
+            this.likelihood.HeaderText = "Likelihood (%)";
+            this.likelihood.Name = "likelihood";
+            // 
             // CategoryPrediction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(854, 450);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dgvProducts);
             this.Name = "CategoryPrediction";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CategoryPrediction";
             this.Load += new System.EventHandler(this.CategoryPrediction_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
@@ -128,5 +136,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn UnitsInStock;
         private System.Windows.Forms.DataGridViewTextBoxColumn UnitsOnOrder;
         private System.Windows.Forms.DataGridViewTextBoxColumn Category;
+        private System.Windows.Forms.DataGridViewTextBoxColumn likelihood;
     }
 }
