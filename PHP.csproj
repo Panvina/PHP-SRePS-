@@ -188,6 +188,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PHPdbDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="PredictItemSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PredictItemSales.Designer.cs">
+      <DependentUpon>PredictItemSales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs" />
     <Compile Include="ProductList.cs">
       <SubType>Form</SubType>
@@ -253,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LowStockAlert.resx">
       <DependentUpon>LowStockAlert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PredictItemSales.resx">
+      <DependentUpon>PredictItemSales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductList.resx">
       <DependentUpon>ProductList.cs</DependentUpon>
