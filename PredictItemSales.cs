@@ -66,8 +66,55 @@ namespace PHP
 
         }
 
+        private bool ValidateProductID()
+        {
+            int Month;
+
+            if (!int.TryParse(txtMonth.Text, out Month))
+            {
+                lblMonth.Visible = true;
+                return false;
+            }
+
+            if (Month > 12)
+            {
+                lblMonth.Visible = true;
+                return false;
+            }
+
+            return true;
+        }
+
         private void btnPredict_Click(object sender, EventArgs e)
         {
+            lblMonthError.Visible = true;
+            lblInvalidYear.Visible = true;
+            int Month, Year;
+            // validate inputs
+            if (int.TryParse(txtMonth.Text, out Month))
+            {
+                if ((Month >= 1) && (Month <= 12))
+                {
+                    lblMonthError.Visible = false;
+                }
+            }
+
+            if (int.TryParse(txtYear.Text, out Year))
+            {
+                if ((Year >= 1753) && (Year <= 9999))
+                {
+                    lblInvalidYear.Visible = false;
+                }
+            }
+
+            if ((lblInvalidYear.Visible == true) || (lblMonthError.Visible == true))
+            {
+                return;
+            }
+
+
+
+
 
             string productID = cmbProductID.SelectedItem.ToString();
             string productName = txtProductName.Text;
