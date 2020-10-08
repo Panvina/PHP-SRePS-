@@ -121,7 +121,10 @@ namespace PHP
 				}
 			}
 
-            cmbProductID.SelectedIndex = 0;
+            if(cmbProductID.Items.Count > 0)
+			{
+                cmbProductID.SelectedIndex = 0;
+            }
 		}
 
         /// <summary>
