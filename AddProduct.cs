@@ -41,7 +41,7 @@ namespace PHP
                     int min = int.Parse(txtMin.Text);
                     int max = int.Parse(txtMax.Text);
                     string prodQuery = $"INSERT INTO Products values (" +
-                        $"'{proID}', '{proName}', '{supID}', '{price}', '{uIS}', '{uOO}', '{catID}', '{min}', '{max}')";
+                        $"'{proID}', '{proName}', '{supID}', '{price}', '{uIS}', '{uOO}', '{min}', '{max}', '{catID}')";
 
                     SqlCommand command = new SqlCommand(prodQuery, frmLogin.con);
                     command.ExecuteNonQuery();

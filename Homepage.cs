@@ -161,5 +161,17 @@ namespace PHP
             frmGenerateCSV rep = new frmGenerateCSV();
             rep.Show();
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPredictItemSales_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PredictItemSales p = new PredictItemSales();
+            p.Show();
+        }
     }
 }
