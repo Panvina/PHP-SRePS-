@@ -39,8 +39,16 @@
 			this.lblYear = new System.Windows.Forms.Label();
 			this.btnBack = new System.Windows.Forms.Button();
 			this.btnGen = new System.Windows.Forms.Button();
+			this.grbGenerateReport = new System.Windows.Forms.GroupBox();
+			this.grbRetrieveReport = new System.Windows.Forms.GroupBox();
+			this.btnSummary = new System.Windows.Forms.Button();
+			this.btnAllItems = new System.Windows.Forms.Button();
+			this.lblSelReport = new System.Windows.Forms.Label();
+			this.cmbSelectReport = new System.Windows.Forms.ComboBox();
 			((System.ComponentModel.ISupportInitialize)(this.dgvSum)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).BeginInit();
+			this.grbGenerateReport.SuspendLayout();
+			this.grbRetrieveReport.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// dgvSum
@@ -67,12 +75,12 @@
 			this.lblInvalidYear.AutoSize = true;
 			this.lblInvalidYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
 			this.lblInvalidYear.ForeColor = System.Drawing.Color.Red;
-			this.lblInvalidYear.Location = new System.Drawing.Point(532, 199);
+			this.lblInvalidYear.Location = new System.Drawing.Point(3, 198);
 			this.lblInvalidYear.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblInvalidYear.Name = "lblInvalidYear";
-			this.lblInvalidYear.Size = new System.Drawing.Size(240, 20);
+			this.lblInvalidYear.Size = new System.Drawing.Size(92, 20);
 			this.lblInvalidYear.TabIndex = 29;
-			this.lblInvalidYear.Text = "Invalid Year: Needs to be 4 digits";
+			this.lblInvalidYear.Text = "Invalid Year";
 			this.lblInvalidYear.Visible = false;
 			this.lblInvalidYear.Click += new System.EventHandler(this.lblInvalidYear_Click);
 			// 
@@ -97,10 +105,10 @@
 			// 
 			// txtYear
 			// 
-			this.txtYear.Location = new System.Drawing.Point(534, 165);
+			this.txtYear.Location = new System.Drawing.Point(9, 164);
 			this.txtYear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.txtYear.Name = "txtYear";
-			this.txtYear.Size = new System.Drawing.Size(151, 26);
+			this.txtYear.Size = new System.Drawing.Size(161, 26);
 			this.txtYear.TabIndex = 1;
 			this.txtYear.TextChanged += new System.EventHandler(this.txtYear_TextChanged);
 			// 
@@ -108,7 +116,7 @@
 			// 
 			this.lblMonth.AutoSize = true;
 			this.lblMonth.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-			this.lblMonth.Location = new System.Drawing.Point(530, 22);
+			this.lblMonth.Location = new System.Drawing.Point(1, 21);
 			this.lblMonth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblMonth.Name = "lblMonth";
 			this.lblMonth.Size = new System.Drawing.Size(140, 29);
@@ -120,7 +128,7 @@
 			this.lblInvalidMonth.AutoSize = true;
 			this.lblInvalidMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
 			this.lblInvalidMonth.ForeColor = System.Drawing.Color.Red;
-			this.lblInvalidMonth.Location = new System.Drawing.Point(532, 89);
+			this.lblInvalidMonth.Location = new System.Drawing.Point(3, 88);
 			this.lblInvalidMonth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblInvalidMonth.Name = "lblInvalidMonth";
 			this.lblInvalidMonth.Size = new System.Drawing.Size(152, 20);
@@ -130,20 +138,20 @@
 			// 
 			// txtMonth
 			// 
-			this.txtMonth.Location = new System.Drawing.Point(534, 55);
+			this.txtMonth.Location = new System.Drawing.Point(9, 55);
 			this.txtMonth.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.txtMonth.Name = "txtMonth";
-			this.txtMonth.Size = new System.Drawing.Size(151, 26);
+			this.txtMonth.Size = new System.Drawing.Size(161, 26);
 			this.txtMonth.TabIndex = 0;
 			this.txtMonth.TextChanged += new System.EventHandler(this.txtMonth_TextChanged);
 			// 
 			// btnSearch
 			// 
 			this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-			this.btnSearch.Location = new System.Drawing.Point(538, 240);
+			this.btnSearch.Location = new System.Drawing.Point(9, 239);
 			this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.btnSearch.Name = "btnSearch";
-			this.btnSearch.Size = new System.Drawing.Size(161, 60);
+			this.btnSearch.Size = new System.Drawing.Size(190, 60);
 			this.btnSearch.TabIndex = 2;
 			this.btnSearch.Text = "Search";
 			this.btnSearch.UseVisualStyleBackColor = true;
@@ -153,7 +161,7 @@
 			// 
 			this.lblYear.AutoSize = true;
 			this.lblYear.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-			this.lblYear.Location = new System.Drawing.Point(530, 131);
+			this.lblYear.Location = new System.Drawing.Point(1, 130);
 			this.lblYear.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblYear.Name = "lblYear";
 			this.lblYear.Size = new System.Drawing.Size(115, 29);
@@ -163,7 +171,7 @@
 			// btnBack
 			// 
 			this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-			this.btnBack.Location = new System.Drawing.Point(654, 805);
+			this.btnBack.Location = new System.Drawing.Point(535, 802);
 			this.btnBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.btnBack.Name = "btnBack";
 			this.btnBack.Size = new System.Drawing.Size(200, 82);
@@ -176,31 +184,100 @@
 			// 
 			this.btnGen.Enabled = false;
 			this.btnGen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-			this.btnGen.Location = new System.Drawing.Point(538, 310);
+			this.btnGen.Location = new System.Drawing.Point(9, 309);
 			this.btnGen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.btnGen.Name = "btnGen";
-			this.btnGen.Size = new System.Drawing.Size(161, 60);
+			this.btnGen.Size = new System.Drawing.Size(190, 60);
 			this.btnGen.TabIndex = 3;
 			this.btnGen.Text = "Generate Report";
 			this.btnGen.UseVisualStyleBackColor = true;
 			this.btnGen.Click += new System.EventHandler(this.btnGen_Click);
+			// 
+			// grbGenerateReport
+			// 
+			this.grbGenerateReport.Controls.Add(this.btnGen);
+			this.grbGenerateReport.Controls.Add(this.lblInvalidYear);
+			this.grbGenerateReport.Controls.Add(this.txtYear);
+			this.grbGenerateReport.Controls.Add(this.lblMonth);
+			this.grbGenerateReport.Controls.Add(this.lblInvalidMonth);
+			this.grbGenerateReport.Controls.Add(this.txtMonth);
+			this.grbGenerateReport.Controls.Add(this.btnSearch);
+			this.grbGenerateReport.Controls.Add(this.lblYear);
+			this.grbGenerateReport.Location = new System.Drawing.Point(529, 12);
+			this.grbGenerateReport.Name = "grbGenerateReport";
+			this.grbGenerateReport.Size = new System.Drawing.Size(206, 384);
+			this.grbGenerateReport.TabIndex = 31;
+			this.grbGenerateReport.TabStop = false;
+			this.grbGenerateReport.Text = "Generate";
+			this.grbGenerateReport.Enter += new System.EventHandler(this.grbGenerateReport_Enter);
+			// 
+			// grbRetrieveReport
+			// 
+			this.grbRetrieveReport.Controls.Add(this.btnSummary);
+			this.grbRetrieveReport.Controls.Add(this.btnAllItems);
+			this.grbRetrieveReport.Controls.Add(this.lblSelReport);
+			this.grbRetrieveReport.Controls.Add(this.cmbSelectReport);
+			this.grbRetrieveReport.Location = new System.Drawing.Point(529, 402);
+			this.grbRetrieveReport.Name = "grbRetrieveReport";
+			this.grbRetrieveReport.Size = new System.Drawing.Size(206, 251);
+			this.grbRetrieveReport.TabIndex = 32;
+			this.grbRetrieveReport.TabStop = false;
+			this.grbRetrieveReport.Text = "Retrieve";
+			// 
+			// btnSummary
+			// 
+			this.btnSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+			this.btnSummary.Location = new System.Drawing.Point(9, 175);
+			this.btnSummary.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.btnSummary.Name = "btnSummary";
+			this.btnSummary.Size = new System.Drawing.Size(190, 60);
+			this.btnSummary.TabIndex = 31;
+			this.btnSummary.Text = "Summary";
+			this.btnSummary.UseVisualStyleBackColor = true;
+			this.btnSummary.Click += new System.EventHandler(this.btnSummary_Click);
+			// 
+			// btnAllItems
+			// 
+			this.btnAllItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+			this.btnAllItems.Location = new System.Drawing.Point(9, 105);
+			this.btnAllItems.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.btnAllItems.Name = "btnAllItems";
+			this.btnAllItems.Size = new System.Drawing.Size(190, 60);
+			this.btnAllItems.TabIndex = 30;
+			this.btnAllItems.Text = "All Items";
+			this.btnAllItems.UseVisualStyleBackColor = true;
+			this.btnAllItems.Click += new System.EventHandler(this.btnAllItems_Click);
+			// 
+			// lblSelReport
+			// 
+			this.lblSelReport.AutoSize = true;
+			this.lblSelReport.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+			this.lblSelReport.Location = new System.Drawing.Point(7, 22);
+			this.lblSelReport.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lblSelReport.Name = "lblSelReport";
+			this.lblSelReport.Size = new System.Drawing.Size(146, 29);
+			this.lblSelReport.TabIndex = 30;
+			this.lblSelReport.Text = "Select Report";
+			// 
+			// cmbSelectReport
+			// 
+			this.cmbSelectReport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cmbSelectReport.FormattingEnabled = true;
+			this.cmbSelectReport.Location = new System.Drawing.Point(9, 59);
+			this.cmbSelectReport.Name = "cmbSelectReport";
+			this.cmbSelectReport.Size = new System.Drawing.Size(190, 28);
+			this.cmbSelectReport.TabIndex = 0;
 			// 
 			// frmGenerateCSV
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
-			this.ClientSize = new System.Drawing.Size(872, 898);
-			this.Controls.Add(this.btnGen);
+			this.ClientSize = new System.Drawing.Size(744, 898);
+			this.Controls.Add(this.grbRetrieveReport);
+			this.Controls.Add(this.grbGenerateReport);
 			this.Controls.Add(this.dgvSum);
-			this.Controls.Add(this.lblInvalidYear);
 			this.Controls.Add(this.dgvDisplay);
-			this.Controls.Add(this.txtYear);
-			this.Controls.Add(this.lblMonth);
-			this.Controls.Add(this.lblInvalidMonth);
-			this.Controls.Add(this.txtMonth);
-			this.Controls.Add(this.btnSearch);
-			this.Controls.Add(this.lblYear);
 			this.Controls.Add(this.btnBack);
 			this.Name = "frmGenerateCSV";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -208,8 +285,11 @@
 			this.Load += new System.EventHandler(this.frmGenerateCSV_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dgvSum)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).EndInit();
+			this.grbGenerateReport.ResumeLayout(false);
+			this.grbGenerateReport.PerformLayout();
+			this.grbRetrieveReport.ResumeLayout(false);
+			this.grbRetrieveReport.PerformLayout();
 			this.ResumeLayout(false);
-			this.PerformLayout();
 
 		}
 
@@ -226,5 +306,11 @@
 		private System.Windows.Forms.Label lblYear;
 		private System.Windows.Forms.Button btnBack;
 		private System.Windows.Forms.Button btnGen;
+		private System.Windows.Forms.GroupBox grbGenerateReport;
+		private System.Windows.Forms.GroupBox grbRetrieveReport;
+		private System.Windows.Forms.Label lblSelReport;
+		private System.Windows.Forms.ComboBox cmbSelectReport;
+		private System.Windows.Forms.Button btnSummary;
+		private System.Windows.Forms.Button btnAllItems;
 	}
 }

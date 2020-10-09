@@ -18,6 +18,8 @@ namespace PHP
 		private string exportDirectory = Environment.CurrentDirectory + @"\reports";
 		private string ext = ".csv";
 
+		private string reportList = "reportList.txt";
+
 		public frmGenerateCSV()
 		{
 			InitializeComponent();
@@ -28,6 +30,80 @@ namespace PHP
 			DateTime dt = DateTime.Now;
 			txtMonth.Text = dt.Month.ToString();
 			txtYear.Text = dt.Year.ToString();
+
+			if (!File.Exists(reportList))
+			{
+				File.Create(reportList);
+			}
+
+			PopulateCmbReportList();
+
+			EnableCmbReportList();
+		}
+
+		private void EnableCmbReportList()
+		{
+			cmbSelectReport.Enabled = (cmbSelectReport.Items.Count > 0);
+		}
+
+		private string GetReportDate()
+		{
+			return $"{int.Parse(txtMonth.Text)}-{int.Parse(txtYear.Text)}";
+		}
+
+		private void UpdateReportList()
+		{
+			string reportDate = GetReportDate();
+
+			if (!cmbSelectReport.Items.Contains(reportDate))
+			{
+				List<string> repList = GetReportList();
+				repList.Add(reportDate);
+				repList.Sort();
+
+				StreamWriter writer = new StreamWriter(reportList);
+				
+				for(int i = 0; i < repList.Count; i++)
+				{
+					writer.WriteLine(repList[i]);
+				}
+
+				writer.Close();
+			}
+		}
+
+		private List<string> GetReportList()
+		{
+			StreamReader reader = new StreamReader(reportList);
+			List<string> repList = new List<string>();
+
+			while(!reader.EndOfStream)
+			{
+				repList.Add(reader.ReadLine());
+			}
+			reader.Close();
+
+			repList.Sort();
+
+			return repList;
+		}
+
+		private void PopulateCmbReportList()
+		{
+			cmbSelectReport.Items.Clear();
+			StreamReader reader = new StreamReader(reportList);
+
+			while (!reader.EndOfStream)
+			{
+				cmbSelectReport.Items.Add(reader.ReadLine());
+			}
+
+			reader.Close();
+
+			if (cmbSelectReport.Items.Count > 0)
+			{
+				cmbSelectReport.SelectedIndex = 0;
+			}
 		}
 
 		private void lblInvalidYear_Click(object sender, EventArgs e)
@@ -273,12 +349,16 @@ namespace PHP
 				Directory.CreateDirectory(exportDirectory);
 			}
 
-			string dateSelected = $"{int.Parse(txtMonth.Text)}-{int.Parse(txtYear.Text)}";
+			string dateSelected = GetReportDate();
 			string individualRepName = $"{dateSelected} Transaction Report";
 			string sumRepName = $"{dateSelected} Summary Report";
 
 			WriteToFile($"{exportDirectory}\\{individualRepName}{ext}", dgvDisplay);
 			WriteToFile($"{exportDirectory}\\{sumRepName}{ext}", dgvSum);
+
+			UpdateReportList();
+			PopulateCmbReportList();
+			EnableCmbReportList();
 
 			// open file directory if requested
 			DialogResult result = MessageBox.Show($"Report for {dateSelected} generated.\nOpen directory?", "Report generated", MessageBoxButtons.YesNo);
@@ -328,6 +408,21 @@ namespace PHP
 			}
 
 			sw.Close();
+		}
+
+		private void btnAllItems_Click(object sender, EventArgs e)
+		{
+			Process.Start($"{exportDirectory}\\{cmbSelectReport.Text} Transaction Report.csv");
+		}
+
+		private void btnSummary_Click(object sender, EventArgs e)
+		{
+			Process.Start($"{exportDirectory}\\{cmbSelectReport.Text} Summary Report.csv");
+		}
+
+		private void grbGenerateReport_Enter(object sender, EventArgs e)
+		{
+
 		}
 	}
 }
