@@ -41,7 +41,7 @@
             this.lblYear = new System.Windows.Forms.Label();
             this.lblSelectDate = new System.Windows.Forms.Label();
             this.lblPrediction = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPredictedSale = new System.Windows.Forms.TextBox();
             this.btnPredict = new System.Windows.Forms.Button();
             this.lblPrice = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
@@ -176,12 +176,12 @@
             this.lblPrediction.TabIndex = 27;
             this.lblPrediction.Text = "Previous Item sales:";
             // 
-            // textBox1
+            // txtPredictedSale
             // 
-            this.textBox1.Location = new System.Drawing.Point(216, 359);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(102, 20);
-            this.textBox1.TabIndex = 28;
+            this.txtPredictedSale.Location = new System.Drawing.Point(216, 359);
+            this.txtPredictedSale.Name = "txtPredictedSale";
+            this.txtPredictedSale.Size = new System.Drawing.Size(102, 20);
+            this.txtPredictedSale.TabIndex = 28;
             // 
             // btnPredict
             // 
@@ -232,7 +232,7 @@
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.btnPredict);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPredictedSale);
             this.Controls.Add(this.lblPrediction);
             this.Controls.Add(this.lblSelectDate);
             this.Controls.Add(this.lblInvalidYear);
@@ -248,6 +248,7 @@
             this.Controls.Add(this.btnBack);
             this.Name = "PredictItemSales";
             this.Text = "PredictItemSales";
+            this.Load += new System.EventHandler(this.PredictItemSales_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,7 +269,7 @@
         private System.Windows.Forms.Label lblYear;
         private System.Windows.Forms.Label lblSelectDate;
         private System.Windows.Forms.Label lblPrediction;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPredictedSale;
         private System.Windows.Forms.Button btnPredict;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.TextBox txtPrice;
