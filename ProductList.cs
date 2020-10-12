@@ -62,14 +62,13 @@ namespace PHP
 
         private void ProductList_Load(object sender, EventArgs e)
         {
-            
             UpdateDB();
             int proCount = alertStock();
         
             string[] file = System.IO.File.ReadAllLines(frmLogin.LowStockSettingFile);
             if (file[2] == "true")
             {
-                System.Windows.MessageBox.Show(proCount + " products are running low!");
+                MessageBox.Show(proCount + " products are running low!");
             }
         }
 
@@ -82,9 +81,9 @@ namespace PHP
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-                this.Hide();
-                frmHomepage home = new frmHomepage();
-                home.Show();
+            this.Hide();
+            frmHomepage home = new frmHomepage();
+            home.Show();
         }
     }
 }

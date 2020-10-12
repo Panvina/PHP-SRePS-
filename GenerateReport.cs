@@ -46,11 +46,17 @@ namespace PHP
 			cmbSelectReport.Enabled = (cmbSelectReport.Items.Count > 0);
 		}
 
+		/// <summary>
+		/// Get the date of a report
+		/// </summary>
 		private string GetReportDate()
 		{
 			return $"{int.Parse(txtMonth.Text)}-{int.Parse(txtYear.Text)}";
 		}
 
+		/// <summary>
+		/// Update list of reports for CMB
+		/// </summary>
 		private void UpdateReportList()
 		{
 			string reportDate = GetReportDate();
@@ -72,6 +78,10 @@ namespace PHP
 			}
 		}
 
+		/// <summary>
+		/// Get a list of reports
+		/// </summary>
+		/// <returns></returns>
 		private List<string> GetReportList()
 		{
 			StreamReader reader = new StreamReader(reportList);
@@ -88,6 +98,9 @@ namespace PHP
 			return repList;
 		}
 
+		/// <summary>
+		/// Get report list combo box
+		/// </summary>
 		private void PopulateCmbReportList()
 		{
 			cmbSelectReport.Items.Clear();
@@ -135,6 +148,10 @@ namespace PHP
 			btnGen.Enabled = (dgvSum.Rows.Count > 0);
 		}
 
+		/// <summary>
+		/// Populate individual transaction DGV
+		/// </summary>
+		/// <param name="cmd"></param>
 		private void PopulateSingle(SqlCommand cmd)
 		{
 			cmd.CommandText = $"SELECT * FROM SALES WHERE MONTH(DATE) = {txtMonth.Text} AND YEAR(DATE) = {txtYear.Text}";
@@ -156,6 +173,10 @@ namespace PHP
 			dgvDisplay.Columns[3].Width = 112;
 		}
 
+		/// <summary>
+		/// Populates Summary DGV
+		/// </summary>
+		/// <param name="cmd"></param>
 		private void PopulateTotals(SqlCommand cmd)
 		{
 			// get quantities from Sales table
@@ -179,6 +200,10 @@ namespace PHP
 			SetColWidths();
 		}
 
+		/// <summary>
+		/// Get a collection of quantities for products
+		/// </summary>
+		/// <param name="cmd"></param>
 		private Dictionary<int, int> GetQuantities(SqlCommand cmd)
 		{
 			Dictionary<int, int> quantities = new Dictionary<int, int>();
@@ -204,6 +229,10 @@ namespace PHP
 			return quantities;
 		}
 
+		/// <summary>
+		/// Get a collection of products
+		/// </summary>
+		/// <param name="cmd"></param>
 		private Dictionary<int, Product> GetProducts(SqlCommand cmd)
 		{
 			Dictionary<int, Product> products = new Dictionary<int, Product>();
@@ -276,16 +305,26 @@ namespace PHP
 			dgvSum.Columns[4].Width = 80;
 		}
 
+		/// <summary>
+		/// Update month error label
+		/// </summary>
 		private void txtMonth_TextChanged(object sender, EventArgs e)
 		{
 			ValidateMonth(txtMonth.Text);
 		}
 
+		/// <summary>
+		/// Update year error label
+		/// </summary>
 		private void txtYear_TextChanged(object sender, EventArgs e)
 		{
 			ValidateYear(txtYear.Text);
 		}
 
+		/// <summary>
+		/// Full validation for month
+		/// </summary>
+		/// <param name="text"></param>
 		private bool ValidateMonth(String text)
 		{
 			int month = 0;
@@ -300,6 +339,10 @@ namespace PHP
 			return errorFound;
 		}
 
+		/// <summary>
+		/// Full validation for year
+		/// </summary>
+		/// <param name="text"></param>
 		private bool ValidateYear(String text)
 		{
 			int year = 0;
@@ -314,21 +357,40 @@ namespace PHP
 			return errorFound;
 		}
 
+		/// <summary>
+		/// Checks a month is acceptable
+		/// </summary>
+		/// <param name="month"></param>
+		/// <returns></returns>
 		private bool MonthRangeValid(int month)
 		{
 			return (month >= 1 && month <= 12);
 		}
 
+		/// <summary>
+		/// Checks if an integer is within a select range of values 
+		/// acceptable for SQL DateTime type
+		/// </summary>
+		/// <param name="year"></param>
+		/// <returns></returns>
 		private bool YearRangeValid(int year)
 		{
 			return (year >= 1753 && year <= 9999);
 		}
 
+		/// <summary>
+		/// Displays month error label
+		/// </summary>
+		/// <param name="error"></param>
 		private void DisplayMonthError(bool error)
 		{
 			lblInvalidMonth.Visible = error;
 		}
 
+		/// <summary>
+		/// Displays year error label
+		/// </summary>
+		/// <param name="error"></param>
 		private void DisplayYearError(bool error)
 		{
 			lblInvalidYear.Visible = error;
@@ -341,6 +403,9 @@ namespace PHP
 			home.Show();
 		}
 
+		/// <summary>
+		/// Event handler for clicking generate report button
+		/// </summary>
 		private void btnGen_Click(object sender, EventArgs e)
 		{
 			// create directory if it does not exist
@@ -353,19 +418,27 @@ namespace PHP
 			string individualRepName = $"{dateSelected} Transaction Report";
 			string sumRepName = $"{dateSelected} Summary Report";
 
+			// start timer
+			Timer.Start();
+
 			WriteToFile($"{exportDirectory}\\{individualRepName}{ext}", dgvDisplay);
 			WriteToFile($"{exportDirectory}\\{sumRepName}{ext}", dgvSum);
+
+			// stop timer and get time
+			long ms = Timer.Stop();
 
 			UpdateReportList();
 			PopulateCmbReportList();
 			EnableCmbReportList();
 
+			MessageBox.Show($"{ms}, Items: {dgvDisplay.Rows.Count}");
+
 			// open file directory if requested
-			DialogResult result = MessageBox.Show($"Report for {dateSelected} generated.\nOpen directory?", "Report generated", MessageBoxButtons.YesNo);
-			if (result == DialogResult.Yes)
-			{
-				Process.Start($"{exportDirectory}");
-			}
+			//DialogResult result = MessageBox.Show($"Report for {dateSelected} generated.\nOpen directory?", "Report generated", MessageBoxButtons.YesNo);
+			//if (result == DialogResult.Yes)
+			//{
+			//	Process.Start($"{exportDirectory}");
+			//}
 		}
 
 		/// <summary>
@@ -410,11 +483,17 @@ namespace PHP
 			sw.Close();
 		}
 
+		/// <summary>
+		/// Open transaction report
+		/// </summary>
 		private void btnAllItems_Click(object sender, EventArgs e)
 		{
 			Process.Start($"{exportDirectory}\\{cmbSelectReport.Text} Transaction Report.csv");
 		}
 
+		/// <summary>
+		/// Open summary report
+		/// </summary>
 		private void btnSummary_Click(object sender, EventArgs e)
 		{
 			Process.Start($"{exportDirectory}\\{cmbSelectReport.Text} Summary Report.csv");
