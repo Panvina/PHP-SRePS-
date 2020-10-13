@@ -46,11 +46,11 @@ namespace PHP
                 command.Parameters.AddWithValue(txtID.Text, txtID.Text);
                 command.ExecuteNonQuery();
                 txtID.Text = "";
-                MessageBox.Show("Sale deleted");
+                MessageBox.Show("Supplier deleted");
             }
             else
             {
-                MessageBox.Show("Sale not found");
+                MessageBox.Show("Supplier not found");
             }
         }
 

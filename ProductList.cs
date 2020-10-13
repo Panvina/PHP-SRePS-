@@ -68,7 +68,7 @@ namespace PHP
             string[] file = System.IO.File.ReadAllLines(frmLogin.LowStockSettingFile);
             if (file[2] == "true")
             {
-                MessageBox.Show(proCount + " products are running low!");
+                System.Windows.MessageBox.Show(proCount + " products are running low!");
             }
         }
 

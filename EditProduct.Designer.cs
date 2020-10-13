@@ -52,6 +52,8 @@
             this.lblMin = new System.Windows.Forms.Label();
             this.lblMax = new System.Windows.Forms.Label();
             this.lblInvalidMinMax = new System.Windows.Forms.Label();
+            this.cmbCategoryID = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblProductID
@@ -66,7 +68,7 @@
             // lblProductName
             // 
             this.lblProductName.AutoSize = true;
-            this.lblProductName.Location = new System.Drawing.Point(55, 104);
+            this.lblProductName.Location = new System.Drawing.Point(55, 91);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(75, 13);
             this.lblProductName.TabIndex = 4;
@@ -75,7 +77,7 @@
             // lblSupplierID
             // 
             this.lblSupplierID.AutoSize = true;
-            this.lblSupplierID.Location = new System.Drawing.Point(55, 165);
+            this.lblSupplierID.Location = new System.Drawing.Point(55, 202);
             this.lblSupplierID.Name = "lblSupplierID";
             this.lblSupplierID.Size = new System.Drawing.Size(59, 13);
             this.lblSupplierID.TabIndex = 6;
@@ -84,7 +86,7 @@
             // lblUnitsOnOrder
             // 
             this.lblUnitsOnOrder.AutoSize = true;
-            this.lblUnitsOnOrder.Location = new System.Drawing.Point(56, 331);
+            this.lblUnitsOnOrder.Location = new System.Drawing.Point(56, 356);
             this.lblUnitsOnOrder.Name = "lblUnitsOnOrder";
             this.lblUnitsOnOrder.Size = new System.Drawing.Size(77, 13);
             this.lblUnitsOnOrder.TabIndex = 12;
@@ -93,7 +95,7 @@
             // lblUnitsInStock
             // 
             this.lblUnitsInStock.AutoSize = true;
-            this.lblUnitsInStock.Location = new System.Drawing.Point(56, 278);
+            this.lblUnitsInStock.Location = new System.Drawing.Point(56, 301);
             this.lblUnitsInStock.Name = "lblUnitsInStock";
             this.lblUnitsInStock.Size = new System.Drawing.Size(74, 13);
             this.lblUnitsInStock.TabIndex = 10;
@@ -102,7 +104,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(66, 475);
+            this.btnUpdate.Location = new System.Drawing.Point(66, 496);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(200, 37);
             this.btnUpdate.TabIndex = 10;
@@ -113,7 +115,7 @@
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnExit.Location = new System.Drawing.Point(66, 518);
+            this.btnExit.Location = new System.Drawing.Point(66, 539);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(200, 49);
             this.btnExit.TabIndex = 0;
@@ -123,14 +125,14 @@
             // 
             // txtUnitsOnOrder
             // 
-            this.txtUnitsOnOrder.Location = new System.Drawing.Point(58, 347);
+            this.txtUnitsOnOrder.Location = new System.Drawing.Point(58, 372);
             this.txtUnitsOnOrder.Name = "txtUnitsOnOrder";
             this.txtUnitsOnOrder.Size = new System.Drawing.Size(200, 20);
             this.txtUnitsOnOrder.TabIndex = 5;
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(58, 237);
+            this.txtPrice.Location = new System.Drawing.Point(58, 260);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(200, 20);
             this.txtPrice.TabIndex = 6;
@@ -139,14 +141,14 @@
             // 
             this.cmbSupplierID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSupplierID.FormattingEnabled = true;
-            this.cmbSupplierID.Location = new System.Drawing.Point(58, 181);
+            this.cmbSupplierID.Location = new System.Drawing.Point(58, 218);
             this.cmbSupplierID.Name = "cmbSupplierID";
             this.cmbSupplierID.Size = new System.Drawing.Size(200, 21);
             this.cmbSupplierID.TabIndex = 9;
             // 
             // txtProductName
             // 
-            this.txtProductName.Location = new System.Drawing.Point(58, 120);
+            this.txtProductName.Location = new System.Drawing.Point(58, 107);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(200, 20);
             this.txtProductName.TabIndex = 4;
@@ -163,7 +165,7 @@
             // 
             // txtUnitsInStock
             // 
-            this.txtUnitsInStock.Location = new System.Drawing.Point(58, 294);
+            this.txtUnitsInStock.Location = new System.Drawing.Point(58, 317);
             this.txtUnitsInStock.Name = "txtUnitsInStock";
             this.txtUnitsInStock.Size = new System.Drawing.Size(200, 20);
             this.txtUnitsInStock.TabIndex = 14;
@@ -171,7 +173,7 @@
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(55, 221);
+            this.lblPrice.Location = new System.Drawing.Point(55, 244);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(31, 13);
             this.lblPrice.TabIndex = 15;
@@ -181,7 +183,7 @@
             // 
             this.lblProductNameError.AutoSize = true;
             this.lblProductNameError.ForeColor = System.Drawing.Color.Red;
-            this.lblProductNameError.Location = new System.Drawing.Point(57, 143);
+            this.lblProductNameError.Location = new System.Drawing.Point(57, 129);
             this.lblProductNameError.Name = "lblProductNameError";
             this.lblProductNameError.Size = new System.Drawing.Size(109, 13);
             this.lblProductNameError.TabIndex = 16;
@@ -191,7 +193,7 @@
             // 
             this.lblPriceError.AutoSize = true;
             this.lblPriceError.ForeColor = System.Drawing.Color.Red;
-            this.lblPriceError.Location = new System.Drawing.Point(57, 260);
+            this.lblPriceError.Location = new System.Drawing.Point(57, 283);
             this.lblPriceError.Name = "lblPriceError";
             this.lblPriceError.Size = new System.Drawing.Size(65, 13);
             this.lblPriceError.TabIndex = 17;
@@ -201,7 +203,7 @@
             // 
             this.lblUnitsInStockError.AutoSize = true;
             this.lblUnitsInStockError.ForeColor = System.Drawing.Color.Red;
-            this.lblUnitsInStockError.Location = new System.Drawing.Point(58, 315);
+            this.lblUnitsInStockError.Location = new System.Drawing.Point(58, 338);
             this.lblUnitsInStockError.Name = "lblUnitsInStockError";
             this.lblUnitsInStockError.Size = new System.Drawing.Size(108, 13);
             this.lblUnitsInStockError.TabIndex = 18;
@@ -211,7 +213,7 @@
             // 
             this.lblUnitsOnOrderError.AutoSize = true;
             this.lblUnitsOnOrderError.ForeColor = System.Drawing.Color.Red;
-            this.lblUnitsOnOrderError.Location = new System.Drawing.Point(58, 370);
+            this.lblUnitsOnOrderError.Location = new System.Drawing.Point(58, 395);
             this.lblUnitsOnOrderError.Name = "lblUnitsOnOrderError";
             this.lblUnitsOnOrderError.Size = new System.Drawing.Size(111, 13);
             this.lblUnitsOnOrderError.TabIndex = 19;
@@ -222,7 +224,7 @@
             this.lblRecordResult.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblRecordResult.AutoSize = true;
             this.lblRecordResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecordResult.Location = new System.Drawing.Point(70, 451);
+            this.lblRecordResult.Location = new System.Drawing.Point(70, 474);
             this.lblRecordResult.Name = "lblRecordResult";
             this.lblRecordResult.Size = new System.Drawing.Size(188, 17);
             this.lblRecordResult.TabIndex = 20;
@@ -230,14 +232,14 @@
             // 
             // txtMin
             // 
-            this.txtMin.Location = new System.Drawing.Point(58, 411);
+            this.txtMin.Location = new System.Drawing.Point(58, 432);
             this.txtMin.Name = "txtMin";
             this.txtMin.Size = new System.Drawing.Size(72, 20);
             this.txtMin.TabIndex = 21;
             // 
             // txtMax
             // 
-            this.txtMax.Location = new System.Drawing.Point(186, 411);
+            this.txtMax.Location = new System.Drawing.Point(186, 432);
             this.txtMax.Name = "txtMax";
             this.txtMax.Size = new System.Drawing.Size(72, 20);
             this.txtMax.TabIndex = 22;
@@ -245,7 +247,7 @@
             // lblMin
             // 
             this.lblMin.AutoSize = true;
-            this.lblMin.Location = new System.Drawing.Point(79, 395);
+            this.lblMin.Location = new System.Drawing.Point(79, 416);
             this.lblMin.Name = "lblMin";
             this.lblMin.Size = new System.Drawing.Size(24, 13);
             this.lblMin.TabIndex = 23;
@@ -254,7 +256,7 @@
             // lblMax
             // 
             this.lblMax.AutoSize = true;
-            this.lblMax.Location = new System.Drawing.Point(211, 395);
+            this.lblMax.Location = new System.Drawing.Point(211, 416);
             this.lblMax.Name = "lblMax";
             this.lblMax.Size = new System.Drawing.Size(27, 13);
             this.lblMax.TabIndex = 24;
@@ -264,17 +266,36 @@
             // 
             this.lblInvalidMinMax.AutoSize = true;
             this.lblInvalidMinMax.ForeColor = System.Drawing.Color.Red;
-            this.lblInvalidMinMax.Location = new System.Drawing.Point(55, 438);
+            this.lblInvalidMinMax.Location = new System.Drawing.Point(55, 459);
             this.lblInvalidMinMax.Name = "lblInvalidMinMax";
             this.lblInvalidMinMax.Size = new System.Drawing.Size(117, 13);
             this.lblInvalidMinMax.TabIndex = 25;
             this.lblInvalidMinMax.Text = "Invalid Min/Max inputs.";
             // 
+            // cmbCategoryID
+            // 
+            this.cmbCategoryID.FormattingEnabled = true;
+            this.cmbCategoryID.Location = new System.Drawing.Point(58, 169);
+            this.cmbCategoryID.Name = "cmbCategoryID";
+            this.cmbCategoryID.Size = new System.Drawing.Size(200, 21);
+            this.cmbCategoryID.TabIndex = 27;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(58, 153);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 13);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "Category";
+            // 
             // EditProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(317, 586);
+            this.ClientSize = new System.Drawing.Size(317, 633);
+            this.Controls.Add(this.cmbCategoryID);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.lblInvalidMinMax);
             this.Controls.Add(this.lblMax);
             this.Controls.Add(this.lblMin);
@@ -333,5 +354,7 @@
         private System.Windows.Forms.Label lblMin;
         private System.Windows.Forms.Label lblMax;
         private System.Windows.Forms.Label lblInvalidMinMax;
+        private System.Windows.Forms.ComboBox cmbCategoryID;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -84,6 +84,10 @@
     <Compile Include="AllSales.Designer.cs">
       <DependentUpon>AllSales.cs</DependentUpon>
     </Compile>
+    <Compile Include="CategoryPrediction.cs" />
+    <Compile Include="CategoryPrediction.designer.cs">
+      <DependentUpon>CategoryPrediction.cs</DependentUpon>
+    </Compile>
     <Compile Include="DeleteProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AllSales.resx">
       <DependentUpon>AllSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategoryPrediction.resx">
+      <DependentUpon>CategoryPrediction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteProduct.resx">
       <DependentUpon>DeleteProduct.cs</DependentUpon>

@@ -34,6 +34,7 @@ namespace PHP
         {
             string productQuery = "SELECT ProductID from Products";
             string supplierQuery = "SELECT SupplierID, CompanyName FROM Suppliers";
+            string categoryQuery = "SELECT categoryID, catName FROM Category";
 
             //Open connection and begin transaction
             connection.Open();
@@ -58,6 +59,18 @@ namespace PHP
                     cmbSupplierID.Items.Add($"{supplierReader[1]}, {supplierReader[0]}");
                 }
             }
+
+            SqlCommand categoryCommand = new SqlCommand(categoryQuery, frmLogin.con);
+            SqlDataReader categoryReader = categoryCommand.ExecuteReader();
+            using (categoryReader)
+            {
+                while (categoryReader.Read())
+                {
+                    cmbCategoryID.Items.Add($"{categoryReader[0]}, {categoryReader[1]}");
+                }
+            }
+            cmbCategoryID.SelectedIndex = 0;
+            categoryReader.Close();
 
             //Commit transaction and close connection.
             transaction.Commit();

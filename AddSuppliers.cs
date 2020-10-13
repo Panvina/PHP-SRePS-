@@ -37,11 +37,6 @@ namespace PHP
                 lblIDError.Visible = true;
                 return false;
             }
-            else if (txtID.Text.Length != 6)
-            {
-                lblIDError.Visible = true;
-                return false;
-            }
 
             if (txtName.Text == "")
             {
