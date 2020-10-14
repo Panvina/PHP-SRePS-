@@ -21,8 +21,8 @@ namespace PHP
         private void btnBackToHomepage_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmHomepage home = new frmHomepage();
-            home.Show();
+            ProductList pl = new ProductList();
+            pl.Show();
         }
 
         private void btnSave_Click(object sender, EventArgs e)

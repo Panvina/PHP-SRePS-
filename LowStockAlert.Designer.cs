@@ -80,7 +80,7 @@
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnSave.Location = new System.Drawing.Point(66, 210);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(237, 32);
+            this.btnSave.Size = new System.Drawing.Size(111, 32);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -89,11 +89,11 @@
             // btnBackToHomepage
             // 
             this.btnBackToHomepage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnBackToHomepage.Location = new System.Drawing.Point(66, 248);
+            this.btnBackToHomepage.Location = new System.Drawing.Point(183, 210);
             this.btnBackToHomepage.Name = "btnBackToHomepage";
-            this.btnBackToHomepage.Size = new System.Drawing.Size(237, 44);
+            this.btnBackToHomepage.Size = new System.Drawing.Size(110, 32);
             this.btnBackToHomepage.TabIndex = 6;
-            this.btnBackToHomepage.Text = "Back to homepage";
+            this.btnBackToHomepage.Text = "Back";
             this.btnBackToHomepage.UseVisualStyleBackColor = true;
             this.btnBackToHomepage.Click += new System.EventHandler(this.btnBackToHomepage_Click);
             // 
@@ -111,7 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 331);
+            this.ClientSize = new System.Drawing.Size(370, 291);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnBackToHomepage);
             this.Controls.Add(this.btnSave);

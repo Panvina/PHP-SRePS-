@@ -276,9 +276,10 @@ namespace PHP
                 int maxProducts= int.Parse(txtMax.Text);
 
                 string supplierID = cmbSupplierID.SelectedItem != null ? cmbSupplierID.SelectedItem.ToString().Split(',')[1].Trim() : "";
+                string catID = cmbCategoryID.Text.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries)[0];
 
                 string query = $"UPDATE Products SET " +
-                    $"ProductName='{productName}', SupplierID='{supplierID}', Price='{price}', UnitsInStock='{unitsInStock}', UnitsOnOrder='{unitsOnOrder}', MinProducts='{minProducts}', MaxProducts='{maxProducts}' " +
+                    $"ProductName='{productName}', SupplierID='{supplierID}', Price='{price}', UnitsInStock='{unitsInStock}', UnitsOnOrder='{unitsOnOrder}', MinProducts='{minProducts}', MaxProducts='{maxProducts}', CategoryID='{catID}' " +
                     $"WHERE ProductID={productID}";
 
                 Console.WriteLine(query);
