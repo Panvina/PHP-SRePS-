@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,44 +31,40 @@ namespace PHP
             con.Open();
             if (con.State == System.Data.ConnectionState.Open)
             {
-                frmHomepage hp = new frmHomepage();
-                hp.Show();               
-                this.Hide();
-                string[] text = System.IO.File.ReadAllLines(LowStockSettingFile);
-                if (text[1] == "true")
-                { 
-                    MessageBox.Show( "Your product(s) are running low!\n Please check the inventory list for more information.");
+                string [] read = File.ReadAllLines(LowStockSettingFile);
+                if (read[3] != "0")
+                {
+                    Alert_Box();
+                } else
+                {
+                    frmHomepage hp = new frmHomepage();
+                    hp.Show();
+                    this.Hide();
+                }
+			}
+        }
+        private void Alert_Box()
+        {
+            string[] text = System.IO.File.ReadAllLines(LowStockSettingFile);
+            if (text[1] == "true")
+            {
+                string message = "Your product(s) are running low!\nPlease check the product list for more information.\n"
+                    + "Would you like to check now?";
+                const string caption = "Low Stock Alert";
+                var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    ProductList pl = new ProductList();
+                    pl.Show();
+                    this.Hide();
+                } else
+                {
+                    frmHomepage hp = new frmHomepage();
+                    hp.Show();
+                    this.Hide();
                 }
             }
-
-			//SqlCommand cmd = new SqlCommand();
-			//cmd.Connection = con;
-
-			//cmd.CommandText = $"SELECT * FROM Products";
-			//List<string> products = new List<string>();
-			//Random rnd = new Random();
-
-			//using (SqlDataReader reader = cmd.ExecuteReader())
-			//{
-			//	while (reader.Read())
-			//	{
-			//		products.Add($"{reader[0]}");
-			//	}
-			//}
-
-            //cmd.CommandText = "DELETE FROM Sales WHERE 1=1";
-            //cmd.ExecuteNonQuery();
-
-            //for (int i = 0; i < 100; i++)
-            //{
-            //    string prodID = products[rnd.Next(0, products.Count - 1)];
-            //    int quant = rnd.Next(1, 50);
-            //    string date = "9999-01-01";
-
-            //    string query = $"INSERT INTO Sales (ProductID, Quantity, Date) VALUES ({prodID}, {quant}, '{date}')";
-            //    cmd.CommandText = query;
-            //    cmd.ExecuteNonQuery();
-            //}
         }
     }
+    
 }

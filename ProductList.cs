@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -37,11 +38,11 @@ namespace PHP
             
         }
 
-        private int alertStock()
+        private void alertStock()
         {
             int proCount = 0;
             SqlCommand command = new SqlCommand("Select UnitsInStock, MaxProducts from dbo.Products", frmLogin.con);
-            string[] read = System.IO.File.ReadAllLines(frmLogin.LowStockSettingFile);
+            string[] read = File.ReadAllLines(frmLogin.LowStockSettingFile);
             
             using (SqlDataReader reader = command.ExecuteReader())
             {
@@ -49,25 +50,27 @@ namespace PHP
                 {
                     int toIntUIS = int.Parse(reader["UnitsInStock"].ToString());
                     int toIntMP = int.Parse(reader["MaxProducts"].ToString());
-                    double percent = (toIntUIS / (double)toIntMP) * 100;
+                    //double percent = (toIntUIS / (double)toIntMP) * 100;
+                    double percent = CalcPercent(toIntUIS, toIntMP);
                         if (percent < int.Parse(read[0]))
                         {
                             proCount++;
                         }                   
                 }
             }
-            return proCount;
+            read[3] = proCount.ToString();
+            File.WriteAllLines(frmLogin.LowStockSettingFile, read);
         }
 
         private void ProductList_Load(object sender, EventArgs e)
         {
             UpdateDB();
-            int proCount = alertStock();
-        
+            alertStock();
+            
             string[] file = System.IO.File.ReadAllLines(frmLogin.LowStockSettingFile);
-            if (file[2] == "true")
+            if (file[2] == "true" && file[3] != "0")
             {
-                MessageBox.Show(proCount + " products are running low!");
+                System.Windows.MessageBox.Show(file[3] + " products are running low!");
             }
         }
 
@@ -83,6 +86,36 @@ namespace PHP
             this.Hide();
             frmHomepage home = new frmHomepage();
             home.Show();
+        }
+
+        private double CalcPercent(int firstNum, int secNum)
+        {
+            double percent = (firstNum / (double)secNum) * 100;
+            return percent;
+        }
+
+        private void Lowstock_ColourChange(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            string [] read = File.ReadAllLines(frmLogin.LowStockSettingFile);
+            foreach (DataGridViewRow row in dgvProduct.Rows)
+            {
+                if (row.Cells[4].Value != DBNull.Value && row.Cells[7].Value != DBNull.Value)
+                {
+                    int uis = Convert.ToInt32(row.Cells[4].Value);
+                    int maxstock = Convert.ToInt32(row.Cells[7].Value);
+                    double percent = CalcPercent(uis, maxstock);
+                    if (percent < Convert.ToInt32(read[0]))
+                    {
+                        row.DefaultCellStyle.BackColor = Color.Red;
+                        row.DefaultCellStyle.ForeColor = Color.White;
+                    }
+                    else
+                    {
+                        row.DefaultCellStyle.BackColor = Color.White;
+                        row.DefaultCellStyle.ForeColor = Color.Black;
+                    }
+                }
+            }
         }
     }
 }

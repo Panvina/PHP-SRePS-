@@ -21,13 +21,13 @@ namespace PHP
         private void btnBackToHomepage_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmHomepage home = new frmHomepage();
-            home.Show();
+            ProductList pl = new ProductList();
+            pl.Show();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            File.ReadAllLines(frmLogin.LowStockSettingFile);
+            string [] toWrite = File.ReadAllLines(frmLogin.LowStockSettingFile);
             string homeOption = "false";
             string productListOption = "false";
 
@@ -43,8 +43,11 @@ namespace PHP
 
                 if (tbQuantity.Text != "")
                 {
-                    string[] write = { tbQuantity.Text, homeOption, productListOption };
-                    File.WriteAllLines(frmLogin.LowStockSettingFile, write);
+                toWrite[0] = tbQuantity.Text;
+                toWrite[1] = homeOption;
+                toWrite[2] = productListOption;
+                    //string[] write = { tbQuantity.Text, homeOption, productListOption };
+                    File.WriteAllLines(frmLogin.LowStockSettingFile, toWrite);
 
                     MessageBox.Show("Your settings have been saved!");
                 } else

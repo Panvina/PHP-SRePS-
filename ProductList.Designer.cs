@@ -104,6 +104,7 @@
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.Size = new System.Drawing.Size(943, 337);
             this.dgvProduct.TabIndex = 3;
+            this.dgvProduct.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.Lowstock_ColourChange);
             // 
             // productIDDataGridViewTextBoxColumn
             // 

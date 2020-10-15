@@ -173,5 +173,12 @@ namespace PHP
             PredictItemSales p = new PredictItemSales();
             p.Show();
         }
+
+        private void btnPredictCategorySales_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CategoryPrediction catpred = new CategoryPrediction();
+            catpred.Show();
+        }
     }
 }

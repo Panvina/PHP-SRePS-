@@ -34,6 +34,7 @@ namespace PHP
         {
             string productQuery = "SELECT ProductID from Products";
             string supplierQuery = "SELECT SupplierID, CompanyName FROM Suppliers";
+            string categoryQuery = "SELECT categoryID, catName FROM Category";
 
             //Open connection and begin transaction
             connection.Open();
@@ -58,6 +59,18 @@ namespace PHP
                     cmbSupplierID.Items.Add($"{supplierReader[1]}, {supplierReader[0]}");
                 }
             }
+
+            SqlCommand categoryCommand = new SqlCommand(categoryQuery, frmLogin.con);
+            SqlDataReader categoryReader = categoryCommand.ExecuteReader();
+            using (categoryReader)
+            {
+                while (categoryReader.Read())
+                {
+                    cmbCategoryID.Items.Add($"{categoryReader[0]}, {categoryReader[1]}");
+                }
+            }
+            cmbCategoryID.SelectedIndex = 0;
+            categoryReader.Close();
 
             //Commit transaction and close connection.
             transaction.Commit();
@@ -263,9 +276,10 @@ namespace PHP
                 int maxProducts= int.Parse(txtMax.Text);
 
                 string supplierID = cmbSupplierID.SelectedItem != null ? cmbSupplierID.SelectedItem.ToString().Split(',')[1].Trim() : "";
+                string catID = cmbCategoryID.Text.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries)[0];
 
                 string query = $"UPDATE Products SET " +
-                    $"ProductName='{productName}', SupplierID='{supplierID}', Price='{price}', UnitsInStock='{unitsInStock}', UnitsOnOrder='{unitsOnOrder}', MinProducts='{minProducts}', MaxProducts='{maxProducts}' " +
+                    $"ProductName='{productName}', SupplierID='{supplierID}', Price='{price}', UnitsInStock='{unitsInStock}', UnitsOnOrder='{unitsOnOrder}', MinProducts='{minProducts}', MaxProducts='{maxProducts}', CategoryID='{catID}' " +
                     $"WHERE ProductID={productID}";
 
                 Console.WriteLine(query);
