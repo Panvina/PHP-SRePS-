@@ -1,7 +1,11 @@
 ID, Product name, Quantity, Price, Total
-659347, VitaminJava, 1201, 20, 24020
-129305, VitaminPython, 1130, 37.3, 42149
-345932, VitaminObjectiveC, 1092, 35, 38220
-563245, FaceCream, 736, 50, 36800
-257899, VitaminC, 1213, 20, 24260
-793458, VitaminC#, 1013, 40, 40520
+345932, VitaminObjectiveC, 785, 35, 27475
+129305, VitaminPython, 692, 37.3, 25811.6
+563245, FaceCream, 701, 50, 35050
+659347, VitaminJava, 793, 20, 15860
+793458, VitaminC#, 695, 40, 27800
+257899, VitaminC, 852, 20, 17040
+50000, Toothpaste, 6, 5, 30
+50001, MouthWash, 4, 5, 20
+894358, VitaminC++, 10, 30, 300
+50005, ToothBrush, 35, 5, 175

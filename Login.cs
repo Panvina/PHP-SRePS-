@@ -43,34 +43,34 @@ namespace PHP
                 }
 			}
 
-   //         Random rnd = new Random();
-   //         SqlCommand cmd = new SqlCommand();
-   //         cmd.Connection = con;
+            //Random rnd = new Random();
+            //SqlCommand cmd = new SqlCommand();
+            //cmd.Connection = con;
 
-   //         string query = "SELECT * FROM Products";
-   //         cmd.CommandText = query;
-   //         List<string> products = new List<string>();
+            //string query = "SELECT * FROM Products";
+            //cmd.CommandText = query;
+            //List<string> products = new List<string>();
 
-   //         using (SqlDataReader reader = cmd.ExecuteReader())
-			//{
-   //             while(reader.Read())
-			//	{
-   //                 products.Add($"{reader[0]}");
-			//	}
-			//}
+            //using (SqlDataReader reader = cmd.ExecuteReader())
+            //{
+            //    while (reader.Read())
+            //    {
+            //        products.Add($"{reader[0]}");
+            //    }
+            //}
 
-   //         for (int i = 2000; i <= 2020; i++)
-   //         {
-   //             for (int j = 0; j < 2000; j++)
-   //             {
-   //                 string prodID = products[rnd.Next(0, products.Count - 1)];
-   //                 string quant = $"{rnd.Next(5, 50)}";
-   //                 string date = $"{i}-{rnd.Next(1, 12)}-{rnd.Next(1, 27)}";
-   //                 query = $"INSERT INTO Sales (ProductID, Quantity, Date) VALUES ({prodID}, {quant}, '{date}')";
-   //                 cmd.CommandText = query;
-   //                 cmd.ExecuteNonQuery();
-   //             }
-   //         }
+            //for (int i = 2000; i <= 2020; i++)
+            //{
+            //    for (int j = 0; j < 2000; j++)
+            //    {
+            //        string prodID = products[rnd.Next(0, products.Count - 1)];
+            //        string quant = $"{rnd.Next(5, 50)}";
+            //        string date = $"{i}-{rnd.Next(1, 12)}-{rnd.Next(1, 27)}";
+            //        query = $"INSERT INTO Sales (ProductID, Quantity, Date) VALUES ({prodID}, {quant}, '{date}')";
+            //        cmd.CommandText = query;
+            //        cmd.ExecuteNonQuery();
+            //    }
+            //}
         }
         private void Alert_Box()
         {

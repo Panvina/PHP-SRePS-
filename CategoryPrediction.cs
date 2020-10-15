@@ -92,7 +92,7 @@ namespace PHP
 
                     SqlConnection con2 = new SqlConnection(frmLogin.conString);
                     con2.Open();
-                    SqlCommand cmdCategories = new SqlCommand($"Select * FROM dbo.Category WHERE CategoryID = {readerProducts.GetValue(8).ToString()}", con2);
+                    SqlCommand cmdCategories = new SqlCommand($"Select * FROM dbo.Category WHERE CategoryID = '{readerProducts.GetValue(8).ToString()}'", con2);
                     SqlDataReader readerCategories = cmdCategories.ExecuteReader();
                     while (readerCategories.Read())
                     {
