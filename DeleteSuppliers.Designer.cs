@@ -84,6 +84,7 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnExit);
             this.Name = "frmDeleteSuppliers";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DeleteSuppliers";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -164,6 +164,7 @@
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.lblSuppliers);
             this.Name = "frmDisplaySuppliers";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DisplaySuppliers";
             this.Load += new System.EventHandler(this.frmDisplaySuppliers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliers)).EndInit();

@@ -169,6 +169,7 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnAlert);
             this.Name = "ProductList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductList";
             this.Load += new System.EventHandler(this.ProductList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pHPdbDataSet)).EndInit();

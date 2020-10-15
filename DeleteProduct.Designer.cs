@@ -90,6 +90,7 @@
             this.Controls.Add(this.txtProductID);
             this.Controls.Add(this.label1);
             this.Name = "DeleteProduct";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DeleteProduct";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);

@@ -321,6 +321,7 @@
             this.Controls.Add(this.lblProductName);
             this.Controls.Add(this.lblProductID);
             this.Name = "EditProduct";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditProduct";
             this.Load += new System.EventHandler(this.EditProduct_Load);
             this.ResumeLayout(false);
