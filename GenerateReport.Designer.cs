@@ -226,6 +226,7 @@
 			// 
 			// btnSummary
 			// 
+			this.btnSummary.Enabled = false;
 			this.btnSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
 			this.btnSummary.Location = new System.Drawing.Point(9, 175);
 			this.btnSummary.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -238,6 +239,7 @@
 			// 
 			// btnAllItems
 			// 
+			this.btnAllItems.Enabled = false;
 			this.btnAllItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
 			this.btnAllItems.Location = new System.Drawing.Point(9, 105);
 			this.btnAllItems.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -267,6 +269,7 @@
 			this.cmbSelectReport.Name = "cmbSelectReport";
 			this.cmbSelectReport.Size = new System.Drawing.Size(190, 28);
 			this.cmbSelectReport.TabIndex = 0;
+			this.cmbSelectReport.SelectedIndexChanged += new System.EventHandler(this.cmbSelectReport_SelectedIndexChanged);
 			// 
 			// frmGenerateCSV
 			// 

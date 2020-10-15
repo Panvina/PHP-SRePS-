@@ -40,37 +40,34 @@ namespace PHP
                 }
             }
 
-   //         SqlCommand cmd = new SqlCommand();
-   //         cmd.Connection = con;
+			//SqlCommand cmd = new SqlCommand();
+			//cmd.Connection = con;
 
-   //         cmd.CommandText = $"SELECT * FROM Products";
-   //         List<string> products = new List<string>();
-   //         Random rnd = new Random();
+			//cmd.CommandText = $"SELECT * FROM Products";
+			//List<string> products = new List<string>();
+			//Random rnd = new Random();
 
-   //         using (SqlDataReader reader = cmd.ExecuteReader())
+			//using (SqlDataReader reader = cmd.ExecuteReader())
 			//{
-   //             while(reader.Read())
+			//	while (reader.Read())
 			//	{
-   //                 products.Add($"{reader[0]}");
-			//	}
-			//}                
-
-			//cmd.CommandText = "DELETE FROM Sales WHERE 1=1";
-			//cmd.ExecuteNonQuery();
-
-			//for (int j = 2000; j <= 2020; j++)
-			//{
-   //             for (int i = 0; i < 2500; i++)
-			//	{
-   //                 string prodID = products[rnd.Next(0, products.Count - 1)];
-			//		int quant = rnd.Next(1, 50);
-			//		string date = $"{j}-{rnd.Next(1, 12)}-{rnd.Next(1, 28)}";
-
-			//		string query = $"INSERT INTO Sales (ProductID, Quantity, Date) VALUES ({prodID}, {quant}, '{date}')";
-			//		cmd.CommandText = query;
-			//		cmd.ExecuteNonQuery();
+			//		products.Add($"{reader[0]}");
 			//	}
 			//}
-		}
+
+            //cmd.CommandText = "DELETE FROM Sales WHERE 1=1";
+            //cmd.ExecuteNonQuery();
+
+            //for (int i = 0; i < 100; i++)
+            //{
+            //    string prodID = products[rnd.Next(0, products.Count - 1)];
+            //    int quant = rnd.Next(1, 50);
+            //    string date = "9999-01-01";
+
+            //    string query = $"INSERT INTO Sales (ProductID, Quantity, Date) VALUES ({prodID}, {quant}, '{date}')";
+            //    cmd.CommandText = query;
+            //    cmd.ExecuteNonQuery();
+            //}
+        }
     }
 }

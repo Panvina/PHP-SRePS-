@@ -39,11 +39,23 @@ namespace PHP
 			PopulateCmbReportList();
 
 			EnableCmbReportList();
+			EnableReportButtons();
 		}
 
 		private void EnableCmbReportList()
 		{
 			cmbSelectReport.Enabled = (cmbSelectReport.Items.Count > 0);
+		}
+
+		private void EnableReportButtons()
+		{
+			bool enableButtons = (cmbSelectReport.Items.Count > 0);
+
+			if (enableButtons)
+			{
+				btnSummary.Enabled = true;
+				btnAllItems.Enabled = true;
+			}
 		}
 
 		/// <summary>
@@ -430,15 +442,16 @@ namespace PHP
 			UpdateReportList();
 			PopulateCmbReportList();
 			EnableCmbReportList();
+			EnableReportButtons();
 
-			MessageBox.Show($"{ms}, Items: {dgvDisplay.Rows.Count}");
+			//MessageBox.Show($"{ms}, Items: {dgvDisplay.Rows.Count}");
 
 			// open file directory if requested
-			//DialogResult result = MessageBox.Show($"Report for {dateSelected} generated.\nOpen directory?", "Report generated", MessageBoxButtons.YesNo);
-			//if (result == DialogResult.Yes)
-			//{
-			//	Process.Start($"{exportDirectory}");
-			//}
+			DialogResult result = MessageBox.Show($"Report for {dateSelected} generated.\nOpen directory?", "Report generated", MessageBoxButtons.YesNo);
+			if (result == DialogResult.Yes)
+			{
+				Process.Start($"{exportDirectory}");
+			}
 		}
 
 		/// <summary>
@@ -502,6 +515,11 @@ namespace PHP
 		private void grbGenerateReport_Enter(object sender, EventArgs e)
 		{
 
+		}
+
+		private void cmbSelectReport_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			
 		}
 	}
 }
