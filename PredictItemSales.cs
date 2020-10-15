@@ -14,6 +14,7 @@ namespace PHP
     public partial class PredictItemSales : Form
     {
         private SqlConnection connection;
+        long runTime;
 
         public PredictItemSales()
         {
@@ -23,6 +24,7 @@ namespace PHP
 
         private void PredictItemSales_Load(object sender, EventArgs e)
         {
+            Timer.Start();
             string productQuery = "SELECT ProductID from Products";
 
 
@@ -44,7 +46,7 @@ namespace PHP
             //Commit transaction and close connection.
             transaction.Commit();
             connection.Close();
-
+            runTime = runTime + Timer.Stop();
         }
 
         
@@ -87,6 +89,8 @@ namespace PHP
 
         private void btnPredict_Click(object sender, EventArgs e)
         {
+            Timer.Start();
+
             lblMonthError.Visible = true;
             lblInvalidYear.Visible = true;
             int Month, Year;
@@ -153,6 +157,8 @@ namespace PHP
             transaction.Commit();
             connection.Close();
 
+            runTime = runTime + Timer.Stop();
+            MessageBox.Show(runTime.ToString());
         }
 
         private void cmbProductID_SelectedIndexChanged(object sender, EventArgs e)
@@ -181,6 +187,8 @@ namespace PHP
 
         private void cmbProductID_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+            Timer.Start();
+
             ComboBox cmb = (ComboBox)sender;
             connection.Open();
 
@@ -205,7 +213,8 @@ namespace PHP
 
             command.Transaction.Commit();
             connection.Close();
-        
+
+            runTime = runTime + Timer.Stop();
         }
 
         
