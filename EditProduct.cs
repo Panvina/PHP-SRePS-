@@ -232,23 +232,7 @@ namespace PHP
                 return false;
             }
 
-            //Both min/max need to be greater than 0.
-            if(min < 0 || max < 0)
-            {
-                lblInvalidMinMax.Text = "Min/Max must be greater than 0";
-                lblInvalidMinMax.Visible = true;
-                return false;
-            }
-
-            //Min can't be lower than max.
-            if(min > max)
-            {
-                lblInvalidMinMax.Text = "Min cannot be larger than Max";
-                lblInvalidMinMax.Visible = true;
-                return false;
-            }
-
-            return true;
+            return Validator.ValidateMinMaxInputs(min, max);
         }
 
         private void HideErrorLabels()
