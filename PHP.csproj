@@ -84,7 +84,9 @@
     <Compile Include="AllSales.Designer.cs">
       <DependentUpon>AllSales.cs</DependentUpon>
     </Compile>
-    <Compile Include="CategoryPrediction.cs" />
+    <Compile Include="CategoryPrediction.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CategoryPrediction.designer.cs">
       <DependentUpon>CategoryPrediction.cs</DependentUpon>
     </Compile>
@@ -184,6 +186,7 @@
     <Compile Include="LowStockAlert.Designer.cs">
       <DependentUpon>LowStockAlert.cs</DependentUpon>
     </Compile>
+    <Compile Include="Validator.cs" />
     <Compile Include="PHPdbDataSet.cs">
       <DependentUpon>PHPdbDataSet.xsd</DependentUpon>
     </Compile>
