@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PHP", "PHP.csproj", "{FCE81A74-DE18-4BFE-BAE4-0FD3C8B811A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PHPTest", "..\PHPTest\PHPTest.csproj", "{7270199A-8599-454D-A1D6-E87CC485E9CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PHPTests", "..\PHPTests\PHPTests.csproj", "{39A0B46D-54CD-472A-8457-DE39A7DCCBE1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{FCE81A74-DE18-4BFE-BAE4-0FD3C8B811A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCE81A74-DE18-4BFE-BAE4-0FD3C8B811A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCE81A74-DE18-4BFE-BAE4-0FD3C8B811A6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7270199A-8599-454D-A1D6-E87CC485E9CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7270199A-8599-454D-A1D6-E87CC485E9CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7270199A-8599-454D-A1D6-E87CC485E9CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7270199A-8599-454D-A1D6-E87CC485E9CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39A0B46D-54CD-472A-8457-DE39A7DCCBE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39A0B46D-54CD-472A-8457-DE39A7DCCBE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39A0B46D-54CD-472A-8457-DE39A7DCCBE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39A0B46D-54CD-472A-8457-DE39A7DCCBE1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
